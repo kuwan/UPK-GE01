@@ -66,15 +66,63 @@
 		001992B322D6D5E900D91121 /* UPK-GE01 */ = {
 			isa = PBXGroup;
 			children = (
-				001992B422D6D5E900D91121 /* AppDelegate.swift */,
-				001992B622D6D5E900D91121 /* ViewController.swift */,
-				001992B822D6D5E900D91121 /* Main.storyboard */,
 				001992BB22D6D5EB00D91121 /* Assets.xcassets */,
-				001992BD22D6D5EB00D91121 /* LaunchScreen.storyboard */,
-				001992C022D6D5EB00D91121 /* Info.plist */,
-				001992CA22D7623600D91121 /* UiViewHelper.swift */,
+				001992CD22D778D000D91121 /* Controller */,
+				001992D022D778FA00D91121 /* Db */,
+				001992CE22D778D900D91121 /* Model */,
+				001992D122D779CB00D91121 /* Other */,
+				001992CF22D778E000D91121 /* Utils */,
+				001992CC22D778C800D91121 /* View */,
 			);
 			path = "UPK-GE01";
+			sourceTree = "<group>";
+		};
+		001992CC22D778C800D91121 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				001992B822D6D5E900D91121 /* Main.storyboard */,
+				001992BD22D6D5EB00D91121 /* LaunchScreen.storyboard */,
+			);
+			name = View;
+			sourceTree = "<group>";
+		};
+		001992CD22D778D000D91121 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				001992B422D6D5E900D91121 /* AppDelegate.swift */,
+				001992B622D6D5E900D91121 /* ViewController.swift */,
+			);
+			name = Controller;
+			sourceTree = "<group>";
+		};
+		001992CE22D778D900D91121 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+		001992CF22D778E000D91121 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				001992CA22D7623600D91121 /* UiViewHelper.swift */,
+			);
+			name = Utils;
+			sourceTree = "<group>";
+		};
+		001992D022D778FA00D91121 /* Db */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Db;
+			sourceTree = "<group>";
+		};
+		001992D122D779CB00D91121 /* Other */ = {
+			isa = PBXGroup;
+			children = (
+				001992C022D6D5EB00D91121 /* Info.plist */,
+			);
+			name = Other;
 			sourceTree = "<group>";
 		};
 		0BA36E226877BC9F268C4D28 /* Frameworks */ = {
