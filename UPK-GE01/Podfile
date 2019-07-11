@@ -13,5 +13,6 @@ target 'UPK-GE01' do
   pod 'RealmSwift'
   pod 'Hero'
   pod 'SVGKit'
+  pod 'FacebookSDK'
 
 end

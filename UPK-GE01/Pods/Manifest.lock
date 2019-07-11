@@ -3,6 +3,22 @@ PODS:
   - CocoaLumberjack (3.5.3):
     - CocoaLumberjack/Core (= 3.5.3)
   - CocoaLumberjack/Core (3.5.3)
+  - FacebookSDK (5.0.2):
+    - FacebookSDK/CoreKit (= 5.0.2)
+    - FacebookSDK/MarketingKit (= 5.0.2)
+  - FacebookSDK/CoreKit (5.0.2):
+    - FBSDKCoreKit (~> 5.0)
+  - FacebookSDK/MarketingKit (5.0.2):
+    - FacebookSDK/CoreKit
+    - FBSDKMarketingKit (~> 5.0)
+  - FBSDKCoreKit (5.0.0):
+    - FBSDKCoreKit/Basics (= 5.0.0)
+    - FBSDKCoreKit/Core (= 5.0.0)
+  - FBSDKCoreKit/Basics (5.0.0)
+  - FBSDKCoreKit/Core (5.0.0):
+    - FBSDKCoreKit/Basics
+  - FBSDKMarketingKit (5.0.0):
+    - FBSDKCoreKit (= 5.0.0)
   - Hero (1.4.0)
   - Realm (3.16.1):
     - Realm/Headers (= 3.16.1)
@@ -15,6 +31,7 @@ PODS:
 
 DEPENDENCIES:
   - Alamofire
+  - FacebookSDK
   - Hero
   - RealmSwift
   - SVGKit
@@ -24,6 +41,9 @@ SPEC REPOS:
   https://github.com/cocoapods/specs.git:
     - Alamofire
     - CocoaLumberjack
+    - FacebookSDK
+    - FBSDKCoreKit
+    - FBSDKMarketingKit
     - Hero
     - Realm
     - RealmSwift
@@ -33,12 +53,15 @@ SPEC REPOS:
 SPEC CHECKSUMS:
   Alamofire: ae5c501addb7afdbb13687d7f2f722c78734c2d3
   CocoaLumberjack: 2f44e60eb91c176d471fdba43b9e3eae6a721947
+  FacebookSDK: 94a2aee31c90d6bd32069ccbd7d830cb11438153
+  FBSDKCoreKit: ba361d4a9d4dc29ff218822b849b22d4f869c7bb
+  FBSDKMarketingKit: 4b8d3c6b53b5397cd0b6ba39b1e7034bc9f3a45e
   Hero: bac92350d7201a1a940003e0767c7b52ce7c99a1
   Realm: 601cacc51d8be3b17a377ef787be0f6ee0e76cf1
   RealmSwift: 486f2e09d5a8ccff63ed66e48d0846b111deb5e5
   SVGKit: 652cdf7bef8bec8564d04a8511d3ab50c7595fac
   SwiftyJSON: 36413e04c44ee145039d332b4f4e2d3e8d6c4db7
 
-PODFILE CHECKSUM: e4041745fb28b84de052cea2a2168bd0c7aa0f86
+PODFILE CHECKSUM: 3bf79f7e8e8ea8ad32165c7c646a7354dae5fe12
 
 COCOAPODS: 1.5.2
