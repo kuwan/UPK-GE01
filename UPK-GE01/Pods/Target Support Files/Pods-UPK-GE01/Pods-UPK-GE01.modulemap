@@ -1,0 +1,6 @@
+framework module Pods_UPK_GE01 {
+  umbrella header "Pods-UPK-GE01-umbrella.h"
+
+  export *
+  module * { export * }
+}

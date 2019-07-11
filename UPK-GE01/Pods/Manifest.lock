@@ -1,0 +1,44 @@
+PODS:
+  - Alamofire (4.8.2)
+  - CocoaLumberjack (3.5.3):
+    - CocoaLumberjack/Core (= 3.5.3)
+  - CocoaLumberjack/Core (3.5.3)
+  - Hero (1.4.0)
+  - Realm (3.16.1):
+    - Realm/Headers (= 3.16.1)
+  - Realm/Headers (3.16.1)
+  - RealmSwift (3.16.1):
+    - Realm (= 3.16.1)
+  - SVGKit (2.1.1):
+    - CocoaLumberjack (~> 3.0)
+  - SwiftyJSON (5.0.0)
+
+DEPENDENCIES:
+  - Alamofire
+  - Hero
+  - RealmSwift
+  - SVGKit
+  - SwiftyJSON
+
+SPEC REPOS:
+  https://github.com/cocoapods/specs.git:
+    - Alamofire
+    - CocoaLumberjack
+    - Hero
+    - Realm
+    - RealmSwift
+    - SVGKit
+    - SwiftyJSON
+
+SPEC CHECKSUMS:
+  Alamofire: ae5c501addb7afdbb13687d7f2f722c78734c2d3
+  CocoaLumberjack: 2f44e60eb91c176d471fdba43b9e3eae6a721947
+  Hero: bac92350d7201a1a940003e0767c7b52ce7c99a1
+  Realm: 601cacc51d8be3b17a377ef787be0f6ee0e76cf1
+  RealmSwift: 486f2e09d5a8ccff63ed66e48d0846b111deb5e5
+  SVGKit: 652cdf7bef8bec8564d04a8511d3ab50c7595fac
+  SwiftyJSON: 36413e04c44ee145039d332b4f4e2d3e8d6c4db7
+
+PODFILE CHECKSUM: e4041745fb28b84de052cea2a2168bd0c7aa0f86
+
+COCOAPODS: 1.5.2
