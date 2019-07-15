@@ -12,7 +12,6 @@
 		001992BA22D6D5E900D91121 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 001992B822D6D5E900D91121 /* Main.storyboard */; };
 		001992BC22D6D5EB00D91121 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 001992BB22D6D5EB00D91121 /* Assets.xcassets */; };
 		001992BF22D6D5EB00D91121 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 001992BD22D6D5EB00D91121 /* LaunchScreen.storyboard */; };
-		001992C722D6DB4100D91121 /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = 001992C622D6DB4100D91121 /* .gitignore */; };
 		001992CB22D7623600D91121 /* UiViewHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 001992CA22D7623600D91121 /* UiViewHelper.swift */; };
 		A2F8BF5A89648B6E970EC8C3 /* Pods_UPK_GE01.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A7C617972811AC9BA52A2B8F /* Pods_UPK_GE01.framework */; };
 /* End PBXBuildFile section */
@@ -25,7 +24,6 @@
 		001992BB22D6D5EB00D91121 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		001992BE22D6D5EB00D91121 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		001992C022D6D5EB00D91121 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		001992C622D6DB4100D91121 /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
 		001992CA22D7623600D91121 /* UiViewHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UiViewHelper.swift; sourceTree = "<group>"; };
 		53CACF2880FD828B6B761DE5 /* Pods-UPK-GE01.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-UPK-GE01.debug.xcconfig"; path = "Pods/Target Support Files/Pods-UPK-GE01/Pods-UPK-GE01.debug.xcconfig"; sourceTree = "<group>"; };
 		A7C617972811AC9BA52A2B8F /* Pods_UPK_GE01.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_UPK_GE01.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -47,7 +45,6 @@
 		001992A822D6D5E900D91121 = {
 			isa = PBXGroup;
 			children = (
-				001992C622D6DB4100D91121 /* .gitignore */,
 				001992B322D6D5E900D91121 /* UPK-GE01 */,
 				001992B222D6D5E900D91121 /* Products */,
 				740E3A24829742E4E0E1A04C /* Pods */,
@@ -202,7 +199,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				001992C722D6DB4100D91121 /* .gitignore in Resources */,
 				001992BF22D6D5EB00D91121 /* LaunchScreen.storyboard in Resources */,
 				001992BC22D6D5EB00D91121 /* Assets.xcassets in Resources */,
 				001992BA22D6D5E900D91121 /* Main.storyboard in Resources */,
