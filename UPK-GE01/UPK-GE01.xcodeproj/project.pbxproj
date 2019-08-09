@@ -8,23 +8,109 @@
 
 /* Begin PBXBuildFile section */
 		001992B522D6D5E900D91121 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 001992B422D6D5E900D91121 /* AppDelegate.swift */; };
-		001992B722D6D5E900D91121 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 001992B622D6D5E900D91121 /* ViewController.swift */; };
 		001992BA22D6D5E900D91121 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 001992B822D6D5E900D91121 /* Main.storyboard */; };
 		001992BC22D6D5EB00D91121 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 001992BB22D6D5EB00D91121 /* Assets.xcassets */; };
 		001992BF22D6D5EB00D91121 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 001992BD22D6D5EB00D91121 /* LaunchScreen.storyboard */; };
 		001992CB22D7623600D91121 /* UiViewHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 001992CA22D7623600D91121 /* UiViewHelper.swift */; };
+		0828AE5122EE95F100EBCD86 /* SelectAreaTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0828AE5022EE95F100EBCD86 /* SelectAreaTableViewController.swift */; };
+		0828AE5322EEBC2E00EBCD86 /* WarningsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0828AE5222EEBC2E00EBCD86 /* WarningsTableViewController.swift */; };
+		0828AE5522EED1BC00EBCD86 /* ProgramDetailsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0828AE5422EED1BC00EBCD86 /* ProgramDetailsTableViewController.swift */; };
+		08C2B9FC22DC7BD5008867E5 /* MyProgramsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08C2B9FB22DC7BD5008867E5 /* MyProgramsViewController.swift */; };
+		08C2BA0222DC9346008867E5 /* MoreViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08C2BA0122DC9346008867E5 /* MoreViewController.swift */; };
+		08C2BA0422DC96FE008867E5 /* ProgramLibraryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08C2BA0322DC96FE008867E5 /* ProgramLibraryViewController.swift */; };
+		08C2BA0622DC9856008867E5 /* ProgramLibraryUITableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08C2BA0522DC9856008867E5 /* ProgramLibraryUITableViewCell.swift */; };
+		08C2BA0822DD7725008867E5 /* HelpCenterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08C2BA0722DD7725008867E5 /* HelpCenterViewController.swift */; };
+		08C2BA0A22DD9E74008867E5 /* ControlPannelViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08C2BA0922DD9E74008867E5 /* ControlPannelViewController.swift */; };
+		08C2BA1022E01DA5008867E5 /* PLViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08C2BA0F22E01DA5008867E5 /* PLViewController.swift */; };
+		08C2BA4522E01EDA008867E5 /* YCPageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08C2BA1222E01ED6008867E5 /* YCPageView.swift */; };
+		08C2BA4622E01EDA008867E5 /* YCContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08C2BA1322E01ED6008867E5 /* YCContentView.swift */; };
+		08C2BA4722E01EDA008867E5 /* YCTitleStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08C2BA1422E01ED6008867E5 /* YCTitleStyle.swift */; };
+		08C2BA6122E01EDA008867E5 /* YCPageCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08C2BA4222E01ED9008867E5 /* YCPageCollectionView.swift */; };
+		08C2BA6222E01EDA008867E5 /* YCPageCollectionViewLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08C2BA4322E01EDA008867E5 /* YCPageCollectionViewLayout.swift */; };
+		08C2BA6322E01EDA008867E5 /* YCTitleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08C2BA4422E01EDA008867E5 /* YCTitleView.swift */; };
+		08C2BA6522E044FC008867E5 /* RelieveTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08C2BA6422E044FC008867E5 /* RelieveTableViewController.swift */; };
+		08C2BA6722E04521008867E5 /* StrengthenTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08C2BA6622E04521008867E5 /* StrengthenTableViewController.swift */; };
+		08C2BA6922E04537008867E5 /* RelaxTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08C2BA6822E04537008867E5 /* RelaxTableViewController.swift */; };
+		08C8803422EFE020007BF6F5 /* StartNewSessionTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08C8803322EFE020007BF6F5 /* StartNewSessionTableViewController.swift */; };
+		08C8803622F0224E007BF6F5 /* RelieveQuestionTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08C8803522F0224E007BF6F5 /* RelieveQuestionTableViewController.swift */; };
+		08C8803822F0226B007BF6F5 /* StrengthQuestionTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08C8803722F0226B007BF6F5 /* StrengthQuestionTableViewController.swift */; };
+		08C8803A22F0227F007BF6F5 /* RelaxQuestionTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08C8803922F0227F007BF6F5 /* RelaxQuestionTableViewController.swift */; };
+		08C8803C22F0257F007BF6F5 /* SuggestedProgramsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08C8803B22F0257F007BF6F5 /* SuggestedProgramsTableViewController.swift */; };
+		08C8803E22F03346007BF6F5 /* MyFavoriteTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08C8803D22F03346007BF6F5 /* MyFavoriteTableViewController.swift */; };
+		08C8804022F03361007BF6F5 /* RecommendTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08C8803F22F03361007BF6F5 /* RecommendTableViewController.swift */; };
+		08C8804222F03375007BF6F5 /* MyDiaryTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08C8804122F03375007BF6F5 /* MyDiaryTableViewController.swift */; };
+		08F4D61222F1306700707A84 /* HelpCenterTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08F4D61122F1306700707A84 /* HelpCenterTableViewController.swift */; };
+		08F4D61422F137ED00707A84 /* UpdateProfileTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08F4D61322F137ED00707A84 /* UpdateProfileTableViewController.swift */; };
+		08F4D61622F1380100707A84 /* ResetPasswordTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08F4D61522F1380100707A84 /* ResetPasswordTableViewController.swift */; };
+		08F4D61822F139B000707A84 /* MyDeviceTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08F4D61722F139B000707A84 /* MyDeviceTableViewController.swift */; };
+		08F4D61A22F139C600707A84 /* ContactUsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08F4D61922F139C600707A84 /* ContactUsTableViewController.swift */; };
+		08F4D61C22F139E600707A84 /* PrivacyStatementTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08F4D61B22F139E600707A84 /* PrivacyStatementTableViewController.swift */; };
+		08F4D61E22F13A0100707A84 /* TermsofServicesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08F4D61D22F13A0100707A84 /* TermsofServicesTableViewController.swift */; };
+		08F4D62022F13A1300707A84 /* MiscSettingTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08F4D61F22F13A1300707A84 /* MiscSettingTableViewController.swift */; };
+		08F4D62222F13A2400707A84 /* AboutSoftwareTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08F4D62122F13A2400707A84 /* AboutSoftwareTableViewController.swift */; };
+		08F4D62422F13A3900707A84 /* LogOutTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08F4D62322F13A3900707A84 /* LogOutTableViewController.swift */; };
+		08F4D62622F142D500707A84 /* ScienceofTENSTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08F4D62522F142D500707A84 /* ScienceofTENSTableViewController.swift */; };
+		08F4D62822F142F500707A84 /* ScienceofEMSTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08F4D62722F142F500707A84 /* ScienceofEMSTableViewController.swift */; };
+		08F4D62A22F4309F00707A84 /* PairingTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08F4D62922F4309F00707A84 /* PairingTableViewController.swift */; };
+		08F4D63F22FD708B00707A84 /* RegisterTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08F4D63E22FD708B00707A84 /* RegisterTableViewController.swift */; };
+		08F4D64122FD70AD00707A84 /* LoginTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08F4D64022FD70AD00707A84 /* LoginTableViewController.swift */; };
+		08F4D64322FD890200707A84 /* ForgotPasswordTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08F4D64222FD890200707A84 /* ForgotPasswordTableViewController.swift */; };
+		08F4D64522FD8C8400707A84 /* WelcomeTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08F4D64422FD8C8400707A84 /* WelcomeTableViewController.swift */; };
 		A2F8BF5A89648B6E970EC8C3 /* Pods_UPK_GE01.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A7C617972811AC9BA52A2B8F /* Pods_UPK_GE01.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		001992B122D6D5E900D91121 /* UPK-GE01.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "UPK-GE01.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		001992B422D6D5E900D91121 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		001992B622D6D5E900D91121 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		001992B922D6D5E900D91121 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		001992BB22D6D5EB00D91121 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		001992BE22D6D5EB00D91121 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		001992C022D6D5EB00D91121 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		001992CA22D7623600D91121 /* UiViewHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UiViewHelper.swift; sourceTree = "<group>"; };
+		0828AE5022EE95F100EBCD86 /* SelectAreaTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectAreaTableViewController.swift; sourceTree = "<group>"; };
+		0828AE5222EEBC2E00EBCD86 /* WarningsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WarningsTableViewController.swift; sourceTree = "<group>"; };
+		0828AE5422EED1BC00EBCD86 /* ProgramDetailsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgramDetailsTableViewController.swift; sourceTree = "<group>"; };
+		08C2B9FB22DC7BD5008867E5 /* MyProgramsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyProgramsViewController.swift; sourceTree = "<group>"; };
+		08C2BA0122DC9346008867E5 /* MoreViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoreViewController.swift; sourceTree = "<group>"; };
+		08C2BA0322DC96FE008867E5 /* ProgramLibraryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgramLibraryViewController.swift; sourceTree = "<group>"; };
+		08C2BA0522DC9856008867E5 /* ProgramLibraryUITableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgramLibraryUITableViewCell.swift; sourceTree = "<group>"; };
+		08C2BA0722DD7725008867E5 /* HelpCenterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HelpCenterViewController.swift; sourceTree = "<group>"; };
+		08C2BA0922DD9E74008867E5 /* ControlPannelViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ControlPannelViewController.swift; sourceTree = "<group>"; };
+		08C2BA0F22E01DA5008867E5 /* PLViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PLViewController.swift; sourceTree = "<group>"; };
+		08C2BA1222E01ED6008867E5 /* YCPageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YCPageView.swift; sourceTree = "<group>"; };
+		08C2BA1322E01ED6008867E5 /* YCContentView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YCContentView.swift; sourceTree = "<group>"; };
+		08C2BA1422E01ED6008867E5 /* YCTitleStyle.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YCTitleStyle.swift; sourceTree = "<group>"; };
+		08C2BA4222E01ED9008867E5 /* YCPageCollectionView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YCPageCollectionView.swift; sourceTree = "<group>"; };
+		08C2BA4322E01EDA008867E5 /* YCPageCollectionViewLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YCPageCollectionViewLayout.swift; sourceTree = "<group>"; };
+		08C2BA4422E01EDA008867E5 /* YCTitleView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YCTitleView.swift; sourceTree = "<group>"; };
+		08C2BA6422E044FC008867E5 /* RelieveTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RelieveTableViewController.swift; sourceTree = "<group>"; };
+		08C2BA6622E04521008867E5 /* StrengthenTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StrengthenTableViewController.swift; sourceTree = "<group>"; };
+		08C2BA6822E04537008867E5 /* RelaxTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RelaxTableViewController.swift; sourceTree = "<group>"; };
+		08C8803322EFE020007BF6F5 /* StartNewSessionTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartNewSessionTableViewController.swift; sourceTree = "<group>"; };
+		08C8803522F0224E007BF6F5 /* RelieveQuestionTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RelieveQuestionTableViewController.swift; sourceTree = "<group>"; };
+		08C8803722F0226B007BF6F5 /* StrengthQuestionTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StrengthQuestionTableViewController.swift; sourceTree = "<group>"; };
+		08C8803922F0227F007BF6F5 /* RelaxQuestionTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RelaxQuestionTableViewController.swift; sourceTree = "<group>"; };
+		08C8803B22F0257F007BF6F5 /* SuggestedProgramsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SuggestedProgramsTableViewController.swift; sourceTree = "<group>"; };
+		08C8803D22F03346007BF6F5 /* MyFavoriteTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyFavoriteTableViewController.swift; sourceTree = "<group>"; };
+		08C8803F22F03361007BF6F5 /* RecommendTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecommendTableViewController.swift; sourceTree = "<group>"; };
+		08C8804122F03375007BF6F5 /* MyDiaryTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyDiaryTableViewController.swift; sourceTree = "<group>"; };
+		08F4D61122F1306700707A84 /* HelpCenterTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HelpCenterTableViewController.swift; sourceTree = "<group>"; };
+		08F4D61322F137ED00707A84 /* UpdateProfileTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateProfileTableViewController.swift; sourceTree = "<group>"; };
+		08F4D61522F1380100707A84 /* ResetPasswordTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResetPasswordTableViewController.swift; sourceTree = "<group>"; };
+		08F4D61722F139B000707A84 /* MyDeviceTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyDeviceTableViewController.swift; sourceTree = "<group>"; };
+		08F4D61922F139C600707A84 /* ContactUsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactUsTableViewController.swift; sourceTree = "<group>"; };
+		08F4D61B22F139E600707A84 /* PrivacyStatementTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrivacyStatementTableViewController.swift; sourceTree = "<group>"; };
+		08F4D61D22F13A0100707A84 /* TermsofServicesTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TermsofServicesTableViewController.swift; sourceTree = "<group>"; };
+		08F4D61F22F13A1300707A84 /* MiscSettingTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MiscSettingTableViewController.swift; sourceTree = "<group>"; };
+		08F4D62122F13A2400707A84 /* AboutSoftwareTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutSoftwareTableViewController.swift; sourceTree = "<group>"; };
+		08F4D62322F13A3900707A84 /* LogOutTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogOutTableViewController.swift; sourceTree = "<group>"; };
+		08F4D62522F142D500707A84 /* ScienceofTENSTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScienceofTENSTableViewController.swift; sourceTree = "<group>"; };
+		08F4D62722F142F500707A84 /* ScienceofEMSTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScienceofEMSTableViewController.swift; sourceTree = "<group>"; };
+		08F4D62922F4309F00707A84 /* PairingTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PairingTableViewController.swift; sourceTree = "<group>"; };
+		08F4D63E22FD708B00707A84 /* RegisterTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterTableViewController.swift; sourceTree = "<group>"; };
+		08F4D64022FD70AD00707A84 /* LoginTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginTableViewController.swift; sourceTree = "<group>"; };
+		08F4D64222FD890200707A84 /* ForgotPasswordTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotPasswordTableViewController.swift; sourceTree = "<group>"; };
+		08F4D64422FD8C8400707A84 /* WelcomeTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeTableViewController.swift; sourceTree = "<group>"; };
 		53CACF2880FD828B6B761DE5 /* Pods-UPK-GE01.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-UPK-GE01.debug.xcconfig"; path = "Pods/Target Support Files/Pods-UPK-GE01/Pods-UPK-GE01.debug.xcconfig"; sourceTree = "<group>"; };
 		A7C617972811AC9BA52A2B8F /* Pods_UPK_GE01.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_UPK_GE01.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		EC85F01ABD59BE3AF7A10C0E /* Pods-UPK-GE01.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-UPK-GE01.release.xcconfig"; path = "Pods/Target Support Files/Pods-UPK-GE01/Pods-UPK-GE01.release.xcconfig"; sourceTree = "<group>"; };
@@ -86,8 +172,46 @@
 		001992CD22D778D000D91121 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				08C2BA1122E01E6F008867E5 /* Pageview */,
 				001992B422D6D5E900D91121 /* AppDelegate.swift */,
-				001992B622D6D5E900D91121 /* ViewController.swift */,
+				08C2B9FB22DC7BD5008867E5 /* MyProgramsViewController.swift */,
+				08C8803322EFE020007BF6F5 /* StartNewSessionTableViewController.swift */,
+				08C8803D22F03346007BF6F5 /* MyFavoriteTableViewController.swift */,
+				08C8803B22F0257F007BF6F5 /* SuggestedProgramsTableViewController.swift */,
+				08C8803522F0224E007BF6F5 /* RelieveQuestionTableViewController.swift */,
+				08C8803722F0226B007BF6F5 /* StrengthQuestionTableViewController.swift */,
+				08C8803922F0227F007BF6F5 /* RelaxQuestionTableViewController.swift */,
+				08C8803F22F03361007BF6F5 /* RecommendTableViewController.swift */,
+				08C8804122F03375007BF6F5 /* MyDiaryTableViewController.swift */,
+				08C2BA0922DD9E74008867E5 /* ControlPannelViewController.swift */,
+				08F4D62922F4309F00707A84 /* PairingTableViewController.swift */,
+				08C2BA0322DC96FE008867E5 /* ProgramLibraryViewController.swift */,
+				08C2BA0522DC9856008867E5 /* ProgramLibraryUITableViewCell.swift */,
+				08C2BA0722DD7725008867E5 /* HelpCenterViewController.swift */,
+				08C2BA0F22E01DA5008867E5 /* PLViewController.swift */,
+				08C2BA6422E044FC008867E5 /* RelieveTableViewController.swift */,
+				08C2BA6622E04521008867E5 /* StrengthenTableViewController.swift */,
+				08C2BA6822E04537008867E5 /* RelaxTableViewController.swift */,
+				0828AE5022EE95F100EBCD86 /* SelectAreaTableViewController.swift */,
+				0828AE5222EEBC2E00EBCD86 /* WarningsTableViewController.swift */,
+				0828AE5422EED1BC00EBCD86 /* ProgramDetailsTableViewController.swift */,
+				08C2BA0122DC9346008867E5 /* MoreViewController.swift */,
+				08F4D61122F1306700707A84 /* HelpCenterTableViewController.swift */,
+				08F4D61322F137ED00707A84 /* UpdateProfileTableViewController.swift */,
+				08F4D61522F1380100707A84 /* ResetPasswordTableViewController.swift */,
+				08F4D61722F139B000707A84 /* MyDeviceTableViewController.swift */,
+				08F4D61922F139C600707A84 /* ContactUsTableViewController.swift */,
+				08F4D61B22F139E600707A84 /* PrivacyStatementTableViewController.swift */,
+				08F4D61D22F13A0100707A84 /* TermsofServicesTableViewController.swift */,
+				08F4D61F22F13A1300707A84 /* MiscSettingTableViewController.swift */,
+				08F4D62122F13A2400707A84 /* AboutSoftwareTableViewController.swift */,
+				08F4D62522F142D500707A84 /* ScienceofTENSTableViewController.swift */,
+				08F4D62722F142F500707A84 /* ScienceofEMSTableViewController.swift */,
+				08F4D62322F13A3900707A84 /* LogOutTableViewController.swift */,
+				08F4D63E22FD708B00707A84 /* RegisterTableViewController.swift */,
+				08F4D64022FD70AD00707A84 /* LoginTableViewController.swift */,
+				08F4D64222FD890200707A84 /* ForgotPasswordTableViewController.swift */,
+				08F4D64422FD8C8400707A84 /* WelcomeTableViewController.swift */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -120,6 +244,19 @@
 				001992C022D6D5EB00D91121 /* Info.plist */,
 			);
 			name = Other;
+			sourceTree = "<group>";
+		};
+		08C2BA1122E01E6F008867E5 /* Pageview */ = {
+			isa = PBXGroup;
+			children = (
+				08C2BA1322E01ED6008867E5 /* YCContentView.swift */,
+				08C2BA4222E01ED9008867E5 /* YCPageCollectionView.swift */,
+				08C2BA4322E01EDA008867E5 /* YCPageCollectionViewLayout.swift */,
+				08C2BA1222E01ED6008867E5 /* YCPageView.swift */,
+				08C2BA1422E01ED6008867E5 /* YCTitleStyle.swift */,
+				08C2BA4422E01EDA008867E5 /* YCTitleView.swift */,
+			);
+			name = Pageview;
 			sourceTree = "<group>";
 		};
 		0BA36E226877BC9F268C4D28 /* Frameworks */ = {
@@ -265,9 +402,52 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				001992B722D6D5E900D91121 /* ViewController.swift in Sources */,
+				08F4D61822F139B000707A84 /* MyDeviceTableViewController.swift in Sources */,
+				08F4D61622F1380100707A84 /* ResetPasswordTableViewController.swift in Sources */,
+				08C2B9FC22DC7BD5008867E5 /* MyProgramsViewController.swift in Sources */,
+				08C2BA1022E01DA5008867E5 /* PLViewController.swift in Sources */,
+				08C2BA0422DC96FE008867E5 /* ProgramLibraryViewController.swift in Sources */,
+				08C2BA0A22DD9E74008867E5 /* ControlPannelViewController.swift in Sources */,
+				08C8803622F0224E007BF6F5 /* RelieveQuestionTableViewController.swift in Sources */,
+				08C2BA6922E04537008867E5 /* RelaxTableViewController.swift in Sources */,
+				08C8803822F0226B007BF6F5 /* StrengthQuestionTableViewController.swift in Sources */,
+				08F4D61222F1306700707A84 /* HelpCenterTableViewController.swift in Sources */,
+				08C2BA6522E044FC008867E5 /* RelieveTableViewController.swift in Sources */,
+				08C2BA4622E01EDA008867E5 /* YCContentView.swift in Sources */,
+				08C8803C22F0257F007BF6F5 /* SuggestedProgramsTableViewController.swift in Sources */,
+				08C8804222F03375007BF6F5 /* MyDiaryTableViewController.swift in Sources */,
+				08C2BA4722E01EDA008867E5 /* YCTitleStyle.swift in Sources */,
+				08F4D63F22FD708B00707A84 /* RegisterTableViewController.swift in Sources */,
+				08F4D64322FD890200707A84 /* ForgotPasswordTableViewController.swift in Sources */,
+				0828AE5522EED1BC00EBCD86 /* ProgramDetailsTableViewController.swift in Sources */,
+				08C8803A22F0227F007BF6F5 /* RelaxQuestionTableViewController.swift in Sources */,
+				08C2BA6222E01EDA008867E5 /* YCPageCollectionViewLayout.swift in Sources */,
+				08C2BA0822DD7725008867E5 /* HelpCenterViewController.swift in Sources */,
+				08F4D61A22F139C600707A84 /* ContactUsTableViewController.swift in Sources */,
+				08C2BA6122E01EDA008867E5 /* YCPageCollectionView.swift in Sources */,
+				08F4D62222F13A2400707A84 /* AboutSoftwareTableViewController.swift in Sources */,
+				08F4D61422F137ED00707A84 /* UpdateProfileTableViewController.swift in Sources */,
+				0828AE5122EE95F100EBCD86 /* SelectAreaTableViewController.swift in Sources */,
+				08F4D62622F142D500707A84 /* ScienceofTENSTableViewController.swift in Sources */,
+				08F4D61E22F13A0100707A84 /* TermsofServicesTableViewController.swift in Sources */,
+				08C8804022F03361007BF6F5 /* RecommendTableViewController.swift in Sources */,
+				08F4D64122FD70AD00707A84 /* LoginTableViewController.swift in Sources */,
+				08F4D62A22F4309F00707A84 /* PairingTableViewController.swift in Sources */,
+				08F4D62022F13A1300707A84 /* MiscSettingTableViewController.swift in Sources */,
+				08F4D62422F13A3900707A84 /* LogOutTableViewController.swift in Sources */,
+				08C2BA0622DC9856008867E5 /* ProgramLibraryUITableViewCell.swift in Sources */,
+				08C8803E22F03346007BF6F5 /* MyFavoriteTableViewController.swift in Sources */,
+				08C2BA0222DC9346008867E5 /* MoreViewController.swift in Sources */,
+				08F4D61C22F139E600707A84 /* PrivacyStatementTableViewController.swift in Sources */,
+				0828AE5322EEBC2E00EBCD86 /* WarningsTableViewController.swift in Sources */,
 				001992CB22D7623600D91121 /* UiViewHelper.swift in Sources */,
+				08C2BA6722E04521008867E5 /* StrengthenTableViewController.swift in Sources */,
 				001992B522D6D5E900D91121 /* AppDelegate.swift in Sources */,
+				08C2BA4522E01EDA008867E5 /* YCPageView.swift in Sources */,
+				08F4D64522FD8C8400707A84 /* WelcomeTableViewController.swift in Sources */,
+				08F4D62822F142F500707A84 /* ScienceofEMSTableViewController.swift in Sources */,
+				08C8803422EFE020007BF6F5 /* StartNewSessionTableViewController.swift in Sources */,
+				08C2BA6322E01EDA008867E5 /* YCTitleView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
