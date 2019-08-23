@@ -141,11 +141,13 @@ class StrengthQuestionTableViewController: UITableViewController {
             && Squestion1_B.imageView?.image == UIImage(named: "pic") && Squestion1_C.imageView?.image == UIImage(named: "pic")) || (Squestion2_A.imageView?.image == UIImage(named: "pic") && Squestion2_B.imageView?.image == UIImage(named: "pic") && Squestion2_C.imageView?.image == UIImage(named: "pic") && Squestion2_D.imageView?.image == UIImage(named: "pic")) || (Squestion3_A.imageView?.image == UIImage(named: "pic") && Squestion3_B.imageView?.image == UIImage(named: "pic") && Squestion3_C.imageView?.image == UIImage(named: "pic") && Squestion3_D.imageView?.image == UIImage(named: "pic")) || (Squestion4_A.imageView?.image == UIImage(named: "pic") && Squestion4_B.imageView?.image == UIImage(named: "pic") && Squestion4_C.imageView?.image == UIImage(named: "pic") && Squestion4_D.imageView?.image == UIImage(named: "pic")){
             
             let menu = UIAlertController(title: "", message: "Please fill in all questions", preferredStyle: .alert)
-            let option1 = UIAlertAction(title: "CANCEL", style: .cancel, handler: nil)
-            let option2 = UIAlertAction(title: "OK", style: .default, handler: nil)
-            menu.addAction(option1)
-            menu.addAction(option2)
-            
+            //let option1 = UIAlertAction(title: "CANCEL", style: .cancel, handler: nil)
+            //let option2 = UIAlertAction(title: "OK", style: .default, handler: nil)
+           // menu.addAction(option1)
+           // menu.addAction(option2)
+            DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 1){
+                self.presentedViewController?.dismiss(animated: false, completion: nil)
+            }
             self.present(menu, animated: true, completion: nil)
             
         }

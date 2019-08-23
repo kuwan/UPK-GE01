@@ -7,6 +7,8 @@
 //
 
 import UIKit
+let label4 = UITextField(frame: CGRect(x: 45, y: 145, width: UIScreen.main.bounds.width - 85, height: 40))
+let label5 = UITextField(frame: CGRect(x: 45, y: 190, width: UIScreen.main.bounds.width - 85, height: 40))
 
 class ForgotPasswordTableViewController: UITableViewController {
     
@@ -51,11 +53,21 @@ class ForgotPasswordTableViewController: UITableViewController {
         Button1.contentHorizontalAlignment = .left
         Button1.addTarget(self, action: #selector(Button1_action), for: .touchUpInside)
         cell.contentView.addSubview(Button1)
+        let lineview1 = UIView.init(frame: CGRect(x: 10, y: 50, width: 80, height: 2))
+        lineview1.backgroundColor = UIColor(red: 0/255.0, green: 204/255.0, blue: 204/255.0, alpha: 1)
+        self.view.addSubview(lineview1)
         
-        let Label1 = UITextField(frame: CGRect(x: 95, y: 10, width: self.view.frame.width - 100, height: 40))
-        Label1.borderStyle = .line
+        let image1 = UIImageView.init(frame: CGRect(x: 95, y: 15, width: 25, height: 25))
+        image1.image = UIImage(named: "pic")
+        cell.contentView.addSubview(image1)
+        let Label1 = UITextField(frame: CGRect(x: 130, y: 10, width: self.view.frame.width - 100, height: 40))
+        Label1.borderStyle = .none
         Label1.placeholder = "Email address or cell phone number"
+        Label1.clearButtonMode = .always
         self.view.addSubview(Label1)
+        let lineview2 = UIView.init(frame: CGRect(x: 95, y: 50, width: self.view.frame.width - 100, height: 2))
+        lineview2.backgroundColor = UIColor(red: 0/255.0, green: 204/255.0, blue: 204/255.0, alpha: 1)
+        self.view.addSubview(lineview2)
         
         let Button2 = UIButton.init(frame: CGRect(x: 10, y: 55, width: self.view.frame.width - 10, height: 40))
         Button2.addTarget(self, action: #selector(Button2_action), for: .touchUpInside)
@@ -68,32 +80,69 @@ class ForgotPasswordTableViewController: UITableViewController {
         label2.textColor = UIColor.white
         label2.backgroundColor = UIColor.orange
         cell.contentView.addSubview(label2)
-        
-        let label3 = UITextField(frame: CGRect(x: 10, y: 100, width: self.view.frame.width - 20, height: 40))
-        label3.borderStyle = .line
+                
+        let image2 = UIImageView.init(frame: CGRect(x: 10, y: 105, width: 25, height: 25))
+        image2.image = UIImage(named: "pic")
+        cell.contentView.addSubview(image2)
+        let label3 = UITextField(frame: CGRect(x: 45, y: 100, width: self.view.frame.width - 20, height: 40))
+        label3.borderStyle = .none
         label3.placeholder = "Enter verfication code"
         self.view.addSubview(label3)
+        let lineview3 = UIView.init(frame: CGRect(x: 10, y: 140, width: self.view.frame.width - 20, height: 2))
+        lineview3.backgroundColor = UIColor(red: 0/255.0, green: 204/255.0, blue: 204/255.0, alpha: 1)
+        self.view.addSubview(lineview3)
         
-        let label4 = UITextField(frame: CGRect(x: 10, y: 145, width: self.view.frame.width - 20, height: 40))
-        label4.borderStyle = .line
+        let image3 = UIImageView.init(frame: CGRect(x: 10, y: 150, width: 25, height: 25))
+        image3.image = UIImage(named: "pic")
+        cell.contentView.addSubview(image3)
+       // let label4 = UITextField(frame: CGRect(x: 45, y: 145, width: self.view.frame.width - 85, height: 40))
+        label4.borderStyle = .none
         label4.placeholder = "New Password"
+        label4.isSecureTextEntry = true
         self.view.addSubview(label4)
+        let lineview4 = UIView.init(frame: CGRect(x: 10, y: 185, width: self.view.frame.width - 20, height: 2))
+        lineview4.backgroundColor = UIColor(red: 0/255.0, green: 204/255.0, blue: 204/255.0, alpha: 1)
+        self.view.addSubview(lineview4)
+        let ButtonSecure = UIButton.init(frame: CGRect(x: self.view.frame.width - 40, y: 155, width: 25, height: 25))
+        ButtonSecure.setImage(UIImage(named: "pic"), for: .normal)
+        ButtonSecure.addTarget(self, action: #selector(ButtonSecure_Action), for: .touchUpInside)
+        cell.contentView.addSubview(ButtonSecure)
         
-        
-        let label5 = UITextField(frame: CGRect(x: 10, y: 190, width: self.view.frame.width - 20, height: 40))
-        label5.borderStyle = .line
+        let image4 = UIImageView.init(frame: CGRect(x: 10, y: 195, width: 25, height: 25))
+        image4.image = UIImage(named: "pic")
+        cell.contentView.addSubview(image4)
+       // let label5 = UITextField(frame: CGRect(x: 45, y: 190, width: self.view.frame.width - 20, height: 40))
+        label5.borderStyle = .none
         label5.placeholder = "Repeat New Password"
+        label5.isSecureTextEntry = true
         self.view.addSubview(label5)
+        let lineview5 = UIView.init(frame: CGRect(x: 10, y: 230, width: self.view.frame.width - 20, height: 2))
+        lineview5.backgroundColor = UIColor(red: 0/255.0, green: 204/255.0, blue: 204/255.0, alpha: 1)
+        self.view.addSubview(lineview5)
         
         let button_Reset = UIButton.init(frame: CGRect(x: 10, y: 560, width: self.view.frame.width - 20, height: 40))
-        button_Reset.backgroundColor = UIColor(red: 9/255.0, green: 187/255.0, blue: 7/255.0, alpha: 1)
+        button_Reset.backgroundColor = UIColor(red: 0/255.0, green: 204/255.0, blue: 204/255.0, alpha: 1)
         button_Reset.setTitle("Reset password", for: .normal)
         Button1.addTarget(self, action: #selector(Button1_action), for: .touchUpInside)
         cell.contentView.addSubview(button_Reset)
         
         return cell
     }
-    
+    @objc func ButtonSecure_Action(button: UIButton){
+        
+        if label4.isSecureTextEntry == true{
+            
+            label4.isSecureTextEntry = false
+            label5.isSecureTextEntry = false
+            button.setImage(UIImage(named: "picHL"), for: .normal)
+        }
+        else{
+            
+            label4.isSecureTextEntry = true
+            label5.isSecureTextEntry = true
+            button.setImage(UIImage(named: "pic"), for: .normal)
+        }
+    }
     @objc func Button1_action(button: UIButton){
         
         let menu = UIAlertController(title: "", message: "Select Area", preferredStyle: .alert)
@@ -108,7 +157,7 @@ class ForgotPasswordTableViewController: UITableViewController {
     @objc func Button2_action(button: UIButton){
         
         let menu = UIAlertController(title: "", message: "test", preferredStyle: .alert)
-        let option1 = UIAlertAction(title: "Cance;", style: .cancel, handler: nil)
+        let option1 = UIAlertAction(title: "Cance", style: .cancel, handler: nil)
         let option2 = UIAlertAction(title: "OK", style: .default, handler: nil)
         
         menu.addAction(option1)

@@ -12,15 +12,17 @@ class MoreViewController: UIViewController,UITableViewDelegate,UITableViewDataSo
     
     var menu = [["Help Center"], ["Update My Profile", "Reset Password"], ["My Device"], ["Contact Us"], ["Privacy Statement","Terms of Services"], ["Misc Setting", "About software"], ["Log out"]]
     
-    
+    var menu_image = [["icon_more_help"], ["icon_more_my", "icon_more_reset"], ["icon_more_device"], ["icon_more_contact"], ["icon_more_privacy","icon_more_services"], ["icon_more_settings", "icon_more_about"], ["icon_more_exit"]] 
     
     override func viewDidLoad() {
         super.viewDidLoad()
         //  title = "More "//title = "More"
         self.navigationItem.title = "RelieforMe"
+        self.navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.white
+            , NSAttributedString.Key.font:UIFont.systemFont(ofSize: 25)]
         let item = UIBarButtonItem(title: "", style: .plain, target: self, action: nil)
         self.navigationItem.backBarButtonItem = item
-        
+        self.navigationController?.navigationBar.barTintColor = UIColor(red: 0/255.0, green: 204/255.0, blue: 204/255.0, alpha: 1)
         // Do any additional setup after loading the view.
     }
     override func viewWillAppear(_ animated: Bool) {
@@ -62,16 +64,20 @@ class MoreViewController: UIViewController,UITableViewDelegate,UITableViewDataSo
        return 45
     }
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "cell_more", for: indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: "cell_more", for: indexPath)//as! MoreTableViewCell
         
-        cell.imageView?.image = UIImage(named: "pic")
+        //cell.MoreImage.image = UIImage(named:menu_image[indexPath.section][indexPath.row])
+        //cell.MoreLabel.text = menu[indexPath.section][indexPath.row]
+        
+        cell.imageView?.image = UIImage(named:menu_image[indexPath.section][indexPath.row])
         cell.textLabel?.text = menu[indexPath.section][indexPath.row]
-        cell.textLabel?.textColor = UIColor(red: 9/255.0, green: 187/255.0, blue: 7/255.0, alpha: 1)
+        //cell.textLabel?.textColor = UIColor(red: 9/255.0, green: 187/255.0, blue: 7/255.0, alpha: 1)
         
         return cell
     }
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
+        tableView.deselectRow(at: indexPath, animated: true)
         if indexPath.section == 0 {
             
             let vc = HelpCenterTableViewController()

@@ -13,15 +13,17 @@ class ProgramLibraryViewController: UIViewController, UITableViewDelegate,UITabl
     var therapy = [["Relieve"], ["Strengthen"], ["Relax"]]
     var therapy_decribe = ["Programs designed to help relieve your muscle and joint pain and stiffness", "Programs designed to help strenghten and restore your muscles and promote movement", "Programs designed to massage and relax your muscles"]
     
-     var session_image = ["pic1", "pic1", "pic1"]
+      var session_image = ["icon_main_relieve", "icon_main_strenthe", "icon_main_relax"]
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // title = "Program Library"
         self.navigationItem.title = "RelieforMe"
+        self.navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.white
+            , NSAttributedString.Key.font:UIFont.systemFont(ofSize: 25)]
         let item = UIBarButtonItem(title: "", style: .plain, target: self, action: nil)
         self.navigationItem.backBarButtonItem = item
-        
+        self.navigationController?.navigationBar.barTintColor = UIColor(red: 0/255.0, green: 204/255.0, blue: 204/255.0, alpha: 1)
         // Do any additional setup after loading the view.
     }
     override func viewWillAppear(_ animated: Bool) {
@@ -75,6 +77,7 @@ class ProgramLibraryViewController: UIViewController, UITableViewDelegate,UITabl
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
+        tableView.deselectRow(at: indexPath, animated: true)
         if indexPath.section == 0 && indexPath.row == 0 {
             
             let vc = PLViewController()

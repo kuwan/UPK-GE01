@@ -53,9 +53,10 @@ class StrengthenTableViewController: UITableViewController {
         
         let label_name = UILabel.init(frame: CGRect(x: 10, y: 6, width: self.view.frame.width - 60, height: 40))
         label_name.text = Strengthen_name[indexPath.section][indexPath.row]
-        label_name.numberOfLines = 2
+        label_name.numberOfLines = 0
         label_name.font = label_name.font.withSize(15)
-        label_name.textColor = UIColor(red: 9/255.0, green: 187/255.0, blue: 7/255.0, alpha: 1)
+        label_name.font = UIFont.boldSystemFont(ofSize: 15)
+        label_name.textColor = UIColor(red: 0/255.0, green: 204/255.0, blue: 204/255.0, alpha: 1)
         cell.contentView.addSubview(label_name)
         
         let label_detial1 = UILabel.init(frame: CGRect(x: 10, y: 46, width: self.view.frame.width - 60, height: 40))
@@ -78,7 +79,7 @@ class StrengthenTableViewController: UITableViewController {
         
         let button_favorite = UIButton.init(frame: CGRect(x: self.view.frame.width - 50, y: 20, width: 30, height: 24))
         // button.backgroundColor = UIColor.lightGray
-        button_favorite.setImage(UIImage(named: "pic"), for: .normal)
+        button_favorite.setImage(UIImage(named: "lin_like_grey"), for: .normal)
        // button_favorite.setTitle("test", for: .highlighted)
         button_favorite.addTarget(self, action: #selector(buttonAction_favorite), for: .touchUpInside)
         //button.setImage("pic", for: UIControl.State)
@@ -86,7 +87,7 @@ class StrengthenTableViewController: UITableViewController {
         
         let button_start = UIButton.init(frame: CGRect(x: self.view.frame.width - 50, y: 100, width: 30, height: 24))
         // button.backgroundColor = UIColor.lightGray
-        button_start.setImage(UIImage(named: "pic"), for: .normal)
+        button_start.setImage(UIImage(named: "lin_start"), for: .normal)
        // button_start.setTitle("test", for: .highlighted)
         button_start.addTarget(self, action: #selector(buttonAction_start), for: .touchUpInside)
         //button.setImage("pic", for: UIControl.State)
@@ -97,12 +98,12 @@ class StrengthenTableViewController: UITableViewController {
     @objc private func buttonAction_favorite(button: UIButton) {
         
         print("do nothing")
-        if button.imageView?.image == UIImage(named: "pic"){
-            button.setImage(UIImage(named: "picHL"), for: .normal)
+        if button.imageView?.image == UIImage(named: "lin_like_grey"){
+            button.setImage(UIImage(named: "lin_like_red"), for: .normal)
         }
         else{
             
-            button.setImage(UIImage(named: "pic"), for: .normal)
+            button.setImage(UIImage(named: "lin_like_grey"), for: .normal)
         }
         
     }
@@ -115,6 +116,7 @@ class StrengthenTableViewController: UITableViewController {
     }
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
+        tableView.deselectRow(at: indexPath, animated: true)
         let vc = ProgramDetailsTableViewController()
         vc.program_section = indexPath.section + 15
         vc.program_row = indexPath.row

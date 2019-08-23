@@ -44,19 +44,19 @@ class ContactUsTableViewController: UITableViewController {
         
         let label1 = UILabel.init(frame: CGRect(x: 10, y: 10, width: self.view.frame.width - 100,height: 40))
         label1.text = "Texhnical issue"
-        label1.textColor = UIColor.green
+        label1.textColor = UIColor(red: 0/255.0, green: 204/255.0, blue: 204/255.0, alpha: 1)
         cell.contentView.addSubview(label1)
         let button1 = UIButton.init(frame: CGRect(x: self.view.frame.width - 40, y: 20, width: 20, height: 20))
-        button1.setImage(UIImage(named: "pic"), for: .normal)
+        button1.setImage(UIImage(named: "btn_unselected"), for: .normal)
         button1.addTarget(self, action: #selector(button1_action), for: .touchUpInside)
         cell.contentView.addSubview(button1)
         
         let label2 = UILabel.init(frame: CGRect(x: 10, y: 55, width: self.view.frame.width - 100,height: 40))
         label2.text = "Other issue"
-        label2.textColor = UIColor.green
+        label2.textColor = UIColor(red: 0/255.0, green: 204/255.0, blue: 204/255.0, alpha: 1)
         cell.contentView.addSubview(label2)
         let button2 = UIButton.init(frame: CGRect(x: self.view.frame.width - 40, y: 70, width: 20, height: 20))
-        button2.setImage(UIImage(named: "pic"), for: .normal)
+        button2.setImage(UIImage(named: "btn_unselected"), for: .normal)
         button2.addTarget(self, action: #selector(button2_action), for: .touchUpInside)
         cell.contentView.addSubview(button2)
         
@@ -65,16 +65,19 @@ class ContactUsTableViewController: UITableViewController {
         cell.contentView.addSubview(label3)
         
         let Label_comments = UITextField(frame: CGRect(x: 10, y: 150, width: self.view.frame.width - 20, height: 80))
-        Label_comments.borderStyle = .line
+        Label_comments.borderStyle = .none
         self.view.addSubview(Label_comments)
+        let lineview = UIView.init(frame: CGRect(x: 10, y: 230, width: self.view.frame.width - 20, height: 2))
+        lineview.backgroundColor = UIColor(red: 0/255.0, green: 204/255.0, blue: 204/255.0, alpha: 1)
+        self.view.addSubview(lineview)
         
         let label4 = UILabel.init(frame: CGRect(x: 10, y: 240, width: self.view.frame.width ,height: 30))
         label4.text = "Please add picture or screen shot"
         cell.contentView.addSubview(label4)
         
         let Camera_button = UIButton.init(frame: CGRect(x: 10, y: 275, width: 80, height: 70))
-        Camera_button.setImage(UIImage(named: "pic1"), for: .normal)
-      //  Camera_button.addTarget(self, action: #selector(CameraButton_action), for: .touchUpInside)
+        Camera_button.setImage(UIImage(named: "lin_camemer"), for: .normal)
+        Camera_button.addTarget(self, action: #selector(CameraButton_action), for: .touchUpInside)
         cell.contentView.addSubview(Camera_button)
         
         let label5 = UILabel.init(frame: CGRect(x: 10, y: 530, width: self.view.frame.width ,height: 20))
@@ -84,7 +87,7 @@ class ContactUsTableViewController: UITableViewController {
         
         
         let button_OK = UIButton.init(frame: CGRect(x: 10, y: 560, width: self.view.frame.width - 20, height: 40))
-        button_OK.backgroundColor = UIColor(red: 9/255.0, green: 187/255.0, blue: 7/255.0, alpha: 1)
+        button_OK.backgroundColor = UIColor(red: 0/255.0, green: 204/255.0, blue: 204/255.0, alpha: 1)
         // button_next.setImage(UIImage(named: "pic"), for: .normal)
         button_OK.setTitle("OK", for: .normal)
         //button_next.addTarget(self, action: #selector(buttonAction_next), for: .touchUpInside)
@@ -97,25 +100,37 @@ class ContactUsTableViewController: UITableViewController {
     @objc private func button1_action(button: UIButton) {
         
         print("do nothing")
-        if button.imageView?.image == UIImage(named: "pic"){
-            button.setImage(UIImage(named: "picHL"), for: .normal)
+        if button.imageView?.image == UIImage(named: "btn_unselected"){
+            button.setImage(UIImage(named: "btn_selected"), for: .normal)
         }
         else{
             
-            button.setImage(UIImage(named: "pic"), for: .normal)
+            button.setImage(UIImage(named: "btn_unselected"), for: .normal)
         }
         
     }
     @objc private func button2_action(button: UIButton) {
         
         print("do nothing")
-        if button.imageView?.image == UIImage(named: "pic"){
-            button.setImage(UIImage(named: "picHL"), for: .normal)
+        if button.imageView?.image == UIImage(named: "btn_unselected"){
+            button.setImage(UIImage(named: "btn_selected"), for: .normal)
         }
         else{
             
-            button.setImage(UIImage(named: "pic"), for: .normal)
+            button.setImage(UIImage(named: "btn_unselected"), for: .normal)
         }
+        
+    }
+    @objc  func CameraButton_action(button: UIButton){
+        
+        if !UIImagePickerController.isSourceTypeAvailable(.photoLibrary) {
+            
+           // return
+        }
+       
+        let imagePickerVC = UIImagePickerController()
+       
+        self.present(imagePickerVC, animated: true, completion: nil)
         
     }
     /*

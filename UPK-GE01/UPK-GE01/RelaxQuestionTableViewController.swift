@@ -282,11 +282,13 @@ class RelaxQuestionTableViewController: UITableViewController {
             && Rquestion1_B.imageView?.image == UIImage(named: "pic") && Rquestion1_C.imageView?.image == UIImage(named: "pic") && Rquestion1_D.imageView?.image == UIImage(named: "pic")) || (Rquestion2_A.imageView?.image == UIImage(named: "pic") && Rquestion2_B.imageView?.image == UIImage(named: "pic") && Rquestion2_C.imageView?.image == UIImage(named: "pic") && Rquestion2_D.imageView?.image == UIImage(named: "pic")) || (Rquestion3_A.imageView?.image == UIImage(named: "pic") && Rquestion3_B.imageView?.image == UIImage(named: "pic") && Rquestion3_C.imageView?.image == UIImage(named: "pic") && Rquestion3_D.imageView?.image == UIImage(named: "pic")){
             
             let menu = UIAlertController(title: "", message: "Please fill in all questions", preferredStyle: .alert)
-            let option1 = UIAlertAction(title: "CANCEL", style: .cancel, handler: nil)
-            let option2 = UIAlertAction(title: "OK", style: .default, handler: nil)
-            menu.addAction(option1)
-            menu.addAction(option2)
-            
+            //let option1 = UIAlertAction(title: "CANCEL", style: .cancel, handler: nil)
+            //let option2 = UIAlertAction(title: "OK", style: .default, handler: nil)
+           // menu.addAction(option1)
+            //menu.addAction(option2)
+            DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 1){
+                self.presentedViewController?.dismiss(animated: false, completion: nil)
+            }
             self.present(menu, animated: true, completion: nil)
            
         }
@@ -294,7 +296,7 @@ class RelaxQuestionTableViewController: UITableViewController {
             
             let vc = SuggestedProgramsTableViewController()
             self.navigationController?.pushViewController(vc, animated: true)
-            
+          // self.navigationController?.popToRootViewController(animated: true)
         }
         
         

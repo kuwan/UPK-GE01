@@ -15,6 +15,8 @@ class WarningsTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.navigationItem.title = "Warnings"
+        let item = UIBarButtonItem(title: "", style: .plain, target: self, action: nil)
+        self.navigationItem.backBarButtonItem = item
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
 
@@ -48,7 +50,7 @@ class WarningsTableViewController: UITableViewController {
         cell.contentView.addSubview(label_name)
         
         let button_read = UIButton.init(frame: CGRect(x: 10, y: 560, width: self.view.frame.width - 20, height: 40))
-        button_read.backgroundColor = UIColor(red: 9/255.0, green: 187/255.0, blue: 7/255.0, alpha: 1)
+        button_read.backgroundColor = UIColor(red: 0/255.0, green: 204/255.0, blue: 204/255.0, alpha: 1)
         // button_next.setImage(UIImage(named: "pic"), for: .normal)
         button_read.setTitle("Read and Understand", for: .normal)
         button_read.addTarget(self, action: #selector(buttonAction_read), for: .touchUpInside)
@@ -66,7 +68,7 @@ class WarningsTableViewController: UITableViewController {
             self.navigationController?.pushViewController(vc, animated: true)
         }
         else{
-            //self.navigationController?.popToRootViewController(animated: true)
+           // self.navigationController?.popToRootViewController(animated: true)
             self.tabBarController?.selectedIndex = 1
             
         }  

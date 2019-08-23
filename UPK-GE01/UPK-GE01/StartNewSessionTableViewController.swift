@@ -12,7 +12,7 @@ class StartNewSessionTableViewController: UITableViewController {
 
     var session = [["Relieve"], ["Strengthen"], ["Relax"]]
     var session_decribe = ["Programs designed to help relieve your muscle and joint pain and stiffness", "Programs designed to help strenghten and restore your muscles and promote movement", "Programs designed to massage and relax your muscles"]
-    var session_image = ["pic1", "pic1", "pic1"]
+    var session_image = ["icon_main_relieve", "icon_main_strenthe", "icon_main_relax"]
     override func viewDidLoad() {
         super.viewDidLoad()
         title = "Start New Session"
@@ -58,7 +58,6 @@ class StartNewSessionTableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = UITableViewCell.init(style: .default, reuseIdentifier: nil)
         
-        
         if indexPath.section == 0 {
             
             let headerLable = UILabel.init(frame: CGRect(x: 10, y: 55, width: self.view.frame.width - 20, height: 20))
@@ -68,9 +67,9 @@ class StartNewSessionTableViewController: UITableViewController {
         }
         else {
             let SessionImage = UIImageView.init(frame: CGRect(x: 5, y: 15, width: 90, height: 90))
-            SessionImage.image = UIImage(named: "pic1")
-            SessionImage.layer.cornerRadius = SessionImage.frame.size.height/2
-            SessionImage.clipsToBounds = true
+            SessionImage.image = UIImage(named:session_image[indexPath.section - 1])
+            //SessionImage.layer.cornerRadius = SessionImage.frame.size.height/2
+            //SessionImage.clipsToBounds = true
             cell.contentView.addSubview(SessionImage)
             
             let nameLabel = UILabel.init(frame: CGRect(x: 117, y: 1, width: self.view.frame.width - 117, height: 37))
@@ -92,6 +91,8 @@ class StartNewSessionTableViewController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+        tableView.deselectRow(at: indexPath, animated: true)
         if indexPath.section == 1{
             
             let vc = SelectAreaTableViewController()

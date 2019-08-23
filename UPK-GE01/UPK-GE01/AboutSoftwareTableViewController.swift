@@ -43,7 +43,7 @@ class AboutSoftwareTableViewController: UITableViewController {
         cell.selectionStyle = UITableViewCell.SelectionStyle.none
         
         let AppImage = UIImageView.init(frame: CGRect(x: self.view.frame.width/2 - 40, y: 50, width: 80, height: 80))
-        AppImage.image = UIImage(named: "pic1")
+        AppImage.image = UIImage(named: "ic_launcher")
         cell.contentView.addSubview(AppImage)
         
         let AppName = UILabel.init(frame: CGRect(x: 0, y: 150, width: self.view.frame.width, height: 50))
@@ -51,12 +51,18 @@ class AboutSoftwareTableViewController: UITableViewController {
         AppName.textAlignment = .center
         AppName.font = AppName.font.withSize(22)
         cell.contentView.addSubview(AppName)
+       
+       
+        let lineview1 = UIView.init(frame: CGRect(x: 10, y: 300, width: self.view.frame.width - 20, height: 1))
+        lineview1.backgroundColor = UIColor.gray
+        self.view.addSubview(lineview1)
         
         let AppVersion = UILabel.init(frame: CGRect(x: 10, y: 300, width: self.view.frame.width/2 - 10, height: 50))
         AppVersion.text = "APP Version"
         AppVersion.textAlignment = .left
         AppVersion.font = AppName.font.withSize(19)
         cell.contentView.addSubview(AppVersion)
+       
         
         let AppVersion1 = UILabel.init(frame: CGRect(x: self.view.frame.width/2, y: 300, width: self.view.frame.width/2 - 10, height: 50))
         AppVersion1.text = "04.05"
@@ -64,17 +70,27 @@ class AboutSoftwareTableViewController: UITableViewController {
         AppVersion1.font = AppName.font.withSize(19)
         cell.contentView.addSubview(AppVersion1)
         
+        
+        let lineview2 = UIView.init(frame: CGRect(x: 10, y: 350, width: self.view.frame.width - 20, height: 1))
+        lineview2.backgroundColor = UIColor.gray
+        self.view.addSubview(lineview2)
+        
         let FwVersion = UILabel.init(frame: CGRect(x: 10, y: 360, width: self.view.frame.width/2 - 10, height: 40))
         FwVersion.text = "Firmware Version"
         FwVersion.textAlignment = .left
         FwVersion.font = AppName.font.withSize(19)
         cell.contentView.addSubview(FwVersion)
         
-        let FwVersion1 = UILabel.init(frame: CGRect(x: self.view.frame.width/2, y: 350, width: self.view.frame.width/2 - 10, height: 40))
+        let FwVersion1 = UILabel.init(frame: CGRect(x: self.view.frame.width/2, y: 360, width: self.view.frame.width/2 - 10, height: 40))
         FwVersion1.text = "04.01"
         FwVersion1.textAlignment = .right
         FwVersion1.font = AppName.font.withSize(19)
         cell.contentView.addSubview(FwVersion1)
+        
+        
+        let lineview3 = UIView.init(frame: CGRect(x: 10, y: 400, width: self.view.frame.width - 20, height: 1))
+        lineview3.backgroundColor = UIColor.gray
+        self.view.addSubview(lineview3)
         
 
         return cell

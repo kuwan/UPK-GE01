@@ -60,7 +60,7 @@ class WelcomeTableViewController: UITableViewController {
        
         
         let Button_Next = UIButton.init(frame: CGRect(x: 10, y: 560, width: self.view.frame.width - 20, height: 40))
-        Button_Next.backgroundColor = UIColor(red: 9/255.0, green: 187/255.0, blue: 7/255.0, alpha: 1)
+        Button_Next.backgroundColor = UIColor(red: 0/255.0, green: 204/255.0, blue: 204/255.0, alpha: 1)
         Button_Next.setTitle("Next", for: .normal)
         Button_Next.addTarget(self, action: #selector(ButtonNext_action), for: .touchUpInside)
         cell.contentView.addSubview(Button_Next)

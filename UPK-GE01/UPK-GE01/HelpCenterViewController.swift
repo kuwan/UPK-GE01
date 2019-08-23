@@ -12,7 +12,7 @@ class HelpCenterViewController: UIViewController,UITableViewDelegate,UITableView
     
     var index_selectd = 0
     var menu = [["Quick Start"], ["E-manual"], ["FAQ"]]
-    var menu_image = ["pic1", "pic1", "pic1"]
+    var menu_image = ["icon_more_about", "icon_help_emanual", "icon_more_help"]
     
     
     override func viewDidLoad() {
@@ -51,13 +51,19 @@ class HelpCenterViewController: UIViewController,UITableViewDelegate,UITableView
     }
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell_helpcenter", for: indexPath)
+     
         // print(indexPath.section)
         cell.imageView?.image = UIImage(named:menu_image[indexPath.section])
         cell.textLabel?.text = menu[indexPath.section][indexPath.row]
-        cell.textLabel?.textColor = UIColor(red: 9/255.0, green: 187/255.0, blue: 7/255.0, alpha: 1)
+        //cell.textLabel?.textColor = UIColor(red: 9/255.0, green: 187/255.0, blue: 7/255.0, alpha: 1)
         
         return cell
     }
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+        tableView.deselectRow(at: indexPath, animated: true)
+    }
     
 }
+
 

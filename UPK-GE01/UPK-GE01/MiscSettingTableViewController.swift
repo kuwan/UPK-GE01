@@ -43,9 +43,12 @@ class MiscSettingTableViewController: UITableViewController {
         cell.selectionStyle = UITableViewCell.SelectionStyle.none
         
         
-        let FontButton = UIButton.init(frame: CGRect(x: 10, y: 20, width: 360, height: 40))
-       // FontButton.backgroundColor = UIColor(red: 9/255.0, green: 187/255.0, blue: 7/255.0, alpha: 1)
-        FontButton.setImage(UIImage(named: "pic"), for: .normal)
+        
+        let FontImage = UIImageView.init(frame: CGRect(x: 10, y: 33, width: 28, height: 23))
+        FontImage.image = UIImage(named: "icon_more_about")
+        cell.contentView.addSubview(FontImage)
+        
+        let FontButton = UIButton.init(frame: CGRect(x: 38, y: 20, width: self.view.frame.width - 30, height: 50))
         FontButton.setTitle("  Font Setting", for: .normal)
         FontButton.setTitleColor(.black, for: .normal)
         FontButton.contentHorizontalAlignment = .left
@@ -53,7 +56,7 @@ class MiscSettingTableViewController: UITableViewController {
         cell.contentView.addSubview(FontButton)
         
         let PadImage = UIImageView.init(frame: CGRect(x: 10, y: 78, width: 28, height: 23))
-        PadImage.image = UIImage(named: "pic")
+        PadImage.image = UIImage(named: "icon_more_help")
         cell.contentView.addSubview(PadImage)
         
         let PadLabel = UILabel.init(frame: CGRect(x:38, y: 65, width: self.view.frame.width - 110, height: 50))

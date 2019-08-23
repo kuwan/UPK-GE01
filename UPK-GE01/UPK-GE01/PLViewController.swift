@@ -17,7 +17,7 @@ class PLViewController: UIViewController {
   //  var pageFrame: CGRect = CGRect(x: 0, y: 0, width: 0, height: 0)
     override func viewDidLoad() {
         super.viewDidLoad()
-        if index != 4{
+        if index != 4 && index != 5{
             self.navigationItem.title = "Program Library"
             let item = UIBarButtonItem(title: "", style: .plain, target: self, action: nil)
             self.navigationItem.backBarButtonItem = item
@@ -31,6 +31,7 @@ class PLViewController: UIViewController {
         }
         //self.navigationItem.titleView?.backgroundColor = UIColor(red: 9/255.0, green: 187/255.0, blue: 7/255.0, alpha: 1)
         /// 标题
+       // self.navigationItem.
        
         //样式
         let style = YCTitleStyle()
@@ -43,6 +44,8 @@ class PLViewController: UIViewController {
         //显示遮盖
         style.isShowCover = true
         
+        style.FirstTitle = index
+        
         
         // 所以的子控制器
         var childVcs = [UITableViewController]()
@@ -52,7 +55,7 @@ class PLViewController: UIViewController {
         
            // childVcs.append(vc)
        // }
-         if index != 4 {
+         if index != 4 && index != 5 {
             let vc1 = RelieveTableViewController()
             let vc2 = StrengthenTableViewController()
             let vc3 = RelaxTableViewController()
@@ -62,13 +65,20 @@ class PLViewController: UIViewController {
             childVcs.append(vc3)
         }
          else{
+            if index == 4{
+                style.FirstTitle = 0
+            }
+            else{
+                style.FirstTitle = 1
+            }
+            
             let vc1 = RegisterTableViewController()
             let vc2 = LoginTableViewController()
             
             childVcs.append(vc1)
             childVcs.append(vc2)
         }
-        print(index)
+       // print("\(titles.count)-----------------count")
         
         // pageView的frame
       //  if index != 4{

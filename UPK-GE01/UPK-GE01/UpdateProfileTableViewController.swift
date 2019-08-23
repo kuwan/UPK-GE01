@@ -7,12 +7,46 @@
 //
 
 import UIKit
+let GenderButton = UIButton.init(frame: CGRect(x: UIScreen.main.bounds.width - 220, y: 225, width: 200, height: 40))
+let BirthdayButton = UIButton.init(frame: CGRect(x: UIScreen.main.bounds.width - 220, y: 270, width: 200, height: 40))
+
+let WeightButton = UIButton.init(frame: CGRect(x: UIScreen.main.bounds.width - 220, y: 315, width: 200, height: 40))
 
 class UpdateProfileTableViewController: UITableViewController {
-
+    
+    var Weight = [String](), WeightUnit = [String]()
+    let label = UILabel.init(frame: CGRect(x: 0, y: 300, width: 375, height: 40))
+    var index = 0
+    // weight data
+    private lazy var data: [[String]] = {
+        
+       
+        for i in 1..<1000 {
+            Weight.append("\(i)")
+           // WeightUnit.append("\(i)")
+        }
+        for i in 1..<3 {
+            if i == 1{
+                WeightUnit.append("kg")
+            }
+            if i == 2{
+                WeightUnit.append("lb")
+            }
+        }
+        
+        return [Weight, WeightUnit]
+    }()
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.navigationItem.title = "Update your profile"
+        if index == 1{
+            self.navigationItem.title = "Create your profile"
+            let item = UIBarButtonItem(title: "", style: .plain, target: self, action: nil)
+            self.navigationItem.leftBarButtonItem = item
+        }
+        else{
+            self.navigationItem.title = "Update your profile"
+        }
+        
         self.tabBarController?.hidesBottomBarWhenPushed = true
         self.tabBarController?.tabBar.isHidden = true
         // Uncomment the following line to preserve selection between presentations
@@ -44,24 +78,23 @@ class UpdateProfileTableViewController: UITableViewController {
         cell.selectionStyle = UITableViewCell.SelectionStyle.none
         
         let ProfileLabel = UILabel.init(frame: CGRect(x: 0, y: 0, width: self.view.frame.width, height: 130))
-        ProfileLabel.backgroundColor = .green
+        ProfileLabel.backgroundColor = UIColor(red: 0/255.0, green: 204/255.0, blue: 204/255.0, alpha: 1)
         cell.contentView.addSubview(ProfileLabel)
         
         let ProfileImage = UIImageView.init(frame: CGRect(x: self.view.frame.width/2 - 25, y: 30, width: 50, height: 50))
         //PadImage.backgroundColor = .green
-        ProfileImage.image = UIImage(named: "pic1")
-        ProfileImage.layer.cornerRadius = ProfileImage.frame.size.height/2
-        ProfileImage.clipsToBounds = true
+        ProfileImage.image = UIImage(named: "ic_user_man_port")
+        //ProfileImage.layer.cornerRadius = ProfileImage.frame.size.height/2
+        //ProfileImage.clipsToBounds = true
         cell.contentView.addSubview(ProfileImage)
         
         let ProfileLabel1 = UILabel.init(frame: CGRect(x: 0, y: 90, width: self.view.frame.width, height: 30))
-       // ProfileLabel1.backgroundColor = .green
+        ProfileLabel1.textColor = UIColor.white
         ProfileLabel1.text = "13016490924"
         ProfileLabel1.textAlignment = .center
         cell.contentView.addSubview(ProfileLabel1)
         
         let ProfileLabel2 = UILabel.init(frame: CGRect(x: 10, y: 135, width: self.view.frame.width - 20 , height: 40))
-        // ProfileLabel1.backgroundColor = .green
         ProfileLabel2.text = "Your profile info will help RelieforMe to provide more customized program recommendations just for you"
         ProfileLabel2.textAlignment = .left
         ProfileLabel2.numberOfLines = 2
@@ -70,75 +103,105 @@ class UpdateProfileTableViewController: UITableViewController {
         cell.contentView.addSubview(ProfileLabel2)
         
         let NameImage = UIImageView.init(frame: CGRect(x: 10, y: 190, width: 28, height: 23))
-        NameImage.image = UIImage(named: "pic")
+        NameImage.image = UIImage(named: "user_login_username")
         cell.contentView.addSubview(NameImage)
         let NameLabel = UILabel.init(frame: CGRect(x:38, y: 180, width: self.view.frame.width - 250, height: 40))
         NameLabel.text = "  First Name"
         NameLabel.textAlignment = .left
         cell.contentView.addSubview(NameLabel)
         let NameField = UITextField(frame: CGRect(x: self.view.frame.width - 220, y: 180, width: 200, height: 40))
-        NameField.borderStyle = .line
+        NameField.borderStyle = .none
         NameField.placeholder = "zzzzzzz"
+        NameField.textColor = UIColor(red: 0/255.0, green: 204/255.0, blue: 204/255.0, alpha: 1)
         self.view.addSubview(NameField)
+        let lineview = UIView.init(frame: CGRect(x: self.view.frame.width - 220, y: 220, width: 200, height: 2))
+        lineview.backgroundColor = UIColor(red: 0/255.0, green: 204/255.0, blue: 204/255.0, alpha: 1)
+        self.view.addSubview(lineview)
 
         
         let GenderImage = UIImageView.init(frame: CGRect(x: 10, y: 235, width: 28, height: 23))
-        GenderImage.image = UIImage(named: "pic")
+        GenderImage.image = UIImage(named: "user_login_sex")
         cell.contentView.addSubview(GenderImage)
         let GenderLabel = UILabel.init(frame: CGRect(x:38, y: 225, width: self.view.frame.width - 250, height: 40))
         GenderLabel.text = "  Gender"
         GenderLabel.textAlignment = .left
         cell.contentView.addSubview(GenderLabel)
-        let GenderButton = UIButton.init(frame: CGRect(x: self.view.frame.width - 220, y: 225, width: 200, height: 40))
+        //let GenderButton = UIButton.init(frame: CGRect(x: self.view.frame.width - 220, y: 225, width: 200, height: 40))
         GenderButton.setTitle("Male", for: .normal)
-        GenderButton.setTitleColor(UIColor.black, for: .normal)
+        GenderButton.setTitleColor(UIColor(red: 0/255.0, green: 204/255.0, blue: 204/255.0, alpha: 1), for: .normal)
         GenderButton.contentHorizontalAlignment = .right
         GenderButton.addTarget(self, action: #selector(GenderButton_select), for: .touchUpInside)
         cell.contentView.addSubview(GenderButton)
+        //let GenderPicker = UIPickerView.init(frame: CGRect(x: self.view.frame.width - 220, y: 225, width: 200, height: 40))
+        //cell.contentView.addSubview(GenderPicker)
+        
         
         let BirthdayImage = UIImageView.init(frame: CGRect(x: 10, y: 280, width: 28, height: 23))
-        BirthdayImage.image = UIImage(named: "pic")
+        BirthdayImage.image = UIImage(named: "user_info_birth")
         cell.contentView.addSubview(BirthdayImage)
         let BirthdayLabel = UILabel.init(frame: CGRect(x:38, y: 270, width: self.view.frame.width - 250, height: 40))
         BirthdayLabel.text = "  Birthday"
         BirthdayLabel.textAlignment = .left
         cell.contentView.addSubview(BirthdayLabel)
-        let BirthdayButton = UIButton.init(frame: CGRect(x: self.view.frame.width - 220, y: 270, width: 200, height: 40))
+        //let BirthdayButton = UIButton.init(frame: CGRect(x: self.view.frame.width - 220, y: 270, width: 200, height: 40))
         BirthdayButton.setTitle("1994-04-19", for: .normal)
-        BirthdayButton.setTitleColor(UIColor.black, for: .normal)
+        BirthdayButton.setTitleColor(UIColor(red: 0/255.0, green: 204/255.0, blue: 204/255.0, alpha: 1), for: .normal)
         BirthdayButton.contentHorizontalAlignment = .right
         BirthdayButton.addTarget(self, action: #selector(BirthdayButton_select), for: .touchUpInside)
         cell.contentView.addSubview(BirthdayButton)
         
-        
-        
         let WeightImage = UIImageView.init(frame: CGRect(x: 10, y: 325, width: 28, height: 23))
-        WeightImage.image = UIImage(named: "pic")
+        WeightImage.image = UIImage(named: "user_info_weight")
         cell.contentView.addSubview(WeightImage)
         let WeightLabel = UILabel.init(frame: CGRect(x:38, y: 315, width: self.view.frame.width - 250, height: 40))
         WeightLabel.text = "  Weight"
         WeightLabel.textAlignment = .left
         cell.contentView.addSubview(WeightLabel)
+        //let WeightButton = UIButton.init(frame: CGRect(x: self.view.frame.width - 220, y: 325, width: 200, height: 40))
+        WeightButton.setTitle("65 kg", for: .normal)
+        WeightButton.setTitleColor(UIColor(red: 0/255.0, green: 204/255.0, blue: 204/255.0, alpha: 1), for: .normal)
+        WeightButton.contentHorizontalAlignment = .right
+        WeightButton.addTarget(self, action: #selector(WeightButton_Action), for: .touchUpInside)
+        cell.contentView.addSubview(WeightButton)
         
-        
-        
-        let button_Save = UIButton.init(frame: CGRect(x: 10, y: 560, width: self.view.frame.width - 20, height: 40))
-        button_Save.backgroundColor = UIColor(red: 9/255.0, green: 187/255.0, blue: 7/255.0, alpha: 1)
+        let ButtonSave = UIButton.init(frame: CGRect(x: 10, y: 560, width: self.view.frame.width - 20, height: 40))
+        ButtonSave.backgroundColor = UIColor(red: 0/255.0, green: 204/255.0, blue: 204/255.0, alpha: 1)
         // button_next.setImage(UIImage(named: "pic"), for: .normal)
-        button_Save.setTitle("SAVE", for: .normal)
-        //button_next.addTarget(self, action: #selector(buttonAction_save), for: .touchUpInside)
+        ButtonSave.setTitle("SAVE", for: .normal)
+        ButtonSave.addTarget(self, action: #selector(ButtonSave_Action), for: .touchUpInside)
         //button.setImage("pic", for: UIControl.State)
-        cell.contentView.addSubview(button_Save)
+        cell.contentView.addSubview(ButtonSave)
         
         return cell
     }
-    
+    @objc func ButtonSave_Action(button: UIButton){
+        
+        if index == 1{
+            
+            let vc = WelcomeTableViewController()
+            self.navigationController?.pushViewController(vc, animated: true)
+            //self.present(vc, animated: true, completion: nil)
+        }
+        else{
+            
+            self.navigationController?.popViewController(animated: true)
+        }
+    }
     @objc func GenderButton_select(button: UIButton){
         
         let menu = UIAlertController(title: "Select", message: "", preferredStyle: .alert)
-        let option1 = UIAlertAction(title: "Male", style: .default, handler: nil)
-        let option2 = UIAlertAction(title: "Female", style: .default, handler: nil)
-        let option3 = UIAlertAction(title: "Confidential", style: .default, handler: nil)
+        let option1 = UIAlertAction(title: "Male", style: .default) {(alertAction)->Void in
+            GenderButton.setTitle("Male", for: .normal)
+            self.view.addSubview(GenderButton)
+        }
+        let option2 = UIAlertAction(title: "Female", style: .default) {(alertAction)->Void in
+            GenderButton.setTitle("Female", for: .normal)
+            self.view.addSubview(GenderButton)
+        }
+        let option3 = UIAlertAction(title: "Confidential", style: .default) {(alertAction)->Void in
+            GenderButton.setTitle("Confidential", for: .normal)
+            self.view.addSubview(GenderButton)
+            }
         //let option4 = UIAlertAction(title: "OK", style: .default, handler: nil)
         
         
@@ -160,24 +223,34 @@ class UpdateProfileTableViewController: UITableViewController {
         datePicker.datePickerMode = .date
         // set default time
         datePicker.date = NSDate() as Date
-        // 响应事件（只要滚轮变化就会触发）
-        // datePicker.addTarget(self, action:Selector("datePickerValueChange:"), forControlEvents: UIControlEvents.ValueChanged)
-        alertController.addAction(UIAlertAction(title: "OK", style: UIAlertAction.Style.default, handler:nil))
-        /*{
+        
+        alertController.addAction(UIAlertAction(title: "OK", style: UIAlertAction.Style.default){
             (alertAction)->Void in
-            print("date select: \(datePicker.date.description)")
-            获取上一节中自定义的按钮外观DateButton类，设置DateButton类属性thedate
-            let myDateButton=self.Datebutt as? DateButton
-            myDateButton?.thedate=datePicker.date
-            强制刷新
-            myDateButton?.setNeedsDisplay()
-        })*/
+            
+            let DataString: String = String(datePicker.date.description.prefix(10))
+            //print("date select: \(DataString)")
+            BirthdayButton.setTitle(DataString, for: .normal)
+            BirthdayButton.setTitleColor(UIColor.black, for: .normal)
+            BirthdayButton.contentHorizontalAlignment = .right
+            self.view.addSubview(BirthdayButton)
+        })
         alertController.addAction(UIAlertAction(title: "Cancel", style: UIAlertAction.Style.cancel,handler:nil))
         
         alertController.view.addSubview(datePicker)
         
         self.present(alertController, animated: true, completion: nil)
             
+    }
+    @IBAction func WeightButton_Action(button: UIButton) {
+        
+        YDPickerView.showPickerView(targetView: self.view, dataSource: data).complete { (selectedState) in            
+            
+            let WeightString:String = self.Weight[selectedState[0]] + " " + self.WeightUnit[selectedState[1]]
+            WeightButton.setTitle(WeightString, for: .normal)
+            WeightButton.setTitleColor(UIColor.black, for: .normal)
+            WeightButton.contentHorizontalAlignment = .right
+            self.view.addSubview(WeightButton)
+        }
     }
     /*
     // Override to support conditional editing of the table view.

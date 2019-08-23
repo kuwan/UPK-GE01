@@ -227,5 +227,6 @@ extension YCContentView {
         // 2.滚动正确的位置
         let offsetX = CGFloat(currentIndex) * collectionView.frame.width
         collectionView.setContentOffset(CGPoint(x: offsetX, y: 0), animated: false)
+        //print("\(currentIndex)--------------")
     }
 }

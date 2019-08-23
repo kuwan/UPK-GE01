@@ -45,6 +45,8 @@ class ProgramDetailsTableViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = UITableViewCell.init(style: .default, reuseIdentifier: nil)
+        cell.selectionStyle = UITableViewCell.SelectionStyle.none
+        
         var height = 0
         if index == 1 {
             let ProgramImage = UIImageView.init(frame: CGRect(x: 0, y: 0, width: 375, height: 150))
@@ -64,7 +66,8 @@ class ProgramDetailsTableViewController: UITableViewController {
             label_name.text = Relax_name[program_section - 23][program_row]
         }
         //label_name.numberOfLines = 0
-        label_name.textColor = UIColor(red: 9/255.0, green: 187/255.0, blue: 7/255.0, alpha: 1)
+        label_name.font = UIFont.boldSystemFont(ofSize: 20)
+        label_name.textColor = UIColor(red: 0/255.0, green: 204/255.0, blue: 204/255.0, alpha: 1)
         cell.contentView.addSubview(label_name)
        
         
@@ -78,7 +81,7 @@ class ProgramDetailsTableViewController: UITableViewController {
         
         let button_favofite = UIButton.init(frame: CGRect(x: 300, y: 20 + height, width: 30, height: 24))
         // button.backgroundColor = UIColor.lightGray
-        button_favofite.setImage(UIImage(named: "pic"), for: .normal)
+        button_favofite.setImage(UIImage(named: "lin_like_grey"), for: .normal)
         //button_favofite.setTitle("test", for: .highlighted)
         button_favofite.addTarget(self, action: #selector(buttonAction_favorite), for: .touchUpInside)
         //button.setImage("pic", for: UIControl.State)
@@ -86,7 +89,7 @@ class ProgramDetailsTableViewController: UITableViewController {
         
         let label_Decription = UILabel.init(frame: CGRect(x: 10, y: 106 + height, width: 300, height: 20))
         label_Decription.text = "Description"
-        label_Decription.textColor = UIColor(red: 9/255.0, green: 187/255.0, blue: 7/255.0, alpha: 1)
+        label_Decription.textColor = UIColor(red: 0/255.0, green: 204/255.0, blue: 204/255.0, alpha: 1)
         cell.contentView.addSubview(label_Decription)
         
         
@@ -96,7 +99,7 @@ class ProgramDetailsTableViewController: UITableViewController {
         
         let label_Intensity = UILabel.init(frame: CGRect(x: 10, y: 166 + height, width: 300, height: 20))
         label_Intensity.text = "Intensity"
-        label_Intensity.textColor = UIColor(red: 9/255.0, green: 187/255.0, blue: 7/255.0, alpha: 1)
+        label_Intensity.textColor = UIColor(red: 0/255.0, green: 204/255.0, blue: 204/255.0, alpha: 1)
         cell.contentView.addSubview(label_Intensity)
         
         
@@ -106,7 +109,7 @@ class ProgramDetailsTableViewController: UITableViewController {
         
         let label_Use = UILabel.init(frame: CGRect(x: 10, y: 226 + height, width: 300, height: 20))
         label_Use.text = "Use"
-        label_Use.textColor = UIColor(red: 9/255.0, green: 187/255.0, blue: 7/255.0, alpha: 1)
+        label_Use.textColor = UIColor(red: 0/255.0, green: 204/255.0, blue: 204/255.0, alpha: 1)
         cell.contentView.addSubview(label_Use)
         
         
@@ -116,7 +119,7 @@ class ProgramDetailsTableViewController: UITableViewController {
         
         let label_Caution = UILabel.init(frame: CGRect(x: 10, y: 286 + height, width: 300, height: 20))
         label_Caution.text = "Caution"
-        label_Caution.textColor = UIColor(red: 9/255.0, green: 187/255.0, blue: 7/255.0, alpha: 1)
+        label_Caution.textColor = UIColor(red: 0/255.0, green: 204/255.0, blue: 204/255.0, alpha: 1)
         cell.contentView.addSubview(label_Caution)
         
         
@@ -126,8 +129,8 @@ class ProgramDetailsTableViewController: UITableViewController {
         
         if index == 0{
             let button_start = UIButton.init(frame: CGRect(x: 10, y: 550 + height, width: 360, height: 40))
-            button_start.backgroundColor = UIColor(red: 9/255.0, green: 187/255.0, blue: 7/255.0, alpha: 1)
-            button_start.setImage(UIImage(named: "pic"), for: .normal)
+            button_start.backgroundColor = UIColor(red: 0/255.0, green: 204/255.0, blue: 204/255.0, alpha: 1)
+            button_start.setImage(UIImage(named: "lin_start_white"), for: .normal)
             //button_next.setTitle("Next", for: .normal)
             button_start.addTarget(self, action: #selector(buttonAction_start), for: .touchUpInside)
             //button.setImage("pic", for: UIControl.State)
@@ -139,12 +142,12 @@ class ProgramDetailsTableViewController: UITableViewController {
     @objc private func buttonAction_favorite(button: UIButton) {
         
         // print("do nothing")
-        if button.imageView?.image == UIImage(named: "pic"){
-            button.setImage(UIImage(named: "picHL"), for: .normal)
+        if button.imageView?.image == UIImage(named: "lin_like_grey"){
+            button.setImage(UIImage(named: "lin_like_red"), for: .normal)
         }
         else{
             
-            button.setImage(UIImage(named: "pic"), for: .normal)
+            button.setImage(UIImage(named: "lin_like_grey"), for: .normal)
         }
         
     }
