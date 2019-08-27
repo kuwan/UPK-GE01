@@ -35,15 +35,15 @@ class RelaxTableViewController: UITableViewController {
     }
     override func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
         
-        return 5
+        return 5*HeighPercent
     }
     override func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
         
-        return 5
+        return 5*HeighPercent
     }
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         
-        return  150
+        return  150*HeighPercent
     }
     
     
@@ -51,33 +51,33 @@ class RelaxTableViewController: UITableViewController {
         let cell = UITableViewCell.init(style: .default, reuseIdentifier: nil)
         
         
-        let label_name = UILabel.init(frame: CGRect(x: 10, y: 6, width: self.view.frame.width - 60, height: 40))
+        let label_name = UILabel.init(frame: CGRect(x: 10*lengthPercent, y: 6*HeighPercent, width: screenWidth - 60*lengthPercent, height: 40*lengthPercent))
         label_name.text = Relax_name[indexPath.section][indexPath.row]
         label_name.numberOfLines = 0
-        label_name.font = label_name.font.withSize(15)
-        label_name.font = UIFont.boldSystemFont(ofSize: 15)
+        label_name.font = label_name.font.withSize(15*lengthPercent)
+        label_name.font = UIFont.boldSystemFont(ofSize: 15*lengthPercent)
         label_name.textColor = UIColor(red: 0/255.0, green: 204/255.0, blue: 204/255.0, alpha: 1)
         cell.contentView.addSubview(label_name)
         
-        let label_detial1 = UILabel.init(frame: CGRect(x: 10, y: 46, width: self.view.frame.width - 60, height: 40))
+        let label_detial1 = UILabel.init(frame: CGRect(x: 10*lengthPercent, y: 46*HeighPercent, width: screenWidth - 60*lengthPercent, height: 40*lengthPercent))
         label_detial1.text = Relax_detial1
         label_detial1.numberOfLines = 2
         cell.contentView.addSubview(label_detial1)
         
-        let label_detial2 = UILabel.init(frame: CGRect(x: 10, y: 66, width: self.view.frame.width - 60, height: 40))
+        let label_detial2 = UILabel.init(frame: CGRect(x: 10*lengthPercent, y: 66*HeighPercent, width: screenWidth - 60*lengthPercent, height: 40*lengthPercent))
         label_detial2.text = Relax_detial2
         label_detial2.numberOfLines = 2
         cell.contentView.addSubview(label_detial2)
         
-        let lable_duration = UILabel.init(frame: CGRect(x: 10, y: 100, width: self.view.frame.width - 60, height: 20))
+        let lable_duration = UILabel.init(frame: CGRect(x: 10*lengthPercent, y: 100*HeighPercent, width: screenWidth - 60*lengthPercent, height: 20*lengthPercent))
         lable_duration.text = "Duration: 20 min"
         cell.contentView.addSubview(lable_duration)
         
-        let lable_myrating = UILabel.init(frame: CGRect(x: 10, y: 120, width: self.view.frame.width - 60, height: 20))
+        let lable_myrating = UILabel.init(frame: CGRect(x: 10*lengthPercent, y: 120*HeighPercent, width: screenWidth - 60*lengthPercent, height: 20*lengthPercent))
         lable_myrating.text = "My rating *****"
         cell.contentView.addSubview(lable_myrating)
         
-        let button_favorite = UIButton.init(frame: CGRect(x: self.view.frame.width - 50, y: 20, width: 30, height: 24))
+        let button_favorite = UIButton.init(frame: CGRect(x: screenWidth - 50*lengthPercent, y: 20*HeighPercent, width: 30*lengthPercent, height: 24*lengthPercent))
         // button.backgroundColor = UIColor.lightGray
         button_favorite.setImage(UIImage(named: "lin_like_grey"), for: .normal)
       //  button_favorite.setTitle("test", for: .highlighted)
@@ -85,7 +85,7 @@ class RelaxTableViewController: UITableViewController {
         //button.setImage("pic", for: UIControl.State)
         cell.contentView.addSubview(button_favorite)
         
-        let button_start = UIButton.init(frame: CGRect(x: self.view.frame.width - 50, y: 100, width: 30, height: 24))
+        let button_start = UIButton.init(frame: CGRect(x: screenWidth - 50*lengthPercent, y: 100*HeighPercent, width: 30*lengthPercent, height: 24*lengthPercent))
         // button.backgroundColor = UIColor.lightGray
         button_start.setImage(UIImage(named: "lin_start"), for: .normal)
         //button_start.setTitle("test", for: .highlighted)

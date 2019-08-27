@@ -7,9 +7,9 @@
 //
 
 import UIKit
-let CreatLabel = UITextField(frame: CGRect(x: 45, y: 145, width: UIScreen.main.bounds.width - 85, height: 40))
-let ConfirmLabel = UITextField(frame: CGRect(x: 45, y: 190, width: UIScreen.main.bounds.width - 85, height: 40))
- let Button1 = UIButton.init(frame: CGRect(x: 10, y: 10, width: 80, height: 40))
+let CreatLabel = UITextField(frame: CGRect(x: 45*lengthPercent, y: 145*HeighPercent, width: screenWidth - 85*lengthPercent, height: 40*lengthPercent))
+let ConfirmLabel = UITextField(frame: CGRect(x: 45*lengthPercent, y: 190*HeighPercent, width: screenWidth - 85*lengthPercent, height: 40*lengthPercent))
+ let Button1 = UIButton.init(frame: CGRect(x: 10*lengthPercent, y: 10*HeighPercent, width: 80*lengthPercent, height: 40*lengthPercent))
 class RegisterTableViewController: UITableViewController {
 
     override func viewDidLoad() {
@@ -36,7 +36,7 @@ class RegisterTableViewController: UITableViewController {
     }
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         
-        return self.view.frame.height
+        return screenHeight
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -44,54 +44,57 @@ class RegisterTableViewController: UITableViewController {
         cell.selectionStyle = UITableViewCell.SelectionStyle.none
         
         //let Button1 = UIButton.init(frame: CGRect(x: 10, y: 10, width: 80, height: 40))
-        Button1.setImage(UIImage(named: "pic"), for: .normal)
+        Button1.setImage(UIImage(named: "icon_location (1)"), for: .normal)
         Button1.setTitle("  US", for: .normal)
         Button1.setTitleColor(.black, for: .normal)
         Button1.contentHorizontalAlignment = .left
         Button1.addTarget(self, action: #selector(Button1_action), for: .touchUpInside)
         cell.contentView.addSubview(Button1)
-        let lineview1 = UIView.init(frame: CGRect(x: 10, y: 50, width: 80, height: 2))
+        let lineview1 = UIView.init(frame: CGRect(x: 10*lengthPercent, y: 50*HeighPercent, width: 80*lengthPercent, height: 2*lengthPercent))
         lineview1.backgroundColor = UIColor(red: 0/255.0, green: 204/255.0, blue: 204/255.0, alpha: 1)
         cell.contentView.addSubview(lineview1)
         
-        let image1 = UIImageView.init(frame: CGRect(x: 95, y: 15, width: 25, height: 25))
-        image1.image = UIImage(named: "pic")
+        let image1 = UIImageView.init(frame: CGRect(x: 95*lengthPercent, y: 15*HeighPercent, width: 25*lengthPercent, height: 25*lengthPercent))
+        image1.image = UIImage(named: "lin_user")
         cell.contentView.addSubview(image1)
-        let Label1 = UITextField(frame: CGRect(x: 130, y: 10, width: self.view.frame.width - 100, height: 40))
+        let Label1 = UITextField(frame: CGRect(x: 130*lengthPercent, y: 10*HeighPercent, width: screenWidth - 100*lengthPercent, height: 40*lengthPercent))
         Label1.borderStyle = .none
         Label1.placeholder = "Email address or cell phone number"
         Label1.clearButtonMode = .always
-        Label1.font = Label1.font?.withSize(15)
+        Label1.font = Label1.font?.withSize(15*lengthPercent)
         self.view.addSubview(Label1)
-        let lineview2 = UIView.init(frame: CGRect(x: 95, y: 50, width: self.view.frame.width - 100, height: 2))
+        let lineview2 = UIView.init(frame: CGRect(x: 95*lengthPercent, y: 50*HeighPercent, width: screenWidth - 100*lengthPercent, height: 2*lengthPercent))
         lineview2.backgroundColor = UIColor(red: 0/255.0, green: 204/255.0, blue: 204/255.0, alpha: 1)
         cell.contentView.addSubview(lineview2)
+        let clearbutton = UIButton.init(frame: CGRect(x: screenWidth - 30*lengthPercent, y: 15*HeighPercent, width: 30*lengthPercent, height: 30*lengthPercent))
+        clearbutton.setImage(UIImage(named: "btn_clear"), for: .normal)
+        cell.contentView.addSubview(clearbutton)
         
-        let Button2 = UIButton.init(frame: CGRect(x: 10, y: 55, width: self.view.frame.width - 10, height: 40))
+        let Button2 = UIButton.init(frame: CGRect(x: 10*lengthPercent, y: 55*HeighPercent, width: self.view.frame.width - 10*lengthPercent, height: 40*lengthPercent))
         Button2.addTarget(self, action: #selector(Button2_action), for: .touchUpInside)
         cell.contentView.addSubview(Button2)
-        let label2 = UILabel.init(frame: CGRect(x: 10, y: 55, width: self.view.frame.width - 10, height: 40))
+        let label2 = UILabel.init(frame: CGRect(x: 10*lengthPercent, y: 55*HeighPercent, width: screenWidth - 10*lengthPercent, height: 40*lengthPercent))
         label2.text = "Click here to send verification code to your email or cell phone"
         label2.numberOfLines = 2
-        label2.font = label2.font.withSize(14)
+        label2.font = label2.font.withSize(14*lengthPercent)
         label2.textAlignment = .center
         label2.textColor = UIColor.white
         label2.backgroundColor = UIColor.orange
         cell.contentView.addSubview(label2)
        
-        let image2 = UIImageView.init(frame: CGRect(x: 10, y: 105, width: 25, height: 25))
-        image2.image = UIImage(named: "pic")
+        let image2 = UIImageView.init(frame: CGRect(x: 10*lengthPercent, y: 105*HeighPercent, width: 25*lengthPercent, height: 25*lengthPercent))
+        image2.image = UIImage(named: "user_forgot_vcode")
         cell.contentView.addSubview(image2)
-        let label3 = UITextField(frame: CGRect(x: 45, y: 100, width: self.view.frame.width - 20, height: 40))
+        let label3 = UITextField(frame: CGRect(x: 45*lengthPercent, y: 100*HeighPercent, width: self.view.frame.width - 20*lengthPercent, height: 40*lengthPercent))
         label3.borderStyle = .none
         label3.placeholder = "Enter verfication code"
         cell.contentView.addSubview(label3)
-        let lineview3 = UIView.init(frame: CGRect(x: 10, y: 140, width: self.view.frame.width - 20, height: 2))
+        let lineview3 = UIView.init(frame: CGRect(x: 10*lengthPercent, y: 140*HeighPercent, width: screenWidth - 20*lengthPercent, height: 2*lengthPercent))
         lineview3.backgroundColor = UIColor(red: 0/255.0, green: 204/255.0, blue: 204/255.0, alpha: 1)
         cell.contentView.addSubview(lineview3)
         
-        let image3 = UIImageView.init(frame: CGRect(x: 10, y: 150, width: 25, height: 25))
-        image3.image = UIImage(named: "pic")
+        let image3 = UIImageView.init(frame: CGRect(x: 10*lengthPercent, y: 150*HeighPercent, width: 25*lengthPercent, height: 25*lengthPercent))
+        image3.image = UIImage(named: "user_login_password")
         cell.contentView.addSubview(image3)
        // let label4 = UITextField(frame: CGRect(x: 45, y: 145, width: self.view.frame.width - 20, height: 40))
         CreatLabel.borderStyle = .none
@@ -99,27 +102,27 @@ class RegisterTableViewController: UITableViewController {
         CreatLabel.isSecureTextEntry = true
         //label4.keyboardType = UIKeyboardType.default
         self.view.addSubview(CreatLabel)
-        let lineview4 = UIView.init(frame: CGRect(x: 10, y: 185, width: self.view.frame.width - 20, height: 2))
+        let lineview4 = UIView.init(frame: CGRect(x: 10*lengthPercent, y: 185*HeighPercent, width: screenWidth - 20*lengthPercent, height: 2*lengthPercent))
         lineview4.backgroundColor = UIColor(red: 0/255.0, green: 204/255.0, blue: 204/255.0, alpha: 1)
         cell.contentView.addSubview(lineview4)
-        let ButtonSecure = UIButton.init(frame: CGRect(x: self.view.frame.width - 40, y: 155, width: 25, height: 25))
-        ButtonSecure.setImage(UIImage(named: "pic"), for: .normal)
+        let ButtonSecure = UIButton.init(frame: CGRect(x: screenWidth - 40*lengthPercent, y: 155*HeighPercent, width: 25*lengthPercent, height: 25*lengthPercent))
+        ButtonSecure.setImage(UIImage(named: "ic_user_eye_dis"), for: .normal)
         ButtonSecure.addTarget(self, action: #selector(ButtonSecure_Action), for: .touchUpInside)
         cell.contentView.addSubview(ButtonSecure)
         
-        let image4 = UIImageView.init(frame: CGRect(x: 10, y: 195, width: 25, height: 25))
-        image4.image = UIImage(named: "pic")
+        let image4 = UIImageView.init(frame: CGRect(x: 10*lengthPercent, y: 195*HeighPercent, width: 25*lengthPercent, height: 25*lengthPercent))
+        image4.image = UIImage(named: "user_login_password")
         cell.contentView.addSubview(image4)
         //let label5 = UITextField(frame: CGRect(x: 45, y: 190, width: self.view.frame.width - 20, height: 40))
         ConfirmLabel.borderStyle = .none
         ConfirmLabel.placeholder = "Confirm Password"
         ConfirmLabel.isSecureTextEntry = true
         cell.contentView.addSubview(ConfirmLabel)
-        let lineview5 = UIView.init(frame: CGRect(x: 10, y: 230, width: self.view.frame.width - 20, height: 2))
+        let lineview5 = UIView.init(frame: CGRect(x: 10*lengthPercent, y: 230*HeighPercent, width: self.view.frame.width - 20*lengthPercent, height: 2*lengthPercent))
         lineview5.backgroundColor = UIColor(red: 0/255.0, green: 204/255.0, blue: 204/255.0, alpha: 1)
         cell.contentView.addSubview(lineview5)
         
-        let button_Register = UIButton.init(frame: CGRect(x: 10, y: 240, width: self.view.frame.width - 20, height: 40))
+        let button_Register = UIButton.init(frame: CGRect(x: 10*lengthPercent, y: 240*HeighPercent, width: screenWidth - 20*lengthPercent, height: 40*lengthPercent))
         button_Register.backgroundColor = UIColor(red: 0/255.0, green: 204/255.0, blue: 204/255.0, alpha: 1)
         button_Register.setTitle("Register", for: .normal)
         button_Register.addTarget(self, action: #selector(ButtonRegister_Action), for: .touchUpInside)
@@ -133,13 +136,13 @@ class RegisterTableViewController: UITableViewController {
             
             CreatLabel.isSecureTextEntry = false
             ConfirmLabel.isSecureTextEntry = false
-            button.setImage(UIImage(named: "picHL"), for: .normal)
+            button.setImage(UIImage(named: "ic_user_eye_nor"), for: .normal)
         }
         else{
             
             CreatLabel.isSecureTextEntry = true
             ConfirmLabel.isSecureTextEntry = true
-            button.setImage(UIImage(named: "pic"), for: .normal)
+            button.setImage(UIImage(named: "ic_user_eye_dis"), for: .normal)
         }
     }
     @objc func Button1_action(button: UIButton){

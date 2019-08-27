@@ -25,7 +25,7 @@ private let kIndicatorLineColor = UIColor.lightGray
 // pickerView的背景色
 private let kPickerViewBackgroundColor = UIColor.white
 // toolBar背景色
-private let kToolBarBackgroundColor = UIColor.green//UIColor(red: 44 / 255.0, green: 143 / 255.0, blue: 239 / 255.0, alpha: 1)
+private let kToolBarBackgroundColor = UIColor(red: 0 / 255.0, green: 204 / 255.0, blue: 204 / 255.0, alpha: 1)
 // toolBar的tintColor
 private let kToolBarTintColor = UIColor.white
 // toolBar中间的标题颜色

@@ -8,7 +8,7 @@
 
 import UIKit
 
-let NavH:CGFloat = UIScreen.main.bounds.height == 812 ? 84 : 64
+let NavH:CGFloat = UIScreen.main.bounds.height >= 812 ? 88 : 64 //84*(UIScreen.main.bounds.height/812) : 64
 
 class PLViewController: UIViewController {
     

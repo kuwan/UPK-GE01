@@ -7,15 +7,22 @@
 //
 
 import UIKit
-
+var screenWidth: CGFloat = UIScreen.main.bounds.width
+var screenHeight: CGFloat = UIScreen.main.bounds.height
+var lengthPercent: CGFloat = UIScreen.main.bounds.width/375 //base on iphone8(w:375,h:667)
+var HeighPercent: CGFloat = UIScreen.main.bounds.height/667
 class RelieforMeTableViewController: UITableViewController {
 
-    var Login = true
+    var Login = false
     override func viewDidLoad() {
         super.viewDidLoad()
+        //screenWidth = self.view.frame.width
+        //screenHeight = self.view.frame.height
         if Login == false{
             self.navigationItem.title = "RelieforMe"
-            self.navigationController?.navigationBar.barTintColor = UIColor.green
+            self.navigationController?.navigationBar.barTintColor = UIColor(red: 0/255.0, green: 204/255.0, blue: 204/255.0, alpha: 1)
+            self.navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.white
+                , NSAttributedString.Key.font:UIFont.systemFont(ofSize: 25*lengthPercent)]
         }
         else{
             let deststoryboard = UIStoryboard(name: "Content", bundle: nil)
@@ -51,14 +58,15 @@ class RelieforMeTableViewController: UITableViewController {
         cell.selectionStyle = UITableViewCell.SelectionStyle.none
         
         if Login == false{
-            let label1 = UILabel.init(frame: CGRect(x: 0, y: 40, width: self.view.frame.width, height: 40))
+            let label1 = UILabel.init(frame: CGRect(x: 0, y: 40*HeighPercent, width: screenWidth, height: 40*lengthPercent))
             label1.text = "Welcome to RelieforMe"
             label1.textAlignment = .center
             cell.contentView.addSubview(label1)
             
             
-            let ButtonOK = UIButton.init(frame: CGRect(x: 10, y: 560, width: self.view.frame.width - 20, height: 40))
-            ButtonOK.backgroundColor = UIColor(red: 9/255.0, green: 187/255.0, blue: 7/255.0, alpha: 1)
+            let ButtonOK = UIButton.init(frame: CGRect(x: 10*lengthPercent, y: 560*HeighPercent, width: screenWidth - 20*lengthPercent, height: 40*lengthPercent))
+          
+            ButtonOK.backgroundColor = UIColor(red: 0/255.0, green: 204/255.0, blue: 204/255.0, alpha: 1)
             ButtonOK.setTitle("OK", for: .normal)
             ButtonOK.addTarget(self, action: #selector(ButtonOK_Action), for: .touchUpInside)
             cell.contentView.addSubview(ButtonOK)

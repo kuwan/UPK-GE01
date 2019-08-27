@@ -7,7 +7,7 @@
 //
 
 import UIKit
-let label2 = UITextField(frame: CGRect(x: 45, y: 55, width: UIScreen.main.bounds.width - 85, height: 40))
+let label2 = UITextField(frame: CGRect(x: 45*lengthPercent, y: 55*HeighPercent, width: screenWidth - 85*lengthPercent, height: 40*lengthPercent))
 class LoginTableViewController: UITableViewController {
 
     override func viewDidLoad() {
@@ -34,42 +34,45 @@ class LoginTableViewController: UITableViewController {
     }
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         
-        return self.view.frame.height
+        return screenHeight
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = UITableViewCell.init(style: .default, reuseIdentifier: nil)
         cell.selectionStyle = UITableViewCell.SelectionStyle.none
 
-        let image1 = UIImageView.init(frame: CGRect(x: 10, y: 15, width: 25, height: 25))
-        image1.image = UIImage(named: "pic")
+        let image1 = UIImageView.init(frame: CGRect(x: 10*lengthPercent, y: 15*HeighPercent, width: 25*lengthPercent, height: 25*lengthPercent))
+        image1.image = UIImage(named: "lin_user")
         cell.contentView.addSubview(image1)
-        let label1 = UITextField(frame: CGRect(x: 45, y: 10, width: self.view.frame.width - 20, height: 40))
+        let label1 = UITextField(frame: CGRect(x: 45*lengthPercent, y: 10*HeighPercent, width: screenWidth - 20*lengthPercent, height: 40*lengthPercent))
         label1.borderStyle = .none
         label1.placeholder = "Email address or cell phone number"
         label1.clearButtonMode = .always
         self.view.addSubview(label1)
-        let lineview1 = UIView.init(frame: CGRect(x: 10, y: 50, width: self.view.frame.width - 20, height: 2))
+        let lineview1 = UIView.init(frame: CGRect(x: 10*lengthPercent, y: 50*HeighPercent, width: self.view.frame.width - 20*lengthPercent, height: 2*lengthPercent))
         lineview1.backgroundColor = UIColor(red: 0/255.0, green: 204/255.0, blue: 204/255.0, alpha: 1)
         self.view.addSubview(lineview1)
+        let clearbutton = UIButton.init(frame: CGRect(x: screenWidth - 30*lengthPercent, y: 15*HeighPercent, width: 30*lengthPercent, height: 30*lengthPercent))
+        clearbutton.setImage(UIImage(named: "btn_clear"), for: .normal)
+        cell.contentView.addSubview(clearbutton)
         
-        let image2 = UIImageView.init(frame: CGRect(x: 10, y: 65, width: 25, height: 25))
-        image2.image = UIImage(named: "pic")
+        let image2 = UIImageView.init(frame: CGRect(x: 10*lengthPercent, y: 65*HeighPercent, width: 25*lengthPercent, height: 25*lengthPercent))
+        image2.image = UIImage(named: "user_login_password")
         cell.contentView.addSubview(image2)
         //let label2 = UITextField(frame: CGRect(x: 45, y: 55, width: self.view.frame.width - 20, height: 40))
         label2.borderStyle = .none
         label2.placeholder = "Password"
         label2.isSecureTextEntry = true
         self.view.addSubview(label2)
-        let lineview2 = UIView.init(frame: CGRect(x: 10, y: 95, width: self.view.frame.width - 20, height: 2))
+        let lineview2 = UIView.init(frame: CGRect(x: 10*lengthPercent, y: 95*HeighPercent, width: screenWidth - 20*lengthPercent, height: 2*lengthPercent))
         lineview2.backgroundColor = UIColor(red: 0/255.0, green: 204/255.0, blue: 204/255.0, alpha: 1)
         self.view.addSubview(lineview2)
-        let ButtonSecure = UIButton.init(frame: CGRect(x: self.view.frame.width - 40, y: 60, width: 25, height: 25))
-        ButtonSecure.setImage(UIImage(named: "pic"), for: .normal)
+        let ButtonSecure = UIButton.init(frame: CGRect(x: screenWidth - 40*lengthPercent, y: 60*HeighPercent, width: 25*lengthPercent, height: 25*lengthPercent))
+        ButtonSecure.setImage(UIImage(named: "ic_user_eye_dis"), for: .normal)
         ButtonSecure.addTarget(self, action: #selector(ButtonSecure_Action), for: .touchUpInside)
         cell.contentView.addSubview(ButtonSecure)
         
-        let Button1 = UIButton.init(frame: CGRect(x: self.view.frame.width - 160, y: 110, width: 150, height: 40))
+        let Button1 = UIButton.init(frame: CGRect(x: screenWidth - 160*lengthPercent, y: 110*HeighPercent, width: 150*lengthPercent, height: 40*lengthPercent))
         Button1.setTitle("Forget password", for: .normal)
         Button1.setTitleColor(.black, for: .normal)
         Button1.contentHorizontalAlignment = .right
@@ -77,7 +80,7 @@ class LoginTableViewController: UITableViewController {
         cell.contentView.addSubview(Button1)
       
         
-        let button_Login = UIButton.init(frame: CGRect(x: 10, y: 240, width: self.view.frame.width - 20, height: 40))
+        let button_Login = UIButton.init(frame: CGRect(x: 10*lengthPercent, y: 240*HeighPercent, width: screenWidth - 20*lengthPercent, height: 40*lengthPercent))
         button_Login.backgroundColor = UIColor(red: 0/255.0, green: 204/255.0, blue: 204/255.0, alpha: 1)
         button_Login.setTitle("Login", for: .normal)
         button_Login.addTarget(self, action: #selector(ButtonLogin_action), for: .touchUpInside)
@@ -90,12 +93,12 @@ class LoginTableViewController: UITableViewController {
         if label2.isSecureTextEntry == true{
             
             label2.isSecureTextEntry = false
-            button.setImage(UIImage(named: "picHL"), for: .normal)
+            button.setImage(UIImage(named: "ic_user_eye_nor"), for: .normal)
         }
         else{
             
             label2.isSecureTextEntry = true
-            button.setImage(UIImage(named: "pic"), for: .normal)
+            button.setImage(UIImage(named: "ic_user_eye_dis"), for: .normal)
         }
     }
     @objc func Button1_action(button: UIButton){

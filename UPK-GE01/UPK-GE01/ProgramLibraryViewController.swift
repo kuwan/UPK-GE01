@@ -17,10 +17,12 @@ class ProgramLibraryViewController: UIViewController, UITableViewDelegate,UITabl
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        screenWidth = self.view.frame.width
+        screenHeight = self.view.frame.height
         // title = "Program Library"
         self.navigationItem.title = "RelieforMe"
         self.navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.white
-            , NSAttributedString.Key.font:UIFont.systemFont(ofSize: 25)]
+            , NSAttributedString.Key.font:UIFont.systemFont(ofSize: 25*lengthPercent)]
         let item = UIBarButtonItem(title: "", style: .plain, target: self, action: nil)
         self.navigationItem.backBarButtonItem = item
         self.navigationController?.navigationBar.barTintColor = UIColor(red: 0/255.0, green: 204/255.0, blue: 204/255.0, alpha: 1)
@@ -48,27 +50,37 @@ class ProgramLibraryViewController: UIViewController, UITableViewDelegate,UITabl
     }
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
         
-        return 10
+        return 10*HeighPercent
     }
     
     func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
         
-        return  10
+        return  10*HeighPercent
     }
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         
-        return 85
+        return 90*HeighPercent
     }
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell_programlibrary", for: indexPath) as! ProgramLibraryUITableViewCell
         
-        
-        
-        cell.SessionName.text = therapy[indexPath.section][indexPath.row]
+        let NameLabel = UILabel.init(frame: CGRect(x: 95*lengthPercent, y: 15*HeighPercent, width: 200*lengthPercent, height: 20*lengthPercent))
+        NameLabel.text = therapy[indexPath.section][indexPath.row]
+        NameLabel.numberOfLines = 0
+        NameLabel.font = NameLabel.font.withSize(17*lengthPercent)
+        cell.contentView.addSubview(NameLabel)
+        //cell.SessionName.text = therapy[indexPath.section][indexPath.row]
+        //cell.SessionName.font = cell.SessionName.font.withSize(17*lengthPercent)
         cell.SessionImage.image = UIImage(named:session_image[indexPath.section])
-        cell.SessionImage.layer.cornerRadius = cell.SessionImage.frame.size.height/2
-        cell.SessionImage.clipsToBounds = true
-        cell.SessionDetial.text = therapy_decribe[indexPath.section]
+        //cell.SessionImage.layer.cornerRadius = cell.SessionImage.frame.size.height/2
+        //cell.SessionImage.clipsToBounds = true
+        //cell.SessionDetial.text = therapy_decribe[indexPath.section]
+        let DetialLabel = UILabel.init(frame: CGRect(x: 95*lengthPercent, y: 40*HeighPercent, width: 270*lengthPercent, height: 40*lengthPercent))
+        DetialLabel.text = therapy_decribe[indexPath.section]
+        DetialLabel.numberOfLines = 0
+        DetialLabel.font = NameLabel.font.withSize(12*lengthPercent)
+        cell.contentView.addSubview(DetialLabel)
+        //cell.SessionDetial.font = cell.SessionDetial.font.withSize(12*lengthPercent)
         
         
         

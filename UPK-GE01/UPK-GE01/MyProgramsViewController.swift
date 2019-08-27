@@ -19,12 +19,16 @@ class MyProgramsViewController: UIViewController,UITableViewDelegate,UITableView
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        //screenWidth = self.view.frame.width
+        //screenHeight = self.view.frame.height
         self.navigationItem.title = "RelieforMe"
         self.navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.white
-            , NSAttributedString.Key.font:UIFont.systemFont(ofSize: 25)]
+            , NSAttributedString.Key.font:UIFont.systemFont(ofSize: 25*lengthPercent)]
         let item = UIBarButtonItem(title: "", style: .plain, target: self, action: nil)
         self.navigationItem.backBarButtonItem = item
         self.navigationController?.navigationBar.barTintColor = UIColor(red: 0/255.0, green: 204/255.0, blue: 204/255.0, alpha: 1)
+        self.tabBarController?.tabBar.tintColor = UIColor(red: 0/255.0, green: 204/255.0, blue: 204/255.0, alpha: 1)
+       // self.tabB
         // title = "My programs"
        // self.navigationItem.title = "RelieforMe"
         //self.tabBarController?.hidesBottomBarWhenPushed = false
@@ -55,12 +59,12 @@ class MyProgramsViewController: UIViewController,UITableViewDelegate,UITableView
     }
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
         
-        return 10
+        return 10*lengthPercent
     }
     
     func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
         
-        return  10
+        return  10*lengthPercent
     }
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell_myprograms", for: indexPath)as! MyProgramTableViewCell
@@ -76,7 +80,7 @@ class MyProgramsViewController: UIViewController,UITableViewDelegate,UITableView
     }
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         
-        return 84
+        return 84*lengthPercent
     }
     //  override func addChild(_ childController: UIViewController) {
     
@@ -106,6 +110,12 @@ class MyProgramsViewController: UIViewController,UITableViewDelegate,UITableView
         if indexPath.section == 4 {
             
             let qrcodeVC = MyDiaryTableViewController()
+            print("\(String(describing: self.navigationController?.navigationBar.frame.size.height))------------nav height")
+            print("\(self.view.frame.width)------------w height")
+            print("\((self.view.frame.height))------------h height")
+             print("\((screenHeight))------------h height")
+            print("\((screenWidth))------------h height")
+            
             navigationController?.pushViewController(qrcodeVC, animated: true)
         }
     }

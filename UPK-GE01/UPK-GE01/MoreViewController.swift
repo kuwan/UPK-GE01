@@ -16,10 +16,12 @@ class MoreViewController: UIViewController,UITableViewDelegate,UITableViewDataSo
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        //screenWidth = self.view.frame.width
+        //screenHeight = self.view.frame.height
         //  title = "More "//title = "More"
         self.navigationItem.title = "RelieforMe"
         self.navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.white
-            , NSAttributedString.Key.font:UIFont.systemFont(ofSize: 25)]
+            , NSAttributedString.Key.font:UIFont.systemFont(ofSize: 25*lengthPercent)]
         let item = UIBarButtonItem(title: "", style: .plain, target: self, action: nil)
         self.navigationItem.backBarButtonItem = item
         self.navigationController?.navigationBar.barTintColor = UIColor(red: 0/255.0, green: 204/255.0, blue: 204/255.0, alpha: 1)
@@ -52,25 +54,25 @@ class MoreViewController: UIViewController,UITableViewDelegate,UITableViewDataSo
     }
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
         
-        return 5
+        return 5*HeighPercent
     }
     
     func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
         
-        return  5
+        return  5*HeighPercent
     }
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
     
-       return 45
+       return 45*HeighPercent
     }
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "cell_more", for: indexPath)//as! MoreTableViewCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: "cell_more", for: indexPath)as! MoreTableViewCell
         
-        //cell.MoreImage.image = UIImage(named:menu_image[indexPath.section][indexPath.row])
-        //cell.MoreLabel.text = menu[indexPath.section][indexPath.row]
-        
-        cell.imageView?.image = UIImage(named:menu_image[indexPath.section][indexPath.row])
-        cell.textLabel?.text = menu[indexPath.section][indexPath.row]
+        cell.MoreImage.image = UIImage(named:menu_image[indexPath.section][indexPath.row])
+        cell.MoreLabel.text = menu[indexPath.section][indexPath.row]
+        cell.RightImage.image = UIImage(named: "lin_right")
+        //cell.imageView?.image = UIImage(named:menu_image[indexPath.section][indexPath.row])
+        //cell.textLabel?.text = menu[indexPath.section][indexPath.row]
         //cell.textLabel?.textColor = UIColor(red: 9/255.0, green: 187/255.0, blue: 7/255.0, alpha: 1)
         
         return cell

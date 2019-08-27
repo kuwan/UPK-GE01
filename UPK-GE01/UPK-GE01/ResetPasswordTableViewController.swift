@@ -7,9 +7,9 @@
 //
 
 import UIKit
-let OldPassword = UITextField(frame: CGRect(x: 45, y: 10, width: UIScreen.main.bounds.width - 85, height: 40))
-let NewPassword = UITextField(frame: CGRect(x: 45, y: 55, width: UIScreen.main.bounds.width - 85, height: 40))
-let NewPassword1 = UITextField(frame: CGRect(x: 45, y: 100, width: UIScreen.main.bounds.width - 85, height: 40))
+let OldPassword = UITextField(frame: CGRect(x: 45*lengthPercent, y: 10*lengthPercent, width: screenWidth - 85*lengthPercent, height: 40*lengthPercent))
+let NewPassword = UITextField(frame: CGRect(x: 45*lengthPercent, y: 55*lengthPercent, width: screenWidth - 85*lengthPercent, height: 40*lengthPercent))
+let NewPassword1 = UITextField(frame: CGRect(x: 45*lengthPercent, y: 100*lengthPercent, width: screenWidth - 85*lengthPercent, height: 40*lengthPercent))
 class ResetPasswordTableViewController: UITableViewController {
 
     override func viewDidLoad() {
@@ -37,7 +37,7 @@ class ResetPasswordTableViewController: UITableViewController {
     }
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         
-        return self.view.frame.height
+        return screenHeight
     }
 
     
@@ -45,7 +45,7 @@ class ResetPasswordTableViewController: UITableViewController {
         let cell = UITableViewCell.init(style: .default, reuseIdentifier: nil)
         cell.selectionStyle = UITableViewCell.SelectionStyle.none
         
-        let image1 = UIImageView.init(frame: CGRect(x: 10, y: 15, width: 25, height: 25))
+        let image1 = UIImageView.init(frame: CGRect(x: 10*lengthPercent, y: 15*HeighPercent, width: 25*lengthPercent, height: 25*lengthPercent))
         image1.image = UIImage(named: "user_login_password")
         cell.contentView.addSubview(image1)
        // let OldPassword = UITextField(frame: CGRect(x: 45, y: 10, width: self.view.frame.width - 20, height: 40))
@@ -53,15 +53,15 @@ class ResetPasswordTableViewController: UITableViewController {
         OldPassword.placeholder = "Old Password"
         OldPassword.isSecureTextEntry = true
         self.view.addSubview(OldPassword)
-        let lineview1 = UIView.init(frame: CGRect(x: 10, y: 50, width: self.view.frame.width - 20, height: 2))
+        let lineview1 = UIView.init(frame: CGRect(x: 10*lengthPercent, y: 50*HeighPercent, width: screenWidth - 20*lengthPercent, height: 2*lengthPercent))
         lineview1.backgroundColor = UIColor(red: 0/255.0, green: 204/255.0, blue: 204/255.0, alpha: 1)
         self.view.addSubview(lineview1)
-        let ButtonSecure = UIButton.init(frame: CGRect(x: self.view.frame.width - 40, y: 15, width: 25, height: 25))
+        let ButtonSecure = UIButton.init(frame: CGRect(x: screenWidth - 40*lengthPercent, y: 15*HeighPercent, width: 25*lengthPercent, height: 25*lengthPercent))
         ButtonSecure.setImage(UIImage(named: "ic_user_eye_dis"), for: .normal)
         ButtonSecure.addTarget(self, action: #selector(ButtonSecure_Action), for: .touchUpInside)
         cell.contentView.addSubview(ButtonSecure)
         
-        let image2 = UIImageView.init(frame: CGRect(x: 10, y: 60, width: 25, height: 25))
+        let image2 = UIImageView.init(frame: CGRect(x: 10*lengthPercent, y: 60*HeighPercent, width: 25*lengthPercent, height: 25*lengthPercent))
         image2.image = UIImage(named: "user_login_password")
         cell.contentView.addSubview(image2)
        // let NewPassword = UITextField(frame: CGRect(x: 45, y: 55, width: self.view.frame.width - 20, height: 40))
@@ -69,16 +69,16 @@ class ResetPasswordTableViewController: UITableViewController {
         NewPassword.placeholder = "New Password"
         NewPassword.isSecureTextEntry = true
         self.view.addSubview(NewPassword)
-        let lineview2 = UIView.init(frame: CGRect(x: 10, y: 95, width: self.view.frame.width - 20, height: 2))
+        let lineview2 = UIView.init(frame: CGRect(x: 10*lengthPercent, y: 95*HeighPercent, width: screenWidth - 20*lengthPercent, height: 2*lengthPercent))
         lineview2.backgroundColor = UIColor(red: 0/255.0, green: 204/255.0, blue: 204/255.0, alpha: 1)
         self.view.addSubview(lineview2)
-        let ButtonSecure1 = UIButton.init(frame: CGRect(x: self.view.frame.width - 40, y: 60, width: 25, height: 25))
+        let ButtonSecure1 = UIButton.init(frame: CGRect(x: screenWidth - 40*lengthPercent, y: 60*HeighPercent, width: 25*lengthPercent, height: 25*lengthPercent))
         ButtonSecure1.setImage(UIImage(named: "ic_user_eye_dis"), for: .normal)
         ButtonSecure1.addTarget(self, action: #selector(ButtonSecure_Action1), for: .touchUpInside)
         cell.contentView.addSubview(ButtonSecure1)
 
         
-        let image3 = UIImageView.init(frame: CGRect(x: 10, y: 105, width: 25, height: 25))
+        let image3 = UIImageView.init(frame: CGRect(x: 10*lengthPercent, y: 105*HeighPercent, width: 25*lengthPercent, height: 25*lengthPercent))
         image3.image = UIImage(named: "user_login_password")
         cell.contentView.addSubview(image3)
        // let NewPassword1 = UITextField(frame: CGRect(x: 45, y: 100, width: self.view.frame.width - 20, height: 40))
@@ -86,11 +86,11 @@ class ResetPasswordTableViewController: UITableViewController {
         NewPassword1.isSecureTextEntry = true
         NewPassword1.placeholder = "Repeat New Password"
         self.view.addSubview(NewPassword1)
-        let lineview3 = UIView.init(frame: CGRect(x: 10, y: 140, width: self.view.frame.width - 20, height: 2))
+        let lineview3 = UIView.init(frame: CGRect(x: 10*lengthPercent, y: 140*HeighPercent, width: screenWidth - 20*lengthPercent, height: 2*lengthPercent))
         lineview3.backgroundColor = UIColor(red: 0/255.0, green: 204/255.0, blue: 204/255.0, alpha: 1)
         self.view.addSubview(lineview3)
 
-        let button_reset = UIButton.init(frame: CGRect(x: 10, y: 560, width: self.view.frame.width - 20, height: 40))
+        let button_reset = UIButton.init(frame: CGRect(x: 10*lengthPercent, y: 560*HeighPercent, width: screenWidth - 20*lengthPercent, height: 40*lengthPercent))
         button_reset.backgroundColor = UIColor(red: 0/255.0, green: 204/255.0, blue: 204/255.0, alpha: 1)
         // button_next.setImage(UIImage(named: "pic"), for: .normal)
         button_reset.setTitle("Reset password", for: .normal)

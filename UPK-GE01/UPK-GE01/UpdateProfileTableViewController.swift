@@ -7,15 +7,15 @@
 //
 
 import UIKit
-let GenderButton = UIButton.init(frame: CGRect(x: UIScreen.main.bounds.width - 220, y: 225, width: 200, height: 40))
-let BirthdayButton = UIButton.init(frame: CGRect(x: UIScreen.main.bounds.width - 220, y: 270, width: 200, height: 40))
+let GenderButton = UIButton.init(frame: CGRect(x: screenWidth - 220*lengthPercent, y: 225*HeighPercent, width: 200*lengthPercent, height: 40*lengthPercent))
+let BirthdayButton = UIButton.init(frame: CGRect(x: screenWidth - 220*lengthPercent, y: 270*HeighPercent, width: 200*lengthPercent, height: 40*lengthPercent))
 
-let WeightButton = UIButton.init(frame: CGRect(x: UIScreen.main.bounds.width - 220, y: 315, width: 200, height: 40))
+let WeightButton = UIButton.init(frame: CGRect(x: screenWidth - 220*lengthPercent, y: 315*HeighPercent, width: 200*lengthPercent, height: 40*lengthPercent))
 
 class UpdateProfileTableViewController: UITableViewController {
     
     var Weight = [String](), WeightUnit = [String]()
-    let label = UILabel.init(frame: CGRect(x: 0, y: 300, width: 375, height: 40))
+    let label = UILabel.init(frame: CGRect(x: 0, y: 300*lengthPercent, width: 375*lengthPercent, height: 40*lengthPercent))
     var index = 0
     // weight data
     private lazy var data: [[String]] = {
@@ -69,7 +69,7 @@ class UpdateProfileTableViewController: UITableViewController {
     }
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         
-        return self.view.frame.height
+        return screenHeight
     }
 
     
@@ -77,52 +77,52 @@ class UpdateProfileTableViewController: UITableViewController {
         let cell = UITableViewCell.init(style: .default , reuseIdentifier: nil)
         cell.selectionStyle = UITableViewCell.SelectionStyle.none
         
-        let ProfileLabel = UILabel.init(frame: CGRect(x: 0, y: 0, width: self.view.frame.width, height: 130))
+        let ProfileLabel = UILabel.init(frame: CGRect(x: 0, y: 0, width: screenWidth, height: 130*lengthPercent))
         ProfileLabel.backgroundColor = UIColor(red: 0/255.0, green: 204/255.0, blue: 204/255.0, alpha: 1)
         cell.contentView.addSubview(ProfileLabel)
         
-        let ProfileImage = UIImageView.init(frame: CGRect(x: self.view.frame.width/2 - 25, y: 30, width: 50, height: 50))
+        let ProfileImage = UIImageView.init(frame: CGRect(x: screenWidth/2 - 25*lengthPercent, y: 30*HeighPercent, width: 50*lengthPercent, height: 50*lengthPercent))
         //PadImage.backgroundColor = .green
         ProfileImage.image = UIImage(named: "ic_user_man_port")
         //ProfileImage.layer.cornerRadius = ProfileImage.frame.size.height/2
         //ProfileImage.clipsToBounds = true
         cell.contentView.addSubview(ProfileImage)
         
-        let ProfileLabel1 = UILabel.init(frame: CGRect(x: 0, y: 90, width: self.view.frame.width, height: 30))
+        let ProfileLabel1 = UILabel.init(frame: CGRect(x: 0, y: 80*HeighPercent, width: screenWidth, height: 30*lengthPercent))
         ProfileLabel1.textColor = UIColor.white
         ProfileLabel1.text = "13016490924"
         ProfileLabel1.textAlignment = .center
         cell.contentView.addSubview(ProfileLabel1)
         
-        let ProfileLabel2 = UILabel.init(frame: CGRect(x: 10, y: 135, width: self.view.frame.width - 20 , height: 40))
+        let ProfileLabel2 = UILabel.init(frame: CGRect(x: 10*lengthPercent, y: 135*HeighPercent, width: self.view.frame.width - 20*lengthPercent , height: 40*lengthPercent))
         ProfileLabel2.text = "Your profile info will help RelieforMe to provide more customized program recommendations just for you"
         ProfileLabel2.textAlignment = .left
         ProfileLabel2.numberOfLines = 2
         ProfileLabel2.textColor = UIColor.orange
-        ProfileLabel2.font = ProfileLabel2.font.withSize(14)
+        ProfileLabel2.font = ProfileLabel2.font.withSize(14*lengthPercent)
         cell.contentView.addSubview(ProfileLabel2)
         
-        let NameImage = UIImageView.init(frame: CGRect(x: 10, y: 190, width: 28, height: 23))
+        let NameImage = UIImageView.init(frame: CGRect(x: 10*lengthPercent, y: 190*HeighPercent, width: 25*lengthPercent, height: 25*lengthPercent))
         NameImage.image = UIImage(named: "user_login_username")
         cell.contentView.addSubview(NameImage)
-        let NameLabel = UILabel.init(frame: CGRect(x:38, y: 180, width: self.view.frame.width - 250, height: 40))
+        let NameLabel = UILabel.init(frame: CGRect(x:38*lengthPercent, y: 180*HeighPercent, width: screenWidth - 250*lengthPercent, height: 40*lengthPercent))
         NameLabel.text = "  First Name"
         NameLabel.textAlignment = .left
         cell.contentView.addSubview(NameLabel)
-        let NameField = UITextField(frame: CGRect(x: self.view.frame.width - 220, y: 180, width: 200, height: 40))
+        let NameField = UITextField(frame: CGRect(x: screenWidth - 220*lengthPercent, y: 180*HeighPercent, width: 200*lengthPercent, height: 40*lengthPercent))
         NameField.borderStyle = .none
         NameField.placeholder = "zzzzzzz"
         NameField.textColor = UIColor(red: 0/255.0, green: 204/255.0, blue: 204/255.0, alpha: 1)
         self.view.addSubview(NameField)
-        let lineview = UIView.init(frame: CGRect(x: self.view.frame.width - 220, y: 220, width: 200, height: 2))
+        let lineview = UIView.init(frame: CGRect(x: screenWidth - 220*lengthPercent, y: 220*HeighPercent, width: 200*lengthPercent, height: 2*lengthPercent))
         lineview.backgroundColor = UIColor(red: 0/255.0, green: 204/255.0, blue: 204/255.0, alpha: 1)
         self.view.addSubview(lineview)
 
         
-        let GenderImage = UIImageView.init(frame: CGRect(x: 10, y: 235, width: 28, height: 23))
+        let GenderImage = UIImageView.init(frame: CGRect(x: 10*lengthPercent, y: 235*HeighPercent, width: 25*lengthPercent, height: 25*lengthPercent))
         GenderImage.image = UIImage(named: "user_login_sex")
         cell.contentView.addSubview(GenderImage)
-        let GenderLabel = UILabel.init(frame: CGRect(x:38, y: 225, width: self.view.frame.width - 250, height: 40))
+        let GenderLabel = UILabel.init(frame: CGRect(x:38*lengthPercent, y: 225*HeighPercent, width: screenWidth - 250*lengthPercent, height: 40*lengthPercent))
         GenderLabel.text = "  Gender"
         GenderLabel.textAlignment = .left
         cell.contentView.addSubview(GenderLabel)
@@ -136,10 +136,10 @@ class UpdateProfileTableViewController: UITableViewController {
         //cell.contentView.addSubview(GenderPicker)
         
         
-        let BirthdayImage = UIImageView.init(frame: CGRect(x: 10, y: 280, width: 28, height: 23))
+        let BirthdayImage = UIImageView.init(frame: CGRect(x: 10*lengthPercent, y: 280*HeighPercent, width: 28*lengthPercent, height: 23*lengthPercent))
         BirthdayImage.image = UIImage(named: "user_info_birth")
         cell.contentView.addSubview(BirthdayImage)
-        let BirthdayLabel = UILabel.init(frame: CGRect(x:38, y: 270, width: self.view.frame.width - 250, height: 40))
+        let BirthdayLabel = UILabel.init(frame: CGRect(x:38*lengthPercent, y: 270*HeighPercent, width: screenWidth - 250*lengthPercent, height: 40*lengthPercent))
         BirthdayLabel.text = "  Birthday"
         BirthdayLabel.textAlignment = .left
         cell.contentView.addSubview(BirthdayLabel)
@@ -150,10 +150,10 @@ class UpdateProfileTableViewController: UITableViewController {
         BirthdayButton.addTarget(self, action: #selector(BirthdayButton_select), for: .touchUpInside)
         cell.contentView.addSubview(BirthdayButton)
         
-        let WeightImage = UIImageView.init(frame: CGRect(x: 10, y: 325, width: 28, height: 23))
+        let WeightImage = UIImageView.init(frame: CGRect(x: 10*lengthPercent, y: 325*HeighPercent, width: 28*lengthPercent, height: 23*lengthPercent))
         WeightImage.image = UIImage(named: "user_info_weight")
         cell.contentView.addSubview(WeightImage)
-        let WeightLabel = UILabel.init(frame: CGRect(x:38, y: 315, width: self.view.frame.width - 250, height: 40))
+        let WeightLabel = UILabel.init(frame: CGRect(x:38*lengthPercent, y: 315*HeighPercent, width: screenWidth - 250*lengthPercent, height: 40*lengthPercent))
         WeightLabel.text = "  Weight"
         WeightLabel.textAlignment = .left
         cell.contentView.addSubview(WeightLabel)
@@ -164,7 +164,7 @@ class UpdateProfileTableViewController: UITableViewController {
         WeightButton.addTarget(self, action: #selector(WeightButton_Action), for: .touchUpInside)
         cell.contentView.addSubview(WeightButton)
         
-        let ButtonSave = UIButton.init(frame: CGRect(x: 10, y: 560, width: self.view.frame.width - 20, height: 40))
+        let ButtonSave = UIButton.init(frame: CGRect(x: 10*lengthPercent, y: 560*HeighPercent, width: screenWidth - 20*lengthPercent, height: 40*lengthPercent))
         ButtonSave.backgroundColor = UIColor(red: 0/255.0, green: 204/255.0, blue: 204/255.0, alpha: 1)
         // button_next.setImage(UIImage(named: "pic"), for: .normal)
         ButtonSave.setTitle("SAVE", for: .normal)
@@ -230,7 +230,7 @@ class UpdateProfileTableViewController: UITableViewController {
             let DataString: String = String(datePicker.date.description.prefix(10))
             //print("date select: \(DataString)")
             BirthdayButton.setTitle(DataString, for: .normal)
-            BirthdayButton.setTitleColor(UIColor.black, for: .normal)
+            BirthdayButton.setTitleColor(UIColor(red: 0/255.0, green: 204/255.0, blue: 204/255.0, alpha: 1), for: .normal)
             BirthdayButton.contentHorizontalAlignment = .right
             self.view.addSubview(BirthdayButton)
         })
@@ -247,7 +247,7 @@ class UpdateProfileTableViewController: UITableViewController {
             
             let WeightString:String = self.Weight[selectedState[0]] + " " + self.WeightUnit[selectedState[1]]
             WeightButton.setTitle(WeightString, for: .normal)
-            WeightButton.setTitleColor(UIColor.black, for: .normal)
+            WeightButton.setTitleColor(UIColor(red: 0/255.0, green: 204/255.0, blue: 204/255.0, alpha: 1), for: .normal)
             WeightButton.contentHorizontalAlignment = .right
             self.view.addSubview(WeightButton)
         }

@@ -9,7 +9,7 @@
 import UIKit
 
 class MyDeviceTableViewController: UITableViewController {
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.navigationItem.title = "My device"
@@ -26,24 +26,107 @@ class MyDeviceTableViewController: UITableViewController {
 
     override func numberOfSections(in tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
-        return 0
+        return 3
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return 0
+        return 1
     }
 
-    /*
+    
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
-
-        // Configure the cell...
-
+        let cell = UITableViewCell.init(style: .default, reuseIdentifier: nil)
+        cell.selectionStyle = UITableViewCell.SelectionStyle.none
+        
+        let button1 = UIButton.init(frame: CGRect(x: 10*lengthPercent, y: 5*HeighPercent, width: 240*lengthPercent, height: 40*lengthPercent))
+        button1.setTitle("19:06:00:00:00:73", for: .normal)
+        button1.setTitleColor(UIColor.black, for: .normal)
+        button1.contentHorizontalAlignment = .left
+        button1.addTarget(self, action: #selector(button1_action), for: .touchUpInside)
+        cell.contentView.addSubview(button1)
+        
+        let lineview1 = UIView.init(frame: CGRect(x: 250*lengthPercent, y: 5*HeighPercent, width: 1*lengthPercent, height: 35*lengthPercent))
+        lineview1.backgroundColor = UIColor.gray
+        cell.contentView.addSubview(lineview1)
+        
+        let button2 = UIButton.init(frame: CGRect(x: 250*lengthPercent, y: 5*HeighPercent, width: 90*lengthPercent, height: 40*lengthPercent))
+        button2.setTitle("unpaired", for: .normal)
+        button2.setTitleColor(UIColor.black, for: .normal)
+        button2.contentHorizontalAlignment = .center
+        button2.addTarget(self, action: #selector(button2_action), for: .touchUpInside)
+        cell.contentView.addSubview(button2)
+        
+        let lineview2 = UIView.init(frame: CGRect(x: 340*lengthPercent, y: 5*HeighPercent, width: 1*lengthPercent, height: 35*lengthPercent))
+        lineview2.backgroundColor = UIColor.gray
+        cell.contentView.addSubview(lineview2)
+        
+        let button3 = UIButton.init(frame: CGRect(x: 340*lengthPercent, y: 5*HeighPercent, width: 35*lengthPercent, height: 40*lengthPercent))
+        button3.setImage(UIImage(named: "lin_delete"), for: .normal)
+        button3.addTarget(self, action: #selector(button3_action), for: .touchUpInside)
+        cell.contentView.addSubview(button3)
+        
         return cell
     }
-    */
-
+    
+    @objc func button1_action(button: UIButton){
+       
+        var DeviceNameTextField: UITextField?
+        
+        let alertController = UIAlertController(
+            title: "ReName",
+            message: "",
+            preferredStyle: UIAlertController.Style.alert)
+        
+        let CancelAction = UIAlertAction(title: "CANCEL", style: .cancel, handler: nil)
+        let OKAction = UIAlertAction(
+        title: "OK", style: .default) {
+            (action) -> Void in
+            
+            if let DeviceName = DeviceNameTextField?.text {
+                print(" DeviceName = \(DeviceName)")
+                button.setTitle(DeviceName, for: .normal)
+            } else {
+                print("No DeviceName entered")
+            }
+           
+        }
+       
+        alertController.addTextField {
+            (txtDeviceName) -> Void in
+            DeviceNameTextField = txtDeviceName
+        }
+        
+        alertController.addAction(CancelAction)
+        alertController.addAction(OKAction)
+        self.present(alertController, animated: true, completion: nil)
+    }
+    @objc func button2_action(button: UIButton){
+        
+        let menu = UIAlertController(title: "Message", message: "Do you want to connect to this device?", preferredStyle: .alert)
+        let option1 = UIAlertAction(title: "CANCEL", style: .cancel, handler: nil)
+        let option2 = UIAlertAction(title: "OK", style: .default, handler: nil)
+        
+        menu.addAction(option1)
+        menu.addAction(option2)
+        
+        self.present(menu, animated: true, completion: nil)
+    }
+    
+    @objc func button3_action(button: UIButton){
+        
+        let menu = UIAlertController(title: "Message", message: "Are you sure you want to delete this device?", preferredStyle: .alert)
+        let option1 = UIAlertAction(title: "CANCEL", style: .cancel, handler: nil)
+        let option2 = UIAlertAction(title: "OK", style: .default){(alertAction)->Void in
+           
+            
+        }
+        
+        menu.addAction(option1)
+        menu.addAction(option2)
+        
+        self.present(menu, animated: true, completion: nil)
+   }
     /*
     // Override to support conditional editing of the table view.
     override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {

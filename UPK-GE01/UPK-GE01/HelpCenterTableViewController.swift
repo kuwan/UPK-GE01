@@ -38,16 +38,16 @@ class HelpCenterTableViewController: UITableViewController {
     }
     override func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
         
-        return 20
+        return 80*HeighPercent
     }
     
     override func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
         
-        return  20
+        return  0
     }
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         
-        return 100
+        return 100*HeighPercent
     }
 
     
@@ -55,14 +55,18 @@ class HelpCenterTableViewController: UITableViewController {
         let cell = UITableViewCell.init(style: .default, reuseIdentifier: nil)
         
         
-        let label_name = UILabel.init(frame: CGRect(x: 110, y: 50, width: 100, height: 20))
+        let label_name = UILabel.init(frame: CGRect(x: 75*lengthPercent, y: 35*HeighPercent, width: 100*lengthPercent, height: 30*lengthPercent))
         label_name.text = menu[indexPath.section][indexPath.row]
         //label_name.textColor = UIColor(red: 9/255.0, green: 187/255.0, blue: 7/255.0, alpha: 1)
         cell.contentView.addSubview(label_name)
         
-        let label_image = UIImageView.init(frame: CGRect(x: 5, y: 0, width: 100, height: 100))
+        let label_image = UIImageView.init(frame: CGRect(x: 10*lengthPercent, y: 35*HeighPercent, width: 35*lengthPercent, height: 35*lengthPercent))
         label_image.image = UIImage(named: menu_image[indexPath.section])
         cell.contentView.addSubview(label_image)
+        
+        let Right_image = UIImageView.init(frame: CGRect(x: screenWidth - 60*lengthPercent, y: 35*HeighPercent, width: 35*lengthPercent, height: 35*lengthPercent))
+        Right_image.image = UIImage(named: "lin_right")
+        cell.contentView.addSubview(Right_image)
         
         
         return cell

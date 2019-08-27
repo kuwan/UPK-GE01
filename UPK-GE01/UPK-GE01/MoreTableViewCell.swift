@@ -10,8 +10,11 @@ import UIKit
 
 class MoreTableViewCell: UITableViewCell {
 
+    
     @IBOutlet weak var MoreImage: UIImageView!
     @IBOutlet weak var MoreLabel: UILabel!
+    
+    @IBOutlet weak var RightImage: UIImageView!
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

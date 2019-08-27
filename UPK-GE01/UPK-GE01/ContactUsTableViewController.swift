@@ -35,58 +35,58 @@ class ContactUsTableViewController: UITableViewController {
     }
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         
-        return self.view.frame.height
+        return screenHeight
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = UITableViewCell.init(style: .default, reuseIdentifier: nil)
         cell.selectionStyle = UITableViewCell.SelectionStyle.none
         
-        let label1 = UILabel.init(frame: CGRect(x: 10, y: 10, width: self.view.frame.width - 100,height: 40))
+        let label1 = UILabel.init(frame: CGRect(x: 10*lengthPercent, y: 10*HeighPercent, width: self.view.frame.width - 100*lengthPercent,height: 40*lengthPercent))
         label1.text = "Texhnical issue"
         label1.textColor = UIColor(red: 0/255.0, green: 204/255.0, blue: 204/255.0, alpha: 1)
         cell.contentView.addSubview(label1)
-        let button1 = UIButton.init(frame: CGRect(x: self.view.frame.width - 40, y: 20, width: 20, height: 20))
+        let button1 = UIButton.init(frame: CGRect(x: screenWidth - 40*lengthPercent, y: 20*HeighPercent, width: 20*lengthPercent, height: 20*lengthPercent))
         button1.setImage(UIImage(named: "btn_unselected"), for: .normal)
         button1.addTarget(self, action: #selector(button1_action), for: .touchUpInside)
         cell.contentView.addSubview(button1)
         
-        let label2 = UILabel.init(frame: CGRect(x: 10, y: 55, width: self.view.frame.width - 100,height: 40))
+        let label2 = UILabel.init(frame: CGRect(x: 10*lengthPercent, y: 55*HeighPercent, width: self.view.frame.width - 100*lengthPercent,height: 40*lengthPercent))
         label2.text = "Other issue"
         label2.textColor = UIColor(red: 0/255.0, green: 204/255.0, blue: 204/255.0, alpha: 1)
         cell.contentView.addSubview(label2)
-        let button2 = UIButton.init(frame: CGRect(x: self.view.frame.width - 40, y: 70, width: 20, height: 20))
+        let button2 = UIButton.init(frame: CGRect(x: screenWidth - 40*lengthPercent, y: 70*HeighPercent, width: 20*lengthPercent, height: 20*lengthPercent))
         button2.setImage(UIImage(named: "btn_unselected"), for: .normal)
         button2.addTarget(self, action: #selector(button2_action), for: .touchUpInside)
         cell.contentView.addSubview(button2)
         
-        let label3 = UILabel.init(frame: CGRect(x: 10, y: 110, width: self.view.frame.width ,height: 30))
+        let label3 = UILabel.init(frame: CGRect(x: 10*lengthPercent, y: 110*HeighPercent, width: screenWidth ,height: 30*lengthPercent))
         label3.text = "Please write your comments"
         cell.contentView.addSubview(label3)
         
-        let Label_comments = UITextField(frame: CGRect(x: 10, y: 150, width: self.view.frame.width - 20, height: 80))
+        let Label_comments = UITextField(frame: CGRect(x: 10*lengthPercent, y: 150*HeighPercent, width: screenWidth - 20*lengthPercent, height: 80*lengthPercent))
         Label_comments.borderStyle = .none
         self.view.addSubview(Label_comments)
-        let lineview = UIView.init(frame: CGRect(x: 10, y: 230, width: self.view.frame.width - 20, height: 2))
+        let lineview = UIView.init(frame: CGRect(x: 10*lengthPercent, y: 230*HeighPercent, width: screenWidth - 20*lengthPercent, height: 2*lengthPercent))
         lineview.backgroundColor = UIColor(red: 0/255.0, green: 204/255.0, blue: 204/255.0, alpha: 1)
         self.view.addSubview(lineview)
         
-        let label4 = UILabel.init(frame: CGRect(x: 10, y: 240, width: self.view.frame.width ,height: 30))
+        let label4 = UILabel.init(frame: CGRect(x: 10*lengthPercent, y: 240*lengthPercent, width: screenWidth ,height: 30*lengthPercent))
         label4.text = "Please add picture or screen shot"
         cell.contentView.addSubview(label4)
         
-        let Camera_button = UIButton.init(frame: CGRect(x: 10, y: 275, width: 80, height: 70))
+        let Camera_button = UIButton.init(frame: CGRect(x: 10*lengthPercent, y: 275*HeighPercent, width: 80*lengthPercent, height: 70*lengthPercent))
         Camera_button.setImage(UIImage(named: "lin_camemer"), for: .normal)
         Camera_button.addTarget(self, action: #selector(CameraButton_action), for: .touchUpInside)
         cell.contentView.addSubview(Camera_button)
         
-        let label5 = UILabel.init(frame: CGRect(x: 10, y: 530, width: self.view.frame.width ,height: 20))
+        let label5 = UILabel.init(frame: CGRect(x: 10*lengthPercent, y: 530*HeighPercent, width: screenWidth ,height: 20*lengthPercent))
         label5.text = "email:service@umeheal.com"
         label5.font = label5.font.withSize(14)
         cell.contentView.addSubview(label5)
         
         
-        let button_OK = UIButton.init(frame: CGRect(x: 10, y: 560, width: self.view.frame.width - 20, height: 40))
+        let button_OK = UIButton.init(frame: CGRect(x: 10*lengthPercent, y: 560*HeighPercent, width: screenWidth - 20*lengthPercent, height: 40*lengthPercent))
         button_OK.backgroundColor = UIColor(red: 0/255.0, green: 204/255.0, blue: 204/255.0, alpha: 1)
         // button_next.setImage(UIImage(named: "pic"), for: .normal)
         button_OK.setTitle("OK", for: .normal)

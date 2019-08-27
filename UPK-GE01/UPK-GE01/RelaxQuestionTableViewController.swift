@@ -7,26 +7,28 @@
 //
 
 import UIKit
-let Rquestion1_A = UIButton.init(frame: CGRect(x: 12, y: 110, width: 140, height: 25))
-let Rquestion1_B = UIButton.init(frame: CGRect(x: 202, y: 110, width: 140, height: 25))
-let Rquestion1_C = UIButton.init(frame: CGRect(x: 12, y: 140, width: 140, height: 25))
-let Rquestion1_D = UIButton.init(frame: CGRect(x: 202, y: 140, width: 140, height: 25))
+let Rquestion1_A = UIButton.init(frame: CGRect(x: 12*lengthPercent, y: 110*HeighPercent, width: 140*lengthPercent, height: 25*lengthPercent))
+let Rquestion1_B = UIButton.init(frame: CGRect(x: 202*lengthPercent, y: 110*HeighPercent, width: 140*lengthPercent, height: 25*lengthPercent))
+let Rquestion1_C = UIButton.init(frame: CGRect(x: 12*lengthPercent, y: 140*HeighPercent, width: 140*lengthPercent, height: 25*lengthPercent))
+let Rquestion1_D = UIButton.init(frame: CGRect(x: 202*lengthPercent, y: 140*HeighPercent, width: 140*lengthPercent, height: 25*lengthPercent))
 
-let Rquestion2_A = UIButton.init(frame: CGRect(x: 12, y: 230, width: 140, height: 25))
-let Rquestion2_B = UIButton.init(frame: CGRect(x: 202, y: 230, width: 140, height: 25))
-let Rquestion2_C = UIButton.init(frame: CGRect(x: 12, y: 260, width: 140, height: 25))
-let Rquestion2_D = UIButton.init(frame: CGRect(x: 202, y: 260, width: 140, height: 25))
+let Rquestion2_A = UIButton.init(frame: CGRect(x: 12*lengthPercent, y: 230*HeighPercent, width: 140*lengthPercent, height: 25*lengthPercent))
+let Rquestion2_B = UIButton.init(frame: CGRect(x: 202*lengthPercent, y: 230*HeighPercent, width: 140*lengthPercent, height: 25*lengthPercent))
+let Rquestion2_C = UIButton.init(frame: CGRect(x: 12*lengthPercent, y: 260*HeighPercent, width: 140*lengthPercent, height: 25*lengthPercent))
+let Rquestion2_D = UIButton.init(frame: CGRect(x: 202*lengthPercent, y: 260*HeighPercent, width: 140*lengthPercent, height: 25*lengthPercent))
 
-let Rquestion3_A = UIButton.init(frame: CGRect(x: 12, y: 350, width: 140, height: 25))
-let Rquestion3_B = UIButton.init(frame: CGRect(x: 202, y: 350, width: 140, height: 25))
-let Rquestion3_C = UIButton.init(frame: CGRect(x: 12, y: 380, width: 140, height: 25))
-let Rquestion3_D = UIButton.init(frame: CGRect(x: 202, y: 380, width: 140, height: 25))
+let Rquestion3_A = UIButton.init(frame: CGRect(x: 12*lengthPercent, y: 350*HeighPercent, width: 140*lengthPercent, height: 25*lengthPercent))
+let Rquestion3_B = UIButton.init(frame: CGRect(x: 202*lengthPercent, y: 350*HeighPercent, width: 140*lengthPercent, height: 25*lengthPercent))
+let Rquestion3_C = UIButton.init(frame: CGRect(x: 12*lengthPercent, y: 380*HeighPercent, width: 140*lengthPercent, height: 25*lengthPercent))
+let Rquestion3_D = UIButton.init(frame: CGRect(x: 202*lengthPercent, y: 380*HeighPercent, width: 140*lengthPercent, height: 25*lengthPercent))
 
 class RelaxQuestionTableViewController: UITableViewController {
 
     var position = "Calf"
     override func viewDidLoad() {
         super.viewDidLoad()
+        //screenWidth = self.view.frame.width
+        //screenHeight = self.view.frame.height
         self.navigationItem.title = "Relax"
         let item = UIBarButtonItem(title: "", style: .plain, target: self, action: nil)
         self.navigationItem.backBarButtonItem = item
@@ -39,7 +41,7 @@ class RelaxQuestionTableViewController: UITableViewController {
     }
     func AddPositon(string: String){
         
-        let label = UILabel.init(frame: CGRect(x: 0, y: 10, width: self.view.frame.width, height: 50))
+        let label = UILabel.init(frame: CGRect(x: 0, y: 10*HeighPercent, width: screenWidth, height: 30*lengthPercent))
         label.text = string
         label.textAlignment = .center
         self.view.addSubview(label)
@@ -57,13 +59,13 @@ class RelaxQuestionTableViewController: UITableViewController {
     }
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         
-        return  600
+        return  screenHeight
     }
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = UITableViewCell.init(style: .default, reuseIdentifier: nil)        
         cell.selectionStyle = UITableViewCell.SelectionStyle.none
             
-        let Rquestion1 = UILabel.init(frame: CGRect(x: 10, y: 50, width: 360, height: 50))
+        let Rquestion1 = UILabel.init(frame: CGRect(x: 10*lengthPercent, y: 50*HeighPercent, width: 360*lengthPercent, height: 50*lengthPercent))
         Rquestion1.text = "(1)How often have you been experiencing stiff or tight muscles?"
         Rquestion1.numberOfLines = 2
         cell.contentView.addSubview(Rquestion1)
@@ -76,10 +78,7 @@ class RelaxQuestionTableViewController: UITableViewController {
         AddSelectButton(button: Rquestion1_D,string: " Often")
         cell.contentView.addSubview(Rquestion1_D)
         
-       
-        
-        
-        let Rquestion2 = UILabel.init(frame: CGRect(x: 10, y: 170, width: 360, height: 50))
+        let Rquestion2 = UILabel.init(frame: CGRect(x: 10*lengthPercent, y: 170*HeighPercent, width: 360*lengthPercent, height: 50*lengthPercent))
         Rquestion2.text = "(2)How often have you been experiencing fatigue,tension or soreness in muscles?"
         Rquestion2.numberOfLines = 2
         cell.contentView.addSubview(Rquestion2)
@@ -91,9 +90,8 @@ class RelaxQuestionTableViewController: UITableViewController {
         cell.contentView.addSubview(Rquestion2_C)
         AddSelectButton(button: Rquestion2_D,string: " Often")
         cell.contentView.addSubview(Rquestion2_D)
-        
       
-        let Rquestion3 = UILabel.init(frame: CGRect(x: 10, y: 290, width: 360, height: 50))
+        let Rquestion3 = UILabel.init(frame: CGRect(x: 10*lengthPercent, y: 290*HeighPercent, width: 360*lengthPercent, height: 50*lengthPercent))
         Rquestion3.text = "(3)How often have you been experiencing muscle spasm?"
         Rquestion3.numberOfLines = 2
         cell.contentView.addSubview(Rquestion3)
@@ -106,9 +104,8 @@ class RelaxQuestionTableViewController: UITableViewController {
         AddSelectButton(button: Rquestion3_D,string: " Often")
         cell.contentView.addSubview(Rquestion3_D)
         
-        
-        let button_next = UIButton.init(frame: CGRect(x: 10, y: 560, width: self.view.frame.width - 20, height: 40))
-        button_next.backgroundColor = UIColor(red: 9/255.0, green: 187/255.0, blue: 7/255.0, alpha: 1)
+        let button_next = UIButton.init(frame: CGRect(x: 10*lengthPercent, y: 560*HeighPercent, width: screenWidth - 20*lengthPercent, height: 40*lengthPercent))
+        button_next.backgroundColor = UIColor(red: 0/255.0, green: 204/255.0, blue: 204/255.0, alpha: 1)
         // button_next.setImage(UIImage(named: "pic"), for: .normal)
         button_next.setTitle("Next", for: .normal)
         button_next.addTarget(self, action: #selector(buttonAction_next), for: .touchUpInside)
@@ -123,132 +120,132 @@ class RelaxQuestionTableViewController: UITableViewController {
         // print("do nothing")
         switch button {
         case Rquestion1_A:
-             Rquestion1_B.setImage(UIImage(named: "pic"), for: .normal)
-             Rquestion1_C.setImage(UIImage(named: "pic"), for: .normal)
-             Rquestion1_D.setImage(UIImage(named: "pic"), for: .normal)
-            if button.imageView?.image == UIImage(named: "pic"){
-                button.setImage(UIImage(named: "picHL"), for: .normal)
+             Rquestion1_B.setImage(UIImage(named: "btn_unselected"), for: .normal)
+             Rquestion1_C.setImage(UIImage(named: "btn_unselected"), for: .normal)
+             Rquestion1_D.setImage(UIImage(named: "btn_unselected"), for: .normal)
+            if button.imageView?.image == UIImage(named: "btn_unselected"){
+                button.setImage(UIImage(named: "btn_selected"), for: .normal)
             }
             else{
                 
                 //button.setImage(UIImage(named: "pic"), for: .normal)
             }
         case Rquestion1_B:
-            Rquestion1_A.setImage(UIImage(named: "pic"), for: .normal)
-            Rquestion1_C.setImage(UIImage(named: "pic"), for: .normal)
-            Rquestion1_D.setImage(UIImage(named: "pic"), for: .normal)
-            if button.imageView?.image == UIImage(named: "pic"){
-                button.setImage(UIImage(named: "picHL"), for: .normal)
+            Rquestion1_A.setImage(UIImage(named: "btn_unselected"), for: .normal)
+            Rquestion1_C.setImage(UIImage(named: "btn_unselected"), for: .normal)
+            Rquestion1_D.setImage(UIImage(named: "btn_unselected"), for: .normal)
+            if button.imageView?.image == UIImage(named: "btn_unselected"){
+                button.setImage(UIImage(named: "btn_selected"), for: .normal)
             }
             else{
                 
                 //button.setImage(UIImage(named: "pic"), for: .normal)
             }
         case Rquestion1_C:
-            Rquestion1_B.setImage(UIImage(named: "pic"), for: .normal)
-            Rquestion1_A.setImage(UIImage(named: "pic"), for: .normal)
-            Rquestion1_D.setImage(UIImage(named: "pic"), for: .normal)
-            if button.imageView?.image == UIImage(named: "pic"){
-                button.setImage(UIImage(named: "picHL"), for: .normal)
+            Rquestion1_B.setImage(UIImage(named: "btn_unselected"), for: .normal)
+            Rquestion1_A.setImage(UIImage(named: "btn_unselected"), for: .normal)
+            Rquestion1_D.setImage(UIImage(named: "btn_unselected"), for: .normal)
+            if button.imageView?.image == UIImage(named: "btn_unselected"){
+                button.setImage(UIImage(named: "btn_selected"), for: .normal)
             }
             else{
                 
                 //button.setImage(UIImage(named: "pic"), for: .normal)
             }
         case Rquestion1_D:
-            Rquestion1_B.setImage(UIImage(named: "pic"), for: .normal)
-            Rquestion1_C.setImage(UIImage(named: "pic"), for: .normal)
-            Rquestion1_A.setImage(UIImage(named: "pic"), for: .normal)
-            if button.imageView?.image == UIImage(named: "pic"){
-                button.setImage(UIImage(named: "picHL"), for: .normal)
+            Rquestion1_B.setImage(UIImage(named: "btn_unselected"), for: .normal)
+            Rquestion1_C.setImage(UIImage(named: "btn_unselected"), for: .normal)
+            Rquestion1_A.setImage(UIImage(named: "btn_unselected"), for: .normal)
+            if button.imageView?.image == UIImage(named: "btn_unselected"){
+                button.setImage(UIImage(named: "btn_selected"), for: .normal)
             }
             else{
                 
                 //button.setImage(UIImage(named: "pic"), for: .normal)
             }
         case Rquestion2_A:
-            Rquestion2_B.setImage(UIImage(named: "pic"), for: .normal)
-            Rquestion2_C.setImage(UIImage(named: "pic"), for: .normal)
-            Rquestion2_D.setImage(UIImage(named: "pic"), for: .normal)
-            if button.imageView?.image == UIImage(named: "pic"){
-                button.setImage(UIImage(named: "picHL"), for: .normal)
+            Rquestion2_B.setImage(UIImage(named: "btn_unselected"), for: .normal)
+            Rquestion2_C.setImage(UIImage(named: "btn_unselected"), for: .normal)
+            Rquestion2_D.setImage(UIImage(named: "btn_unselected"), for: .normal)
+            if button.imageView?.image == UIImage(named: "btn_unselected"){
+                button.setImage(UIImage(named: "btn_selected"), for: .normal)
             }
             else{
                 
                 //button.setImage(UIImage(named: "pic"), for: .normal)
             }
         case Rquestion2_B:
-            Rquestion2_A.setImage(UIImage(named: "pic"), for: .normal)
-            Rquestion2_C.setImage(UIImage(named: "pic"), for: .normal)
-            Rquestion2_D.setImage(UIImage(named: "pic"), for: .normal)
-            if button.imageView?.image == UIImage(named: "pic"){
-                button.setImage(UIImage(named: "picHL"), for: .normal)
+            Rquestion2_A.setImage(UIImage(named: "btn_unselected"), for: .normal)
+            Rquestion2_C.setImage(UIImage(named: "btn_unselected"), for: .normal)
+            Rquestion2_D.setImage(UIImage(named: "btn_unselected"), for: .normal)
+            if button.imageView?.image == UIImage(named: "btn_unselected"){
+                button.setImage(UIImage(named: "btn_selected"), for: .normal)
             }
             else{
                 
                 //button.setImage(UIImage(named: "pic"), for: .normal)
             }
         case Rquestion2_C:
-            Rquestion2_B.setImage(UIImage(named: "pic"), for: .normal)
-            Rquestion2_A.setImage(UIImage(named: "pic"), for: .normal)
-            Rquestion2_D.setImage(UIImage(named: "pic"), for: .normal)
-            if button.imageView?.image == UIImage(named: "pic"){
-                button.setImage(UIImage(named: "picHL"), for: .normal)
+            Rquestion2_B.setImage(UIImage(named: "btn_unselected"), for: .normal)
+            Rquestion2_A.setImage(UIImage(named: "btn_unselected"), for: .normal)
+            Rquestion2_D.setImage(UIImage(named: "btn_unselected"), for: .normal)
+            if button.imageView?.image == UIImage(named: "btn_unselected"){
+                button.setImage(UIImage(named: "btn_selected"), for: .normal)
             }
             else{
                 
                 //button.setImage(UIImage(named: "pic"), for: .normal)
             }
         case Rquestion2_D:
-            Rquestion2_B.setImage(UIImage(named: "pic"), for: .normal)
-            Rquestion2_C.setImage(UIImage(named: "pic"), for: .normal)
-            Rquestion2_A.setImage(UIImage(named: "pic"), for: .normal)
-            if button.imageView?.image == UIImage(named: "pic"){
-                button.setImage(UIImage(named: "picHL"), for: .normal)
+            Rquestion2_B.setImage(UIImage(named: "btn_unselected"), for: .normal)
+            Rquestion2_C.setImage(UIImage(named: "btn_unselected"), for: .normal)
+            Rquestion2_A.setImage(UIImage(named: "btn_unselected"), for: .normal)
+            if button.imageView?.image == UIImage(named: "btn_unselected"){
+                button.setImage(UIImage(named: "btn_selected"), for: .normal)
             }
             else{
                 
                 //button.setImage(UIImage(named: "pic"), for: .normal)
             }
         case Rquestion3_A:
-            Rquestion3_B.setImage(UIImage(named: "pic"), for: .normal)
-            Rquestion3_C.setImage(UIImage(named: "pic"), for: .normal)
-            Rquestion3_D.setImage(UIImage(named: "pic"), for: .normal)
-            if button.imageView?.image == UIImage(named: "pic"){
-                button.setImage(UIImage(named: "picHL"), for: .normal)
+            Rquestion3_B.setImage(UIImage(named: "btn_unselected"), for: .normal)
+            Rquestion3_C.setImage(UIImage(named: "btn_unselected"), for: .normal)
+            Rquestion3_D.setImage(UIImage(named: "btn_unselected"), for: .normal)
+            if button.imageView?.image == UIImage(named: "btn_unselected"){
+                button.setImage(UIImage(named: "btn_selected"), for: .normal)
             }
             else{
                 
                 //button.setImage(UIImage(named: "pic"), for: .normal)
             }
         case Rquestion3_B:
-            Rquestion3_A.setImage(UIImage(named: "pic"), for: .normal)
-            Rquestion3_C.setImage(UIImage(named: "pic"), for: .normal)
-            Rquestion3_D.setImage(UIImage(named: "pic"), for: .normal)
-            if button.imageView?.image == UIImage(named: "pic"){
-                button.setImage(UIImage(named: "picHL"), for: .normal)
+            Rquestion3_A.setImage(UIImage(named: "btn_unselected"), for: .normal)
+            Rquestion3_C.setImage(UIImage(named: "btn_unselected"), for: .normal)
+            Rquestion3_D.setImage(UIImage(named: "btn_unselected"), for: .normal)
+            if button.imageView?.image == UIImage(named: "btn_unselected"){
+                button.setImage(UIImage(named: "btn_selected"), for: .normal)
             }
             else{
                 
                 //button.setImage(UIImage(named: "pic"), for: .normal)
             }
         case Rquestion3_C:
-            Rquestion3_B.setImage(UIImage(named: "pic"), for: .normal)
-            Rquestion3_A.setImage(UIImage(named: "pic"), for: .normal)
-            Rquestion3_D.setImage(UIImage(named: "pic"), for: .normal)
-            if button.imageView?.image == UIImage(named: "pic"){
-                button.setImage(UIImage(named: "picHL"), for: .normal)
+            Rquestion3_B.setImage(UIImage(named: "btn_unselected"), for: .normal)
+            Rquestion3_A.setImage(UIImage(named: "btn_unselected"), for: .normal)
+            Rquestion3_D.setImage(UIImage(named: "btn_unselected"), for: .normal)
+            if button.imageView?.image == UIImage(named: "btn_unselected"){
+                button.setImage(UIImage(named: "btn_selected"), for: .normal)
             }
             else{
                 
                 //button.setImage(UIImage(named: "pic"), for: .normal)
             }
         case Rquestion3_D:
-            Rquestion3_B.setImage(UIImage(named: "pic"), for: .normal)
-            Rquestion3_C.setImage(UIImage(named: "pic"), for: .normal)
-            Rquestion3_A.setImage(UIImage(named: "pic"), for: .normal)
-            if button.imageView?.image == UIImage(named: "pic"){
-                button.setImage(UIImage(named: "picHL"), for: .normal)
+            Rquestion3_B.setImage(UIImage(named: "btn_unselected"), for: .normal)
+            Rquestion3_C.setImage(UIImage(named: "btn_unselected"), for: .normal)
+            Rquestion3_A.setImage(UIImage(named: "btn_unselected"), for: .normal)
+            if button.imageView?.image == UIImage(named: "btn_unselected"){
+                button.setImage(UIImage(named: "btn_selected"), for: .normal)
             }
             else{
                 
@@ -266,7 +263,7 @@ class RelaxQuestionTableViewController: UITableViewController {
     }
     func AddSelectButton(button: UIButton, string: String){
         
-        button.setImage(UIImage(named: "pic"), for: .normal)
+        button.setImage(UIImage(named: "btn_unselected"), for: .normal)
         button.contentHorizontalAlignment = .left
         button.setTitle(string, for: .normal)
         button.setTitleColor(UIColor.black, for: .normal)
@@ -278,8 +275,8 @@ class RelaxQuestionTableViewController: UITableViewController {
    // }
     @objc private func buttonAction_next(button: UIButton) {
         
-        if (Rquestion1_A.imageView?.image == UIImage(named: "pic")
-            && Rquestion1_B.imageView?.image == UIImage(named: "pic") && Rquestion1_C.imageView?.image == UIImage(named: "pic") && Rquestion1_D.imageView?.image == UIImage(named: "pic")) || (Rquestion2_A.imageView?.image == UIImage(named: "pic") && Rquestion2_B.imageView?.image == UIImage(named: "pic") && Rquestion2_C.imageView?.image == UIImage(named: "pic") && Rquestion2_D.imageView?.image == UIImage(named: "pic")) || (Rquestion3_A.imageView?.image == UIImage(named: "pic") && Rquestion3_B.imageView?.image == UIImage(named: "pic") && Rquestion3_C.imageView?.image == UIImage(named: "pic") && Rquestion3_D.imageView?.image == UIImage(named: "pic")){
+        if (Rquestion1_A.imageView?.image == UIImage(named: "btn_unselected")
+            && Rquestion1_B.imageView?.image == UIImage(named: "btn_unselected") && Rquestion1_C.imageView?.image == UIImage(named: "btn_unselected") && Rquestion1_D.imageView?.image == UIImage(named: "btn_unselected")) || (Rquestion2_A.imageView?.image == UIImage(named: "btn_unselected") && Rquestion2_B.imageView?.image == UIImage(named: "btn_unselected") && Rquestion2_C.imageView?.image == UIImage(named: "btn_unselected") && Rquestion2_D.imageView?.image == UIImage(named: "btn_unselected")) || (Rquestion3_A.imageView?.image == UIImage(named: "btn_unselected") && Rquestion3_B.imageView?.image == UIImage(named: "btn_unselected") && Rquestion3_C.imageView?.image == UIImage(named: "btn_unselected") && Rquestion3_D.imageView?.image == UIImage(named: "btn_unselected")){
             
             let menu = UIAlertController(title: "", message: "Please fill in all questions", preferredStyle: .alert)
             //let option1 = UIAlertAction(title: "CANCEL", style: .cancel, handler: nil)

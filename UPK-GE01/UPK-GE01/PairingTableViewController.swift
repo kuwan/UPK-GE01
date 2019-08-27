@@ -27,22 +27,22 @@ class PairingTableViewController: UITableViewController {
     }
     func Add_label(){
         
-        let label1 = UILabel.init(frame: CGRect(x: 10, y: 10, width: 255, height: 20))
+        let label1 = UILabel.init(frame: CGRect(x: 10*lengthPercent, y: 10*HeighPercent, width: 255*lengthPercent, height: 20*lengthPercent))
         label1.text = "test"
-        label1.font = label1.font.withSize(14)
+        label1.font = label1.font.withSize(14*lengthPercent)
         label1.textAlignment = .center
         self.view.addSubview(label1)
         
     }
     func Add_button(){
         
-        let button1 = UIButton.init(frame: CGRect(x: 20, y: 500, width: 160, height: 40))
+        let button1 = UIButton.init(frame: CGRect(x: 20*lengthPercent, y: 560*HeighPercent, width: 160*lengthPercent, height: 40*lengthPercent))
         button1.backgroundColor = UIColor(red: 0/255.0, green: 204/255.0, blue: 204/255.0, alpha: 1)
         button1.setTitle("(RE)START", for: .normal)
         button1.addTarget(self, action: #selector(buttonAction_Start), for: .touchUpInside)
         self.view.addSubview(button1)
         
-        let button2 = UIButton.init(frame: CGRect(x: 195, y: 500, width: 160, height: 40))
+        let button2 = UIButton.init(frame: CGRect(x: 195*lengthPercent, y: 560*HeighPercent, width: 160*lengthPercent, height: 40*lengthPercent))
         button2.backgroundColor = UIColor(red: 0/255.0, green: 204/255.0, blue: 204/255.0, alpha: 1)
         button2.setTitle("SKIP", for: .normal)
         button2.addTarget(self, action: #selector(buttonAction_Skip), for: .touchUpInside)
