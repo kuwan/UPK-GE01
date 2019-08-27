@@ -25,6 +25,11 @@ class ControlPannelViewController: UIViewController,UITableViewDelegate,UITableV
         // Do any additional setup after loading the view.
     }
     override func viewWillAppear(_ animated: Bool) {
+        let menu = UIAlertController(title: "", message: "test", preferredStyle: .alert)
+        DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 1){
+            self.presentedViewController?.dismiss(animated: false, completion: nil)
+        }
+        self.present(menu, animated: true, completion: nil)
         if ((self.navigationController?.viewControllers.count)!) > 1{
             
             self.tabBarController?.tabBar.isHidden = true

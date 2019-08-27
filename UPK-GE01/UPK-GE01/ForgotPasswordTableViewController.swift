@@ -10,6 +10,7 @@ import UIKit
 let label4 = UITextField(frame: CGRect(x: 45*lengthPercent, y: 145*HeighPercent, width: screenWidth - 85*lengthPercent, height: 40*lengthPercent))
 let label5 = UITextField(frame: CGRect(x: 45*lengthPercent, y: 190*HeighPercent, width: screenWidth - 85*lengthPercent, height: 40*lengthPercent))
 
+let Button2_R = UIButton.init(frame: CGRect(x: 10*lengthPercent, y: 55*HeighPercent, width: screenWidth - 10*lengthPercent, height: 40*lengthPercent))
 class ForgotPasswordTableViewController: UITableViewController {
     
     override func viewDidLoad() {
@@ -72,17 +73,17 @@ class ForgotPasswordTableViewController: UITableViewController {
         clearbutton.setImage(UIImage(named: "btn_clear"), for: .normal)
         cell.contentView.addSubview(clearbutton)
         
-        let Button2 = UIButton.init(frame: CGRect(x: 10*lengthPercent, y: 55*HeighPercent, width: screenWidth - 10*lengthPercent, height: 40*lengthPercent))
-        Button2.addTarget(self, action: #selector(Button2_action), for: .touchUpInside)
-        cell.contentView.addSubview(Button2)
-        let label2 = UILabel.init(frame: CGRect(x: 10*lengthPercent, y: 55*HeighPercent, width: screenWidth - 10*lengthPercent, height: 40*lengthPercent))
-        label2.text = "Click here to send verification code to your email or cell phone"
-        label2.numberOfLines = 2
-        label2.font = label2.font.withSize(14*lengthPercent)
-        label2.textAlignment = .center
-        label2.textColor = UIColor.white
-        label2.backgroundColor = UIColor.orange
-        cell.contentView.addSubview(label2)
+        //let Button2 = UIButton.init(frame: CGRect(x: 10*lengthPercent, y: 55*HeighPercent, width: screenWidth - 10*lengthPercent, height: 40*lengthPercent))
+        Button2_R.addTarget(self, action: #selector(Button2_action), for: .touchUpInside)
+        Button2_R.setTitle("Click here to send verification code to your email or cell phone", for: .normal)
+        Button2_R.setTitleColor(.white, for: .normal)
+        Button2_R.backgroundColor = .orange
+        Button2_R.titleLabel?.font = UIFont.systemFont(ofSize: 15)
+        Button2_R.titleLabel?.numberOfLines = 0
+        Button2_R.titleLabel?.textAlignment = .center
+        Button2_R.addTarget(self, action: #selector(Button2_action), for: .touchUpInside)
+        cell.contentView.addSubview(Button2_R)
+        
                 
         let image2 = UIImageView.init(frame: CGRect(x: 10*lengthPercent, y: 105*HeighPercent, width: 25*lengthPercent, height: 25*lengthPercent))
         image2.image = UIImage(named: "user_forgot_vcode")
@@ -159,12 +160,42 @@ class ForgotPasswordTableViewController: UITableViewController {
     }
     @objc func Button2_action(button: UIButton){
         
+        var time = 60
+        let codeTimer = DispatchSource.makeTimerSource(flags: .init(rawValue: 0), queue: DispatchQueue.global())
+        codeTimer.schedule(deadline: .now(), repeating: .milliseconds(1000))
+        codeTimer.setEventHandler {
+            
+            time = time - 1
+            DispatchQueue.main.async {
+                
+                Button2_R.isEnabled = false //disable button2
+            }
+            if time < 0 {
+                
+                codeTimer.cancel()
+                DispatchQueue.main.async {
+                    Button2_R.isEnabled = true
+                    Button2_R.setTitle("Click here to send verification code to your email or cell phone", for: .normal)
+                    Button2_R.backgroundColor = .orange
+                }
+                return
+            }
+            DispatchQueue.main.async {
+                Button2_R.setTitle("Send successfully,send again(\(time))", for: .normal)
+                Button2_R.backgroundColor = .gray
+            }
+            
+        }
+        codeTimer.activate()
         let menu = UIAlertController(title: "", message: "test", preferredStyle: .alert)
-        let option1 = UIAlertAction(title: "Cance", style: .cancel, handler: nil)
-        let option2 = UIAlertAction(title: "OK", style: .default, handler: nil)
+        //let option1 = UIAlertAction(title: "Cance", style: .cancel, handler: nil)
+        //let option2 = UIAlertAction(title: "OK", style: .default, handler: nil)
         
-        menu.addAction(option1)
-        menu.addAction(option2)
+        // menu.addAction(option1)
+        //menu.addAction(option2)
+        DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 1){
+            self.presentedViewController?.dismiss(animated: false, completion: nil)
+        }
         
         self.present(menu, animated: true, completion: nil)
     }

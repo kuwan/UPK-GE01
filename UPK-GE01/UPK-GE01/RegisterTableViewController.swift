@@ -7,9 +7,13 @@
 //
 
 import UIKit
+
 let CreatLabel = UITextField(frame: CGRect(x: 45*lengthPercent, y: 145*HeighPercent, width: screenWidth - 85*lengthPercent, height: 40*lengthPercent))
 let ConfirmLabel = UITextField(frame: CGRect(x: 45*lengthPercent, y: 190*HeighPercent, width: screenWidth - 85*lengthPercent, height: 40*lengthPercent))
- let Button1 = UIButton.init(frame: CGRect(x: 10*lengthPercent, y: 10*HeighPercent, width: 80*lengthPercent, height: 40*lengthPercent))
+let Button1 = UIButton.init(frame: CGRect(x: 10*lengthPercent, y: 10*HeighPercent, width: 80*lengthPercent, height: 40*lengthPercent))
+
+let Button2 = UIButton.init(frame: CGRect(x: 10*lengthPercent, y: 55*HeighPercent, width: screenWidth - 20*lengthPercent, height: 40*lengthPercent))
+
 class RegisterTableViewController: UITableViewController {
 
     override func viewDidLoad() {
@@ -36,7 +40,7 @@ class RegisterTableViewController: UITableViewController {
     }
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         
-        return screenHeight
+        return 280*HeighPercent//screenHeight
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -70,17 +74,16 @@ class RegisterTableViewController: UITableViewController {
         clearbutton.setImage(UIImage(named: "btn_clear"), for: .normal)
         cell.contentView.addSubview(clearbutton)
         
-        let Button2 = UIButton.init(frame: CGRect(x: 10*lengthPercent, y: 55*HeighPercent, width: self.view.frame.width - 10*lengthPercent, height: 40*lengthPercent))
+        //let Button2 = UIButton.init(frame: CGRect(x: 10*lengthPercent, y: 55*HeighPercent, width: self.view.frame.width - 10*lengthPercent, height: 40*lengthPercent))
+        Button2.setTitle("Click here to send verification code to your email or cell phone", for: .normal)
+        Button2.setTitleColor(.white, for: .normal)
+        Button2.backgroundColor = .orange
+        Button2.titleLabel?.font = UIFont.systemFont(ofSize: 15)
+        Button2.titleLabel?.numberOfLines = 0
+        Button2.titleLabel?.textAlignment = .center
         Button2.addTarget(self, action: #selector(Button2_action), for: .touchUpInside)
         cell.contentView.addSubview(Button2)
-        let label2 = UILabel.init(frame: CGRect(x: 10*lengthPercent, y: 55*HeighPercent, width: screenWidth - 10*lengthPercent, height: 40*lengthPercent))
-        label2.text = "Click here to send verification code to your email or cell phone"
-        label2.numberOfLines = 2
-        label2.font = label2.font.withSize(14*lengthPercent)
-        label2.textAlignment = .center
-        label2.textColor = UIColor.white
-        label2.backgroundColor = UIColor.orange
-        cell.contentView.addSubview(label2)
+      
        
         let image2 = UIImageView.init(frame: CGRect(x: 10*lengthPercent, y: 105*HeighPercent, width: 25*lengthPercent, height: 25*lengthPercent))
         image2.image = UIImage(named: "user_forgot_vcode")
@@ -101,7 +104,7 @@ class RegisterTableViewController: UITableViewController {
         CreatLabel.placeholder = "Creat Password"
         CreatLabel.isSecureTextEntry = true
         //label4.keyboardType = UIKeyboardType.default
-        self.view.addSubview(CreatLabel)
+        cell.contentView.addSubview(CreatLabel)
         let lineview4 = UIView.init(frame: CGRect(x: 10*lengthPercent, y: 185*HeighPercent, width: screenWidth - 20*lengthPercent, height: 2*lengthPercent))
         lineview4.backgroundColor = UIColor(red: 0/255.0, green: 204/255.0, blue: 204/255.0, alpha: 1)
         cell.contentView.addSubview(lineview4)
@@ -164,6 +167,33 @@ class RegisterTableViewController: UITableViewController {
     }
     @objc func Button2_action(button: UIButton){
         
+        var time = 60
+        let codeTimer = DispatchSource.makeTimerSource(flags: .init(rawValue: 0), queue: DispatchQueue.global())
+        codeTimer.schedule(deadline: .now(), repeating: .milliseconds(1000))
+        codeTimer.setEventHandler {
+            
+            time = time - 1
+            DispatchQueue.main.async {
+                
+                Button2.isEnabled = false //disable button2
+            }
+            if time < 0 {
+                
+                codeTimer.cancel()
+                DispatchQueue.main.async {
+                    Button2.isEnabled = true
+                    Button2.setTitle("Click here to send verification code to your email or cell phone", for: .normal)
+                    Button2.backgroundColor = .orange
+                }
+                return
+            }
+            DispatchQueue.main.async {
+                Button2.setTitle("Send successfully,send again(\(time))", for: .normal)
+                Button2.backgroundColor = .gray
+            }
+            
+        }
+        codeTimer.activate()
         let menu = UIAlertController(title: "", message: "test", preferredStyle: .alert)
         //let option1 = UIAlertAction(title: "Cance", style: .cancel, handler: nil)
         //let option2 = UIAlertAction(title: "OK", style: .default, handler: nil)

@@ -29,6 +29,9 @@ class ProgramLibraryViewController: UIViewController, UITableViewDelegate,UITabl
         // Do any additional setup after loading the view.
     }
     override func viewWillAppear(_ animated: Bool) {
+        
+        print("22222")
+        //self.navigationController?.popToRootViewController(animated: true)
         if ((self.navigationController?.viewControllers.count)!) > 1{
             
             self.tabBarController?.tabBar.isHidden = true

@@ -544,10 +544,10 @@
             </objects>
             <point key="canvasLocation" x="3392.8000000000002" y="1218.440779610195"/>
         </scene>
-        <!--Tab Bar Controller-->
+        <!--Tab Bar View Controller-->
         <scene sceneID="FM6-MK-C6s">
             <objects>
-                <tabBarController storyboardIdentifier="MainInterface" id="CJt-Ct-J0H" sceneMemberID="viewController">
+                <tabBarController storyboardIdentifier="MainInterface" id="CJt-Ct-J0H" customClass="TabBarViewController" customModule="UPK_GE01" customModuleProvider="target" sceneMemberID="viewController">
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="fsR-id-2Gt">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>

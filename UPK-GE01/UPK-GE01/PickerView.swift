@@ -134,13 +134,16 @@ class YDPickerView: UIPickerView {
         
         let toolBar = UIToolbar(frame: CGRect(x: 0, y: targetView.bounds.height - (kToolBarHeight + kPickerViewHeight + kBottomHeight), width: kScreenWidth, height: kToolBarHeight))
         let label = UILabel.init(frame: CGRect(x: 0, y: targetView.bounds.height - (kToolBarHeight + kPickerViewHeight + kBottomHeight), width: kScreenWidth, height: kToolBarHeight))
-        let cancelBtnItem = UIBarButtonItem(title: "取消", style: .plain, target: self, action: #selector(cancelBtnClick))
+        let cancelBtnItem = UIBarButtonItem(title: "Cancel", style: .plain, target: self, action: #selector(cancelBtnClick))
         cancelBtnItem.width = 60
         let spaceItem1 = UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: nil, action: nil)
+        let weightBtnItem = UIBarButtonItem(title: "", style: .plain, target: self, action: nil)
+        weightBtnItem.image = UIImage(named: "ico_weight")
+        weightBtnItem.width = 60
         let spaceItem2 = UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: nil, action: nil)
-        let completeBtnItem = UIBarButtonItem(title: "确定", style: .plain, target: self, action: #selector(completeBtnClick))
+        let completeBtnItem = UIBarButtonItem(title: "OK", style: .plain, target: self, action: #selector(completeBtnClick))
         completeBtnItem.width = 60
-        toolBar.items = [cancelBtnItem, spaceItem1, spaceItem2, completeBtnItem]
+        toolBar.items = [cancelBtnItem, spaceItem1, weightBtnItem, spaceItem2, completeBtnItem]
         toolBar.tintColor = kToolBarTintColor
         toolBar.barTintColor = kToolBarBackgroundColor
         

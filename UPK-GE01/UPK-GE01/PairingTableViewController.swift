@@ -52,13 +52,10 @@ class PairingTableViewController: UITableViewController {
     
     @objc private func buttonAction_Start(button: UIButton) {
         
-        let menu = UIAlertController(title: "Message", message: "test", preferredStyle: .alert)
-        let option1 = UIAlertAction(title: "CANCEL", style: .cancel, handler: nil)
-        let option2 = UIAlertAction(title: "OK", style: .default, handler: nil)
-        
-        menu.addAction(option1)
-        menu.addAction(option2)
-        
+        let menu = UIAlertController(title: "", message: "test", preferredStyle: .alert)
+        DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 1){
+            self.presentedViewController?.dismiss(animated: false, completion: nil)
+        }
         self.present(menu, animated: true, completion: nil)
         
     }
