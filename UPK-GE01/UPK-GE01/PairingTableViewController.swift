@@ -15,6 +15,8 @@ class PairingTableViewController: UITableViewController {
         self.navigationItem.title = "Pairing"
         self.tabBarController?.hidesBottomBarWhenPushed = true
         self.tabBarController?.tabBar.isHidden = true
+        //let item = UIBarButtonItem(title: "", style: .plain, target: self, action: nil)
+       // self.navigationItem.backBarButtonItem = item
         Add_label()
         Add_button()
         // Uncomment the following line to preserve selection between presentations
@@ -25,23 +27,23 @@ class PairingTableViewController: UITableViewController {
     }
     func Add_label(){
         
-        let label1 = UILabel.init(frame: CGRect(x: 10, y: 10, width: 255, height: 20))
+        let label1 = UILabel.init(frame: CGRect(x: 10*lengthPercent, y: 10*HeighPercent, width: 255*lengthPercent, height: 20*lengthPercent))
         label1.text = "test"
-        label1.font = label1.font.withSize(14)
+        label1.font = label1.font.withSize(14*lengthPercent)
         label1.textAlignment = .center
         self.view.addSubview(label1)
         
     }
     func Add_button(){
         
-        let button1 = UIButton.init(frame: CGRect(x: 20, y: 500, width: 160, height: 40))
-        button1.backgroundColor = UIColor(red: 9/255.0, green: 187/255.0, blue: 7/255.0, alpha: 1)
+        let button1 = UIButton.init(frame: CGRect(x: 20*lengthPercent, y: 560*HeighPercent, width: 160*lengthPercent, height: 40*lengthPercent))
+        button1.backgroundColor = UIColor(red: 0/255.0, green: 204/255.0, blue: 204/255.0, alpha: 1)
         button1.setTitle("(RE)START", for: .normal)
         button1.addTarget(self, action: #selector(buttonAction_Start), for: .touchUpInside)
         self.view.addSubview(button1)
         
-        let button2 = UIButton.init(frame: CGRect(x: 195, y: 500, width: 160, height: 40))
-        button2.backgroundColor = UIColor(red: 9/255.0, green: 187/255.0, blue: 7/255.0, alpha: 1)
+        let button2 = UIButton.init(frame: CGRect(x: 195*lengthPercent, y: 560*HeighPercent, width: 160*lengthPercent, height: 40*lengthPercent))
+        button2.backgroundColor = UIColor(red: 0/255.0, green: 204/255.0, blue: 204/255.0, alpha: 1)
         button2.setTitle("SKIP", for: .normal)
         button2.addTarget(self, action: #selector(buttonAction_Skip), for: .touchUpInside)
         self.view.addSubview(button2)
@@ -50,19 +52,29 @@ class PairingTableViewController: UITableViewController {
     
     @objc private func buttonAction_Start(button: UIButton) {
         
-        let menu = UIAlertController(title: "Message", message: "test", preferredStyle: .alert)
-        let option1 = UIAlertAction(title: "CANCEL", style: .cancel, handler: nil)
-        let option2 = UIAlertAction(title: "OK", style: .default, handler: nil)
-        
-        menu.addAction(option1)
-        menu.addAction(option2)
-        
+        let menu = UIAlertController(title: "", message: "test", preferredStyle: .alert)
+        DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 1){
+            self.presentedViewController?.dismiss(animated: false, completion: nil)
+        }
         self.present(menu, animated: true, completion: nil)
         
     }
     @objc private func buttonAction_Skip(button: UIButton) {
         
-        self.navigationController?.popToRootViewController(animated: true)
+        //self.tabBarController?.selectedIndex = 1
+        //self.navigationController?.popToRootViewController(animated: true)
+        //self.navigationController = TestViewController()
+        //self.navigationController?.delegate = TestViewController() as! UINavigationControllerDelegate
+      //  let vc = ControlPannelViewController()//TabBarViewController()
+        //vc.index = 1
+        
+       // self.present(vc, animated: true, completion: nil)
+        //self.navigationController?.present(vc, animated: true, completion: nil)
+        //self.navigationController?.pushViewController(vc, animated: true)
+        let deststoryboard = UIStoryboard(name: "Content", bundle: nil)
+        let destvc = deststoryboard.instantiateViewController(withIdentifier: "MainInterface")
+        self.present(destvc, animated: true, completion: nil)
+      
         
     }
     // MARK: - Table view data source

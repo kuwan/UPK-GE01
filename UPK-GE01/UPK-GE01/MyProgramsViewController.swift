@@ -14,14 +14,21 @@ class MyProgramsViewController: UIViewController,UITableViewDelegate,UITableView
     var index_selectd = 0
     //var test_view: UItableview?
     var menu = [["Start New Session"], ["Select from My Favorite"], ["Repeat Last Program"], ["Recommended for You"], ["My Treatment Diary"]]
-    var menu_image = ["pic","pic","pic","pic","pic"]
+    var menu_image = ["icon_main_start","icon_main_favorite","icon_main_repeat","icon_main_recommended","icon_main_diary"]
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        //screenWidth = self.view.frame.width
+        //screenHeight = self.view.frame.height
         self.navigationItem.title = "RelieforMe"
+        self.navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.white
+            , NSAttributedString.Key.font:UIFont.systemFont(ofSize: 25*lengthPercent)]
         let item = UIBarButtonItem(title: "", style: .plain, target: self, action: nil)
         self.navigationItem.backBarButtonItem = item
+        self.navigationController?.navigationBar.barTintColor = UIColor(red: 0/255.0, green: 204/255.0, blue: 204/255.0, alpha: 1)
+        self.tabBarController?.tabBar.tintColor = UIColor(red: 0/255.0, green: 204/255.0, blue: 204/255.0, alpha: 1)
+       // self.tabB
         // title = "My programs"
        // self.navigationItem.title = "RelieforMe"
         //self.tabBarController?.hidesBottomBarWhenPushed = false
@@ -52,32 +59,35 @@ class MyProgramsViewController: UIViewController,UITableViewDelegate,UITableView
     }
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
         
-        return 10
+        return 10*lengthPercent
     }
     
     func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
         
-        return  10
+        return  10*lengthPercent
     }
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "cell_myprograms", for: indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: "cell_myprograms", for: indexPath)as! MyProgramTableViewCell
+        //cell.selectionStyle = UITableViewCell.SelectionStyle.none
         // print(indexPath.section)
-        cell.imageView?.image = UIImage(named:menu_image[indexPath.section])
-        cell.textLabel?.text = menu[indexPath.section][indexPath.row]
-        cell.textLabel?.textColor = UIColor(red: 9/255.0, green: 187/255.0, blue: 7/255.0, alpha: 1)
+        cell.MyImage.image = UIImage(named:menu_image[indexPath.section])
+        cell.MyLabel.text = menu[indexPath.section][indexPath.row]
+       // cell.imageView?.image = UIImage(named:menu_image[indexPath.section])
+        //cell.textLabel?.text = menu[indexPath.section][indexPath.row]
+       // cell.textLabel?.textColor = UIColor(red: 0/255.0, green: 204/255.0, blue: 204/255.0, alpha: 1)
         //tableView.indexPathForSelectedRow!.section
         return cell
     }
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         
-        return 84
+        return 84*lengthPercent
     }
     //  override func addChild(_ childController: UIViewController) {
     
     //}
   func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
     
-        //tableView.deselectRow(at: indexPath, animated: true)
+        tableView.deselectRow(at: indexPath, animated: true)
         if indexPath.section == 0 {
         
             let qrcodeVC = StartNewSessionTableViewController()
@@ -100,6 +110,12 @@ class MyProgramsViewController: UIViewController,UITableViewDelegate,UITableView
         if indexPath.section == 4 {
             
             let qrcodeVC = MyDiaryTableViewController()
+            print("\(String(describing: self.navigationController?.navigationBar.frame.size.height))------------nav height")
+            print("\(self.view.frame.width)------------w height")
+            print("\((self.view.frame.height))------------h height")
+             print("\((screenHeight))------------h height")
+            print("\((screenWidth))------------h height")
+            
             navigationController?.pushViewController(qrcodeVC, animated: true)
         }
     }

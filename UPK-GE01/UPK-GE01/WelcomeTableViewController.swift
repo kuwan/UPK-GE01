@@ -37,7 +37,7 @@ class WelcomeTableViewController: UITableViewController {
     }
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         
-        return self.view.frame.height
+        return screenHeight
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -46,21 +46,21 @@ class WelcomeTableViewController: UITableViewController {
         
       
         
-        let Label1 = UILabel.init(frame: CGRect(x: 20, y: 100, width: self.view.frame.width - 40, height: 40))
+        let Label1 = UILabel.init(frame: CGRect(x: 20*lengthPercent, y: 100*HeighPercent, width: screenWidth - 40*lengthPercent, height: 40*lengthPercent))
         Label1.text = "Hi,zzzzzzz"
         self.view.addSubview(Label1)
         
        
         
-        let label2 = UILabel.init(frame: CGRect(x: 20, y: 145, width: self.view.frame.width - 40, height: 60))
+        let label2 = UILabel.init(frame: CGRect(x: 20*lengthPercent, y: 145*HeighPercent, width: screenWidth - 40*lengthPercent, height: 60*lengthPercent))
         label2.text = "Before we get started,please read the following warnings."
         label2.numberOfLines = 2
         self.view.addSubview(label2)
         
        
         
-        let Button_Next = UIButton.init(frame: CGRect(x: 10, y: 560, width: self.view.frame.width - 20, height: 40))
-        Button_Next.backgroundColor = UIColor(red: 9/255.0, green: 187/255.0, blue: 7/255.0, alpha: 1)
+        let Button_Next = UIButton.init(frame: CGRect(x: 10*lengthPercent, y: 560*HeighPercent, width: screenWidth - 20*lengthPercent, height: 40*lengthPercent))
+        Button_Next.backgroundColor = UIColor(red: 0/255.0, green: 204/255.0, blue: 204/255.0, alpha: 1)
         Button_Next.setTitle("Next", for: .normal)
         Button_Next.addTarget(self, action: #selector(ButtonNext_action), for: .touchUpInside)
         cell.contentView.addSubview(Button_Next)

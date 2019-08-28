@@ -1,25 +1,69 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.16" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" launchScreen="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="01J-lp-oVM">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" launchScreen="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="652-0j-h0R">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
-        <scene sceneID="EHf-IW-A2E">
+        <scene sceneID="65n-x3-sXn">
             <objects>
-                <viewController id="01J-lp-oVM" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="Ze5-6b-2t3">
+                <viewController id="652-0j-h0R" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="6rx-ei-5O5">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="people" translatesAutoresizingMaskIntoConstraints="NO" id="4Ip-8n-ePe">
+                                <rect key="frame" x="127.5" y="125" width="120" height="128"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="120" id="Ry1-UI-QMN"/>
+                                    <constraint firstAttribute="height" constant="128" id="oBd-Cr-wTZ"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="RelieforMe" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Iqh-50-CQE">
+                                <rect key="frame" x="134" y="268" width="107" height="49"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="49" id="839-0s-6QW"/>
+                                    <constraint firstAttribute="width" constant="107" id="onE-hq-8to"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="23"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="V01.01" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nQc-Qh-gXq">
+                                <rect key="frame" x="155.5" y="386" width="64" height="51"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="64" id="aXz-Wa-Gdq"/>
+                                    <constraint firstAttribute="height" constant="51" id="mff-61-Fch"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="21"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <constraints>
+                            <constraint firstItem="4Ip-8n-ePe" firstAttribute="top" secondItem="Gd7-sP-Unw" secondAttribute="top" constant="105" id="3od-iA-eQF"/>
+                            <constraint firstItem="Iqh-50-CQE" firstAttribute="centerX" secondItem="6rx-ei-5O5" secondAttribute="centerX" id="9In-hg-BNP"/>
+                            <constraint firstItem="Iqh-50-CQE" firstAttribute="top" secondItem="4Ip-8n-ePe" secondAttribute="bottom" constant="15" id="GDy-7T-s8Q"/>
+                            <constraint firstItem="nQc-Qh-gXq" firstAttribute="centerX" secondItem="6rx-ei-5O5" secondAttribute="centerX" id="IKc-sD-GIq"/>
+                            <constraint firstItem="nQc-Qh-gXq" firstAttribute="top" secondItem="Iqh-50-CQE" secondAttribute="bottom" constant="69" id="ILZ-32-CUI"/>
+                            <constraint firstItem="4Ip-8n-ePe" firstAttribute="centerX" secondItem="6rx-ei-5O5" secondAttribute="centerX" id="wpz-fO-RUA"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="Gd7-sP-Unw"/>
                     </view>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="iYj-Kq-Ea1" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="xpi-Jg-oHu" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="53" y="375"/>
+            <point key="canvasLocation" x="-200.80000000000001" y="183.95802098950526"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="people" width="365" height="370"/>
+    </resources>
 </document>

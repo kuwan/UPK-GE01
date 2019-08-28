@@ -35,46 +35,62 @@ class AboutSoftwareTableViewController: UITableViewController {
     }
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         
-        return self.view.frame.height
+        return screenHeight
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = UITableViewCell.init(style: .default, reuseIdentifier: nil)
         cell.selectionStyle = UITableViewCell.SelectionStyle.none
         
-        let AppImage = UIImageView.init(frame: CGRect(x: self.view.frame.width/2 - 40, y: 50, width: 80, height: 80))
-        AppImage.image = UIImage(named: "pic1")
+        let AppImage = UIImageView.init(frame: CGRect(x: screenWidth/2 - 40*lengthPercent, y: 50*HeighPercent, width: 80*lengthPercent, height: 80*lengthPercent))
+        AppImage.image = UIImage(named: "ic_launcher")
         cell.contentView.addSubview(AppImage)
         
-        let AppName = UILabel.init(frame: CGRect(x: 0, y: 150, width: self.view.frame.width, height: 50))
+        let AppName = UILabel.init(frame: CGRect(x: 0, y: 150*HeighPercent, width: screenWidth, height: 50*lengthPercent))
         AppName.text = "RelieforMe"
         AppName.textAlignment = .center
-        AppName.font = AppName.font.withSize(22)
+        AppName.font = AppName.font.withSize(22*lengthPercent)
         cell.contentView.addSubview(AppName)
+       
+       
+        let lineview1 = UIView.init(frame: CGRect(x: 10*lengthPercent, y: 300*HeighPercent, width: screenWidth - 20*lengthPercent, height: 1*lengthPercent))
+        lineview1.backgroundColor = UIColor.gray
+        self.view.addSubview(lineview1)
         
-        let AppVersion = UILabel.init(frame: CGRect(x: 10, y: 300, width: self.view.frame.width/2 - 10, height: 50))
+        let AppVersion = UILabel.init(frame: CGRect(x: 10*lengthPercent, y: 300*HeighPercent, width: screenWidth/2 - 10*lengthPercent, height: 50*lengthPercent))
         AppVersion.text = "APP Version"
         AppVersion.textAlignment = .left
-        AppVersion.font = AppName.font.withSize(19)
+        AppVersion.font = AppName.font.withSize(19*lengthPercent)
         cell.contentView.addSubview(AppVersion)
+       
         
-        let AppVersion1 = UILabel.init(frame: CGRect(x: self.view.frame.width/2, y: 300, width: self.view.frame.width/2 - 10, height: 50))
+        let AppVersion1 = UILabel.init(frame: CGRect(x: screenWidth/2, y: 300*HeighPercent, width: screenWidth/2 - 10*lengthPercent, height: 50*lengthPercent))
         AppVersion1.text = "04.05"
         AppVersion1.textAlignment = .right
-        AppVersion1.font = AppName.font.withSize(19)
+        AppVersion1.font = AppName.font.withSize(19*lengthPercent)
         cell.contentView.addSubview(AppVersion1)
         
-        let FwVersion = UILabel.init(frame: CGRect(x: 10, y: 360, width: self.view.frame.width/2 - 10, height: 40))
+        
+        let lineview2 = UIView.init(frame: CGRect(x: 10*lengthPercent, y: 350*HeighPercent, width: screenWidth - 20*lengthPercent, height: 1*lengthPercent))
+        lineview2.backgroundColor = UIColor.gray
+        self.view.addSubview(lineview2)
+        
+        let FwVersion = UILabel.init(frame: CGRect(x: 10*lengthPercent, y: 360*HeighPercent, width: screenWidth/2 - 10*lengthPercent, height: 40*lengthPercent))
         FwVersion.text = "Firmware Version"
         FwVersion.textAlignment = .left
-        FwVersion.font = AppName.font.withSize(19)
+        FwVersion.font = AppName.font.withSize(19*lengthPercent)
         cell.contentView.addSubview(FwVersion)
         
-        let FwVersion1 = UILabel.init(frame: CGRect(x: self.view.frame.width/2, y: 350, width: self.view.frame.width/2 - 10, height: 40))
+        let FwVersion1 = UILabel.init(frame: CGRect(x: screenWidth/2, y: 360*HeighPercent, width: screenWidth/2 - 10*lengthPercent, height: 40*lengthPercent))
         FwVersion1.text = "04.01"
         FwVersion1.textAlignment = .right
-        FwVersion1.font = AppName.font.withSize(19)
+        FwVersion1.font = AppName.font.withSize(19*lengthPercent)
         cell.contentView.addSubview(FwVersion1)
+        
+        
+        let lineview3 = UIView.init(frame: CGRect(x: 10*lengthPercent, y: 400*HeighPercent, width: screenWidth - 20*lengthPercent, height: 1*lengthPercent))
+        lineview3.backgroundColor = UIColor.gray
+        self.view.addSubview(lineview3)
         
 
         return cell

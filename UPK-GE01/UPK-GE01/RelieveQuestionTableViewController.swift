@@ -7,25 +7,31 @@
 //
 
 import UIKit
-let question2_A = UIButton.init(frame: CGRect(x: 50, y: 215, width: UIScreen.main.bounds.width - 50, height: 25))
-let question2_B = UIButton.init(frame: CGRect(x: 50, y: 245, width: UIScreen.main.bounds.width - 50, height: 25))
-let question2_C = UIButton.init(frame: CGRect(x: 50, y: 275, width: UIScreen.main.bounds.width - 50, height: 25))
-let question2_D = UIButton.init(frame: CGRect(x: 50, y: 305, width: UIScreen.main.bounds.width - 50, height: 25))
-let question2_E = UIButton.init(frame: CGRect(x: 50, y: 335, width: UIScreen.main.bounds.width - 50, height: 25))
 
-let question4_A = UIButton.init(frame: CGRect(x: 10, y: 525, width: 40, height: 25))
-let question4_B = UIButton.init(frame: CGRect(x: 60, y: 525, width: 40, height: 25))
-let question4_C = UIButton.init(frame: CGRect(x: 110, y: 525, width: 40, height: 25))
-let question4_D = UIButton.init(frame: CGRect(x: 160, y: 525, width: 50, height: 25))
-let question4_E = UIButton.init(frame: CGRect(x: 220, y: 525, width: 60, height: 25))
-let question4_F = UIButton.init(frame: CGRect(x: 290, y: 525, width: 60, height: 25))
+let question2_A = UIButton.init(frame: CGRect(x: 50*lengthPercent, y: 215*HeighPercent, width: screenWidth - 50*lengthPercent, height: 25*lengthPercent))
+let question2_B = UIButton.init(frame: CGRect(x: 50*lengthPercent, y: 245*HeighPercent, width: screenWidth - 50, height: 25*lengthPercent))
+let question2_C = UIButton.init(frame: CGRect(x: 50*lengthPercent, y: 275*HeighPercent, width: screenWidth - 50, height: 25*lengthPercent))
+let question2_D = UIButton.init(frame: CGRect(x: 50*lengthPercent, y: 305*HeighPercent, width: screenWidth - 50, height: 25*lengthPercent))
+let question2_E = UIButton.init(frame: CGRect(x: 50*lengthPercent, y: 335*HeighPercent, width: screenWidth - 50, height: 25*lengthPercent))
 
-let slider_level = UILabel.init(frame: CGRect(x: 0, y: 420, width: UIScreen.main.bounds.width, height: 20))
+let question4_A = UIButton.init(frame: CGRect(x: 10*lengthPercent, y: 525*HeighPercent, width: 40*lengthPercent, height: 25*lengthPercent))
+let question4_B = UIButton.init(frame: CGRect(x: 60*lengthPercent, y: 525*HeighPercent, width: 40*lengthPercent, height: 25*lengthPercent))
+let question4_C = UIButton.init(frame: CGRect(x: 110*lengthPercent, y: 525*HeighPercent, width: 40*lengthPercent, height: 25*lengthPercent))
+let question4_D = UIButton.init(frame: CGRect(x: 160*lengthPercent, y: 525*HeighPercent, width: 50*lengthPercent, height: 25*lengthPercent))
+let question4_E = UIButton.init(frame: CGRect(x: 220*lengthPercent, y: 525*HeighPercent, width: 60*lengthPercent, height: 25*lengthPercent))
+let question4_F = UIButton.init(frame: CGRect(x: 290*lengthPercent, y: 525*HeighPercent, width: 60*lengthPercent, height: 25*lengthPercent))
+
+let slider_level = UILabel.init(frame: CGRect(x: 0, y: 420*HeighPercent, width: screenWidth, height: 20*lengthPercent))
+
+let ButtonSelect = UIButton.init(frame: CGRect(x: 10*lengthPercent, y: 155*HeighPercent, width: screenWidth - 20*lengthPercent, height: 25*lengthPercent))
+
 class RelieveQuestionTableViewController: UITableViewController {
 
     var position = "Thigh"
     override func viewDidLoad() {
         super.viewDidLoad()
+        //screenWidth = self.view.frame.width
+        //screenHeight = self.view.frame.height
         self.navigationItem.title = "Relieve"
         let item = UIBarButtonItem(title: "", style: .plain, target: self, action: nil)
         self.navigationItem.backBarButtonItem = item
@@ -38,15 +44,15 @@ class RelieveQuestionTableViewController: UITableViewController {
     }
     func AddPositon(string: String){
         
-        let label1 = UILabel.init(frame: CGRect(x: 0, y: 10, width: self.view.frame.width, height: 30))
+        let label1 = UILabel.init(frame: CGRect(x: 0, y: 10*HeighPercent, width: screenWidth, height: 30*lengthPercent))
         label1.text = string
         label1.textAlignment = .center
         self.view.addSubview(label1)
         
-        let label2 = UILabel.init(frame: CGRect(x: 10, y: 40, width: self.view.frame.width, height: 50))
+        let label2 = UILabel.init(frame: CGRect(x: 10*lengthPercent, y: 40*HeighPercent, width: screenWidth, height: 50*lengthPercent))
         label2.text = "Tell us about the pain you have experienced over the last two weeks"
         label2.textAlignment = .left
-        label2.font = label2.font.withSize(15)
+        label2.font = label2.font.withSize(15*lengthPercent)
         label2.numberOfLines = 2
         self.view.addSubview(label2)
         
@@ -64,34 +70,32 @@ class RelieveQuestionTableViewController: UITableViewController {
     }
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         
-        return  self.view.frame.height
+        return  screenHeight
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = UITableViewCell.init(style: .default, reuseIdentifier: nil)
         cell.selectionStyle = UITableViewCell.SelectionStyle.none
         
-        let Squestion1 = UILabel.init(frame: CGRect(x: 10, y: 100, width: self.view.frame.width, height: 50))
+        let Squestion1 = UILabel.init(frame: CGRect(x: 10*lengthPercent, y: 100*HeighPercent, width: screenWidth, height: 50*lengthPercent))
         Squestion1.text = "(1)About how many days in the past w weeks have you been in pain?"
         Squestion1.textAlignment = .left
-        Squestion1.font = Squestion1.font.withSize(15)
+        Squestion1.font = Squestion1.font.withSize(15*lengthPercent)
         Squestion1.numberOfLines = 2
         cell.contentView.addSubview(Squestion1)
-        let button_select = UIButton.init(frame: CGRect(x: 10, y: 155, width: self.view.frame.width - 20, height: 25))
+        //let button_select = UIButton.init(frame: CGRect(x: 10, y: 155, width: self.view.frame.width - 20, height: 25))
+        ButtonSelect.backgroundColor = UIColor.white
+        ButtonSelect.setTitle("0", for: .normal)
+        ButtonSelect.setTitleColor(UIColor.black, for: .normal)
+        ButtonSelect.contentHorizontalAlignment = .left
+        ButtonSelect.addTarget(self, action: #selector(button_select2), for: .touchUpInside)
+        cell.contentView.addSubview(ButtonSelect)   
         
-        button_select.backgroundColor = UIColor(red: 9/255.0, green: 187/255.0, blue: 7/255.0, alpha: 1)
-        button_select.setTitle("0", for: .normal)
-        button_select.addTarget(self, action: #selector(button_select2), for: .touchUpInside)
-        cell.contentView.addSubview(button_select)
-       
-        
-        
-        
-        let Squestion2 = UILabel.init(frame: CGRect(x: 10, y: 185, width: self.view.frame.width, height: 25))
+        let Squestion2 = UILabel.init(frame: CGRect(x: 10*lengthPercent, y: 185*HeighPercent, width: screenWidth, height: 25*lengthPercent))
         Squestion2.text = "(2)About how long have you had this pain?"
         Squestion2.textAlignment = .left
         Squestion2.numberOfLines = 2
-        Squestion2.font = Squestion2.font.withSize(15)
+        Squestion2.font = Squestion2.font.withSize(15*lengthPercent)
         cell.contentView.addSubview(Squestion2)
         AddSelectButton(button: question2_A,string: " For the past few days")
         cell.contentView.addSubview(question2_A)
@@ -105,39 +109,39 @@ class RelieveQuestionTableViewController: UITableViewController {
         cell.contentView.addSubview(question2_E)
         
         
-        let Squestion3 = UILabel.init(frame: CGRect(x: 10, y: 375, width: self.view.frame.width, height: 40))
+        let Squestion3 = UILabel.init(frame: CGRect(x: 10*lengthPercent, y: 375*HeighPercent, width: self.view.frame.width, height: 40*lengthPercent))
         Squestion3.text = "(3)On the days that you have been in pain over the last 2 weeks,what has been your usual level of pain?"
         Squestion3.textAlignment = .left
         Squestion3.numberOfLines = 2
-        Squestion3.font = Squestion3.font.withSize(15)
+        Squestion3.font = Squestion3.font.withSize(15*lengthPercent)
         cell.contentView.addSubview(Squestion3)
-        let slider_start = UILabel.init(frame: CGRect(x: 10, y: 455, width: 20, height: 20))
+        let slider_start = UILabel.init(frame: CGRect(x: 10*lengthPercent, y: 455*HeighPercent, width: 20*lengthPercent, height: 20*lengthPercent))
         slider_start.text = "0"
-        slider_start.textColor = UIColor.green
+        slider_start.textColor = UIColor(red: 0/255.0, green: 204/255.0, blue: 204/255.0, alpha: 1)
         cell.contentView.addSubview(slider_start)
-        let slider_end = UILabel.init(frame: CGRect(x: 345, y: 455, width: 20, height: 20))
+        let slider_end = UILabel.init(frame: CGRect(x: 345*lengthPercent, y: 455*HeighPercent, width: 20*lengthPercent, height: 20*lengthPercent))
         slider_end.text = "10"
-        slider_end.textColor = UIColor.green
+        slider_end.textColor = UIColor(red: 0/255.0, green: 204/255.0, blue: 204/255.0, alpha: 1)
         cell.contentView.addSubview(slider_end)
-        let slider = UISlider(frame: CGRect(x: 35, y: 455, width: 300, height: 10))
+        let slider = UISlider(frame: CGRect(x: 35*lengthPercent, y: 455*HeighPercent, width: 300*lengthPercent, height: 10*lengthPercent))
         slider.minimumValue = 0
         slider.maximumValue = 10
         slider.value = 0
-        slider.minimumTrackTintColor = UIColor.green
+        slider.minimumTrackTintColor = UIColor(red: 0/255.0, green: 204/255.0, blue: 204/255.0, alpha: 1)
         slider.maximumTrackTintColor = UIColor.gray
         slider.addTarget(self, action: #selector(SliderDidChange(_:)), for: .valueChanged)
         cell.contentView.addSubview(slider)
-        slider_level.textColor = UIColor.green
+        slider_level.textColor = UIColor(red: 0/255.0, green: 204/255.0, blue: 204/255.0, alpha: 1)
         slider_level.textAlignment = .center
         slider_level.text = "No pain - 0"
         cell.contentView.addSubview(slider_level)
       
         
-        let Squestion4 = UILabel.init(frame: CGRect(x: 10, y: 470, width: self.view.frame.width, height: 50))
+        let Squestion4 = UILabel.init(frame: CGRect(x: 10*lengthPercent, y: 470*HeighPercent, width: screenWidth, height: 50*lengthPercent))
         Squestion4.text = "(4)On average,how many hours has this usual pain lasted each day?"
         Squestion4.textAlignment = .left
         Squestion4.numberOfLines = 2
-        Squestion4.font = Squestion4.font.withSize(15)
+        Squestion4.font = Squestion4.font.withSize(15*lengthPercent)
         cell.contentView.addSubview(Squestion4)
         AddSelectButton1(button: question4_A,string: " 1-2")
         cell.contentView.addSubview(question4_A)
@@ -152,8 +156,8 @@ class RelieveQuestionTableViewController: UITableViewController {
         AddSelectButton1(button: question4_F,string: " 18-24")
         cell.contentView.addSubview(question4_F)
         
-        let button_next = UIButton.init(frame: CGRect(x: 10, y: 560, width: self.view.frame.width - 20, height: 40))
-        button_next.backgroundColor = UIColor(red: 9/255.0, green: 187/255.0, blue: 7/255.0, alpha: 1)
+        let button_next = UIButton.init(frame: CGRect(x: 10*lengthPercent, y: 560*HeighPercent, width: screenWidth - 20*lengthPercent, height: 40*lengthPercent))
+        button_next.backgroundColor = UIColor(red: 0/255.0, green: 204/255.0, blue: 204/255.0, alpha: 1)
         // button_next.setImage(UIImage(named: "pic"), for: .normal)
         button_next.setTitle("Next", for: .normal)
         button_next.addTarget(self, action: #selector(buttonAction_next), for: .touchUpInside)
@@ -164,14 +168,17 @@ class RelieveQuestionTableViewController: UITableViewController {
     }
     @objc private func buttonAction_next(button: UIButton) {
         
-        if (question2_A.imageView?.image == UIImage(named: "pic")
-            && question2_B.imageView?.image == UIImage(named: "pic") && question2_C.imageView?.image == UIImage(named: "pic") && question2_D.imageView?.image == UIImage(named: "pic") && question2_E.imageView?.image == UIImage(named: "pic")) ||  (question4_A.imageView?.image == UIImage(named: "pic") && question4_B.imageView?.image == UIImage(named: "pic") && question4_C.imageView?.image == UIImage(named: "pic") && question4_D.imageView?.image == UIImage(named: "pic") && question4_E.imageView?.image == UIImage(named: "pic")){
+        if (question2_A.imageView?.image == UIImage(named: "btn_unselected")
+            && question2_B.imageView?.image == UIImage(named: "btn_unselected") && question2_C.imageView?.image == UIImage(named: "btn_unselected") && question2_D.imageView?.image == UIImage(named: "btn_unselected") && question2_E.imageView?.image == UIImage(named: "btn_unselected")) ||  (question4_A.imageView?.image == UIImage(named: "btn_unselected") && question4_B.imageView?.image == UIImage(named: "btn_unselected") && question4_C.imageView?.image == UIImage(named: "btn_unselected") && question4_D.imageView?.image == UIImage(named: "btn_unselected") && question4_E.imageView?.image == UIImage(named: "btn_unselected")){
             
             let menu = UIAlertController(title: "", message: "Please fill in all questions", preferredStyle: .alert)
-            let option1 = UIAlertAction(title: "CANCEL", style: .cancel, handler: nil)
-            let option2 = UIAlertAction(title: "OK", style: .default, handler: nil)
-            menu.addAction(option1)
-            menu.addAction(option2)
+            //let option1 = UIAlertAction(title: "CANCEL", style: .cancel, handler: nil)
+            //let option2 = UIAlertAction(title: "OK", style: .default, handler: nil)
+            //menu.addAction(option1)
+            //menu.addAction(option2)
+            DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 1){
+                self.presentedViewController?.dismiss(animated: false, completion: nil)
+            }
             
             self.present(menu, animated: true, completion: nil)
             
@@ -186,8 +193,7 @@ class RelieveQuestionTableViewController: UITableViewController {
         
         sender.value.round()
         //print(sender.value)
-       
-        slider_level.textColor = UIColor.green
+        
         slider_level.textAlignment = .center
         switch sender.value {
         case 0.0:
@@ -223,60 +229,60 @@ class RelieveQuestionTableViewController: UITableViewController {
         switch button {
         
         case question2_A:
-            question2_B.setImage(UIImage(named: "pic"), for: .normal)
-            question2_C.setImage(UIImage(named: "pic"), for: .normal)
-            question2_D.setImage(UIImage(named: "pic"), for: .normal)
-            question2_E.setImage(UIImage(named: "pic"), for: .normal)
-            if button.imageView?.image == UIImage(named: "pic"){
-                button.setImage(UIImage(named: "picHL"), for: .normal)
+            question2_B.setImage(UIImage(named: "btn_unselected"), for: .normal)
+            question2_C.setImage(UIImage(named: "btn_unselected"), for: .normal)
+            question2_D.setImage(UIImage(named: "btn_unselected"), for: .normal)
+            question2_E.setImage(UIImage(named: "btn_unselected"), for: .normal)
+            if button.imageView?.image == UIImage(named: "btn_unselected"){
+                button.setImage(UIImage(named: "btn_selected"), for: .normal)
             }
             else{
                 
                 //button.setImage(UIImage(named: "pic"), for: .normal)
             }
         case question2_B:
-            question2_A.setImage(UIImage(named: "pic"), for: .normal)
-            question2_C.setImage(UIImage(named: "pic"), for: .normal)
-            question2_D.setImage(UIImage(named: "pic"), for: .normal)
-            question2_E.setImage(UIImage(named: "pic"), for: .normal)
-            if button.imageView?.image == UIImage(named: "pic"){
-                button.setImage(UIImage(named: "picHL"), for: .normal)
+            question2_A.setImage(UIImage(named: "btn_unselected"), for: .normal)
+            question2_C.setImage(UIImage(named: "btn_unselected"), for: .normal)
+            question2_D.setImage(UIImage(named: "btn_unselected"), for: .normal)
+            question2_E.setImage(UIImage(named: "btn_unselected"), for: .normal)
+            if button.imageView?.image == UIImage(named: "btn_unselected"){
+                button.setImage(UIImage(named: "btn_selected"), for: .normal)
             }
             else{
                 
                 //button.setImage(UIImage(named: "pic"), for: .normal)
             }
         case question2_C:
-            question2_B.setImage(UIImage(named: "pic"), for: .normal)
-            question2_A.setImage(UIImage(named: "pic"), for: .normal)
-            question2_D.setImage(UIImage(named: "pic"), for: .normal)
-            question2_E.setImage(UIImage(named: "pic"), for: .normal)
-            if button.imageView?.image == UIImage(named: "pic"){
-                button.setImage(UIImage(named: "picHL"), for: .normal)
+            question2_B.setImage(UIImage(named: "btn_unselected"), for: .normal)
+            question2_A.setImage(UIImage(named: "btn_unselected"), for: .normal)
+            question2_D.setImage(UIImage(named: "btn_unselected"), for: .normal)
+            question2_E.setImage(UIImage(named: "btn_unselected"), for: .normal)
+            if button.imageView?.image == UIImage(named: "btn_unselected"){
+                button.setImage(UIImage(named: "btn_selected"), for: .normal)
             }
             else{
                 
                 //button.setImage(UIImage(named: "pic"), for: .normal)
             }
         case question2_D:
-            question2_B.setImage(UIImage(named: "pic"), for: .normal)
-            question2_C.setImage(UIImage(named: "pic"), for: .normal)
-            question2_A.setImage(UIImage(named: "pic"), for: .normal)
-            question2_E.setImage(UIImage(named: "pic"), for: .normal)
-            if button.imageView?.image == UIImage(named: "pic"){
-                button.setImage(UIImage(named: "picHL"), for: .normal)
+            question2_B.setImage(UIImage(named: "btn_unselected"), for: .normal)
+            question2_C.setImage(UIImage(named: "btn_unselected"), for: .normal)
+            question2_A.setImage(UIImage(named: "btn_unselected"), for: .normal)
+            question2_E.setImage(UIImage(named: "btn_unselected"), for: .normal)
+            if button.imageView?.image == UIImage(named: "btn_unselected"){
+                button.setImage(UIImage(named: "btn_selected"), for: .normal)
             }
             else{
                 
                 //button.setImage(UIImage(named: "pic"), for: .normal)
             }
         case question2_E:
-            question2_B.setImage(UIImage(named: "pic"), for: .normal)
-            question2_C.setImage(UIImage(named: "pic"), for: .normal)
-            question2_A.setImage(UIImage(named: "pic"), for: .normal)
-            question2_D.setImage(UIImage(named: "pic"), for: .normal)
-            if button.imageView?.image == UIImage(named: "pic"){
-                button.setImage(UIImage(named: "picHL"), for: .normal)
+            question2_B.setImage(UIImage(named: "btn_unselected"), for: .normal)
+            question2_C.setImage(UIImage(named: "btn_unselected"), for: .normal)
+            question2_A.setImage(UIImage(named: "btn_unselected"), for: .normal)
+            question2_D.setImage(UIImage(named: "btn_unselected"), for: .normal)
+            if button.imageView?.image == UIImage(named: "btn_unselected"){
+                button.setImage(UIImage(named: "btn_selected"), for: .normal)
             }
             else{
                 
@@ -303,7 +309,7 @@ class RelieveQuestionTableViewController: UITableViewController {
             question4_F.backgroundColor = UIColor.white
             
             if button.backgroundColor == UIColor.white{
-                button.backgroundColor = UIColor(red: 9/255.0, green: 187/255.0, blue: 7/255.0, alpha: 1)
+                button.backgroundColor = UIColor(red: 0/255.0, green: 204/255.0, blue: 204/255.0, alpha: 1)
             }
             else{
                 
@@ -317,7 +323,7 @@ class RelieveQuestionTableViewController: UITableViewController {
             question4_F.backgroundColor = UIColor.white
             
             if button.backgroundColor == UIColor.white{
-                button.backgroundColor = UIColor(red: 9/255.0, green: 187/255.0, blue: 7/255.0, alpha: 1)
+                button.backgroundColor = UIColor(red: 0/255.0, green: 204/255.0, blue: 204/255.0, alpha: 1)
             }
             else{
                 
@@ -331,7 +337,7 @@ class RelieveQuestionTableViewController: UITableViewController {
             question4_F.backgroundColor = UIColor.white
             
             if button.backgroundColor == UIColor.white{
-                button.backgroundColor = UIColor(red: 9/255.0, green: 187/255.0, blue: 7/255.0, alpha: 1)
+                button.backgroundColor = UIColor(red: 0/255.0, green: 204/255.0, blue: 204/255.0, alpha: 1)
             }
             else{
                 
@@ -345,7 +351,7 @@ class RelieveQuestionTableViewController: UITableViewController {
             question4_F.backgroundColor = UIColor.white
             
             if button.backgroundColor == UIColor.white{
-                button.backgroundColor = UIColor(red: 9/255.0, green: 187/255.0, blue: 7/255.0, alpha: 1)
+                button.backgroundColor = UIColor(red: 0/255.0, green: 204/255.0, blue: 204/255.0, alpha: 1)
             }
             else{
                 
@@ -359,7 +365,7 @@ class RelieveQuestionTableViewController: UITableViewController {
             question4_F.backgroundColor = UIColor.white
             
             if button.backgroundColor == UIColor.white{
-                button.backgroundColor = UIColor(red: 9/255.0, green: 187/255.0, blue: 7/255.0, alpha: 1)
+                button.backgroundColor = UIColor(red: 0/255.0, green: 204/255.0, blue: 204/255.0, alpha: 1)
             }
             else{
                 
@@ -373,7 +379,7 @@ class RelieveQuestionTableViewController: UITableViewController {
             question4_A.backgroundColor = UIColor.white
             
             if button.backgroundColor == UIColor.white{
-                button.backgroundColor = UIColor(red: 9/255.0, green: 187/255.0, blue: 7/255.0, alpha: 1)
+                button.backgroundColor = UIColor(red: 0/255.0, green: 204/255.0, blue: 204/255.0, alpha: 1)
             }
             else{
                 
@@ -389,7 +395,7 @@ class RelieveQuestionTableViewController: UITableViewController {
     }
     func AddSelectButton(button: UIButton, string: String){
         
-        button.setImage(UIImage(named: "pic"), for: .normal)
+        button.setImage(UIImage(named: "btn_unselected"), for: .normal)
         button.contentHorizontalAlignment = .left
         button.setTitle(string, for: .normal)
         button.setTitleColor(UIColor.black, for: .normal)
@@ -407,21 +413,66 @@ class RelieveQuestionTableViewController: UITableViewController {
     @objc private func button_select2(button: UIButton) {
         
         let menu = UIAlertController(title: "", message: "", preferredStyle: .alert)
-        let option0 = UIAlertAction(title: "0", style: .default, handler: nil)
-        let option1 = UIAlertAction(title: "1", style: .default, handler: nil)
-        let option2 = UIAlertAction(title: "2", style: .default, handler: nil)
-        let option3 = UIAlertAction(title: "3", style: .default, handler: nil)
-        let option4 = UIAlertAction(title: "4", style: .default, handler: nil)
-        let option5 = UIAlertAction(title: "5", style: .default, handler: nil)
-        let option6 = UIAlertAction(title: "6", style: .default, handler: nil)
-        let option7 = UIAlertAction(title: "7", style: .default, handler: nil)
-        let option8 = UIAlertAction(title: "8", style: .default, handler: nil)
-        let option9 = UIAlertAction(title: "9", style: .default, handler: nil)
-        let option10 = UIAlertAction(title: "10", style: .default, handler: nil)
-        let option11 = UIAlertAction(title: "11", style: .default, handler: nil)
-        let option12 = UIAlertAction(title: "12", style: .default, handler: nil)
-        let option13 = UIAlertAction(title: "13", style: .default, handler: nil)
-        let option14 = UIAlertAction(title: "14", style: .default, handler: nil)
+        let option0 = UIAlertAction(title: "0", style: .default) {(alertAction)->Void in
+            ButtonSelect.setTitle("0", for: .normal)
+            self.view.addSubview(ButtonSelect)
+        }
+        let option1 = UIAlertAction(title: "1", style: .default) {(alertAction)->Void in
+            ButtonSelect.setTitle("1", for: .normal)
+            self.view.addSubview(ButtonSelect)
+        }
+        let option2 = UIAlertAction(title: "2", style: .default) {(alertAction)->Void in
+            ButtonSelect.setTitle("2", for: .normal)
+            self.view.addSubview(ButtonSelect)
+        }
+        let option3 = UIAlertAction(title: "3", style: .default) {(alertAction)->Void in
+            ButtonSelect.setTitle("3", for: .normal)
+            self.view.addSubview(ButtonSelect)
+        }
+        let option4 = UIAlertAction(title: "4", style: .default) {(alertAction)->Void in
+            ButtonSelect.setTitle("4", for: .normal)
+            self.view.addSubview(ButtonSelect)
+        }
+        let option5 = UIAlertAction(title: "5", style: .default) {(alertAction)->Void in
+            ButtonSelect.setTitle("5", for: .normal)
+            self.view.addSubview(ButtonSelect)
+        }
+        let option6 = UIAlertAction(title: "6", style: .default) {(alertAction)->Void in
+            ButtonSelect.setTitle("6", for: .normal)
+            self.view.addSubview(ButtonSelect)
+        }
+        let option7 = UIAlertAction(title: "7", style: .default) {(alertAction)->Void in
+            ButtonSelect.setTitle("7", for: .normal)
+            self.view.addSubview(ButtonSelect)
+        }
+        let option8 = UIAlertAction(title: "8", style: .default) {(alertAction)->Void in
+            ButtonSelect.setTitle("8", for: .normal)
+            self.view.addSubview(ButtonSelect)
+        }
+        let option9 = UIAlertAction(title: "9", style: .default) {(alertAction)->Void in
+            ButtonSelect.setTitle("9", for: .normal)
+            self.view.addSubview(ButtonSelect)
+        }
+        let option10 = UIAlertAction(title: "10", style: .default) {(alertAction)->Void in
+            ButtonSelect.setTitle("10", for: .normal)
+            self.view.addSubview(ButtonSelect)
+        }
+        let option11 = UIAlertAction(title: "11", style: .default) {(alertAction)->Void in
+            ButtonSelect.setTitle("11", for: .normal)
+            self.view.addSubview(ButtonSelect)
+        }
+        let option12 = UIAlertAction(title: "12", style: .default) {(alertAction)->Void in
+            ButtonSelect.setTitle("12", for: .normal)
+            self.view.addSubview(ButtonSelect)
+        }
+        let option13 = UIAlertAction(title: "13", style: .default) {(alertAction)->Void in
+            ButtonSelect.setTitle("13", for: .normal)
+            self.view.addSubview(ButtonSelect)
+        }
+        let option14 = UIAlertAction(title: "14", style: .default) {(alertAction)->Void in
+            ButtonSelect.setTitle("14", for: .normal)
+            self.view.addSubview(ButtonSelect)
+        }
         
         menu.addAction(option0)
         menu.addAction(option1)

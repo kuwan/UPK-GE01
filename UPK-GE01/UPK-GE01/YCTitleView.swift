@@ -118,32 +118,34 @@ extension YCTitleView {
         }
         
         // 3.设置所有的标题Label
-        setupTitleLabels()
+        setupTitleLabels(TitleIndex: style.FirstTitle)
         
         // 4.设置Label的位置
         setupTitleLabelsPosition()
         
         // 5.设置底部的滚动条
         if style.isShowBottomLine {
-            setupBottomLine()
+            setupBottomLine(TitleIndex: style.FirstTitle)
         }
         
         // 6.设置遮盖的View
         if style.isShowCover {
-            setupCoverView()
+            setupCoverView(TitleIndex: style.FirstTitle)
         }
     }
     
     /// 设置标题
-    private func setupTitleLabels() {
+    private func setupTitleLabels(TitleIndex: Int) {
         //循环设置标题
         for (index, title) in titles.enumerated() {
             //创建UILabel
+           // print("\(index)------------")
+            //print("\(title)------------")
             let label = UILabel()
             //设置UILabel相关的属性
             label.tag = index
             label.text = title
-            label.textColor = index == 0 ? style.selectedColor : style.normalColor
+            label.textColor = index == TitleIndex ? style.selectedColor : style.normalColor
             label.font = style.font
             label.textAlignment = .center
             
@@ -158,6 +160,10 @@ extension YCTitleView {
             //添加标题组件
             scrollView.addSubview(label)
         }
+        delegate?.titleView(self, selectedIndex: TitleIndex)
+        // 居中显示
+        contentViewDidEndScroll()
+        
     }
     
     /// 设置标题Frame
@@ -213,26 +219,31 @@ extension YCTitleView {
     }
     
     /// 设置底部的线条
-    private func setupBottomLine() {
+    private func setupBottomLine(TitleIndex: Int) {
         bottomLine.frame = titleLabels.first!.frame
         bottomLine.frame.size.height = style.bottomLineH
         bottomLine.frame.origin.y = bounds.height - style.bottomLineH
+        bottomLine.frame.origin.x = (bounds.width/CGFloat(titleLabels.count)) * CGFloat(TitleIndex)
+       // print("\(bottomLine.frame.origin.x)-----------x")
+       // print("\(bottomLine.frame.size.height)-----------height")
         
         scrollView.addSubview(bottomLine)
     }
     
     /// 设置覆盖视图
-    private func setupCoverView() {
+    private func setupCoverView(TitleIndex: Int) {
         //覆盖视图添加到scrollView
         scrollView.insertSubview(coverView, at: 0)
         //第一个标题
-        let firstLabel = titleLabels[0]
+        let firstLabel = titleLabels[TitleIndex]
         
         //位置信息
         var coverW = firstLabel.frame.width
         let coverH = style.coverH
         var coverX = firstLabel.frame.origin.x
         let coverY = (bounds.height - coverH) * 0.5
+        //print("\(coverX)------------")
+        //print("\(coverW)------------")
         
         if style.isScrollEnable {
             coverX -= style.coverMargin
@@ -259,7 +270,7 @@ extension YCTitleView {
         // 如果是重复点击同一个Title,那么直接返回
         if currentLabel.tag == currentIndex { return }
         
-        //print("currentLabel.tag:\(currentLabel.tag)---currentIndex:\(currentIndex)")
+      //  print("currentLabel.tag:\(currentLabel.tag)---currentIndex:\(currentIndex)")
         
         // 获取之前的Label
         let oldLabel = titleLabels[currentIndex]
@@ -270,7 +281,7 @@ extension YCTitleView {
         
         // 保存最新Label的下标值
         currentIndex = currentLabel.tag
-        print(currentIndex)
+        //print(currentIndex)
         for label in titleLabels{
             if(label !== currentLabel){
                 // 3.2.变化targetLabel
@@ -291,6 +302,7 @@ extension YCTitleView {
                 self.bottomLine.frame.origin.x = currentLabel.frame.origin.x
                 self.bottomLine.frame.size.width = currentLabel.frame.size.width
             })
+               //print("x:\( self.bottomLine.frame.origin.x)---w:\(self.bottomLine.frame.size.width)")
         }
         
         // 调整缩放比例
