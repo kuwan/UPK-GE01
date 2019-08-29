@@ -13,6 +13,7 @@ class ProgramDetailsTableViewController: UITableViewController {
     var program_section = 0
     var program_row = 0
     var index = 0
+    var program_name: String = ""
     var program_description = ["program_description","program_description1","program_description2","program_description3","program_description4","program_description5","program_description6","program_description7","program_description8","program_description9","program_description10","program_description11","program_description12","program_description13","program_description14","program_description15","program_description16","program_description17","program_description18","program_description19","program_description20","program_description21","program_description22","program_description23","program_description24","program_description25","program_description26","program_description27","program_description28","program_description29"]
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -57,13 +58,13 @@ class ProgramDetailsTableViewController: UITableViewController {
         
         let label_name = UILabel.init(frame: CGRect(x: 10*lengthPercent, y: 6*HeighPercent + height, width: 300*lengthPercent, height: 20*lengthPercent))
         if program_section < 15{
-            label_name.text = Relieve_name[program_section][program_row]
+            label_name.text = program_name//Relieve_name[program_section][program_row]
         }
         else if program_section < 23{
-            label_name.text = Strengthen_name[program_section - 15][program_row]
+            label_name.text = program_name//Strengthen_name[program_section - 15][program_row]
         }
         else{
-            label_name.text = Relax_name[program_section - 23][program_row]
+            label_name.text = program_name//Relax_name[program_section - 23][program_row]
         }
         //label_name.numberOfLines = 0
         label_name.font = UIFont.boldSystemFont(ofSize: 20)

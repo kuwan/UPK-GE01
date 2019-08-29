@@ -118,8 +118,9 @@ class StrengthenTableViewController: UITableViewController {
         
         tableView.deselectRow(at: indexPath, animated: true)
         let vc = ProgramDetailsTableViewController()
-        vc.program_section = indexPath.section + 15
-        vc.program_row = indexPath.row
+        //vc.program_section = indexPath.section + 15
+       // vc.program_row = indexPath.row
+        vc.program_name = Strengthen_name[indexPath.section][indexPath.row]
         vc.index = 0
         self.navigationController?.pushViewController(vc, animated: true)
         

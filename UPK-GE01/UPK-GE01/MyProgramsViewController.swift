@@ -39,6 +39,11 @@ class MyProgramsViewController: UIViewController,UITableViewDelegate,UITableView
         // Do any additional setup after loading the view.
     }
     override func viewWillAppear(_ animated: Bool) {
+        if fromWarningView == true{
+            print("00000")
+            fromWarningView = false
+            self.tabBarController?.selectedIndex = 1
+        }
         if ((self.navigationController?.viewControllers.count)!) > 1{
             
             self.tabBarController?.tabBar.isHidden = true

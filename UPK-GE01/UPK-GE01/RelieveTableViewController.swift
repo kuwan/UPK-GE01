@@ -119,8 +119,9 @@ class RelieveTableViewController: UITableViewController {
         
         tableView.deselectRow(at: indexPath, animated: true)
         let vc = ProgramDetailsTableViewController()
-        vc.program_section = indexPath.section
-        vc.program_row = indexPath.row
+        //vc.program_section = indexPath.section
+        //vc.program_row = indexPath.row
+        vc.program_name = Relieve_name[indexPath.section][indexPath.row]
         vc.index = 0
         self.navigationController?.pushViewController(vc, animated: true)
         
