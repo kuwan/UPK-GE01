@@ -50,7 +50,7 @@ class RelieforMeTableViewController: UITableViewController {
     }
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         
-        return self.view.frame.height
+        return screenHeight
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -59,7 +59,8 @@ class RelieforMeTableViewController: UITableViewController {
         
         if Login == false{
             let label1 = UILabel.init(frame: CGRect(x: 0, y: 40*HeighPercent, width: screenWidth, height: 40*lengthPercent))
-            label1.text = "Welcome to RelieforMe"
+            label1.text = "Welcome to RelieforMe!"
+            label1.font = UIFont.boldSystemFont(ofSize: 20*lengthPercent)
             label1.textAlignment = .center
             cell.contentView.addSubview(label1)
             

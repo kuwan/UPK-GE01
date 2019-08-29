@@ -127,18 +127,21 @@ class MoreViewController: UIViewController,UITableViewDelegate,UITableViewDataSo
         }
         else  if indexPath.section == 6{
             
-            /*let menu = UIAlertController(title: "Message", message: "Are you sure you want to log out?", preferredStyle: .alert)
+            let menu = UIAlertController(title: "Message", message: "Are you sure you want to log out?", preferredStyle: .alert)
             let option1 = UIAlertAction(title: "CANCEL", style: .cancel, handler: nil)
-            let option2 = UIAlertAction(title: "OK", style: .default, handler: nil)
+            let option2 = UIAlertAction(title: "OK", style: .default) {(alertAction)-> Void in
+                
+                //let vc = LogOutTableViewController()
+                let vc = PLViewController()
+                vc.index = 4
+                self.navigationController?.pushViewController(vc, animated: true)
+            }
             
             menu.addAction(option1)
             menu.addAction(option2)
             
-            self.present(menu, animated: true, completion: nil)*/
-            //let vc = LogOutTableViewController()
-            let vc = PLViewController()
-            vc.index = 4
-            self.navigationController?.pushViewController(vc, animated: true)
+            self.present(menu, animated: true, completion: nil)
+            
         }
     }
  

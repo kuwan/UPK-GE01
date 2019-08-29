@@ -68,8 +68,9 @@ class WarningsTableViewController: UITableViewController {
             self.navigationController?.pushViewController(vc, animated: true)
         }
         else{
-           // self.navigationController?.popToRootViewController(animated: true)
-            self.tabBarController?.selectedIndex = 1
+            fromWarningView = true           
+            self.navigationController?.popToRootViewController(animated: true)
+            //self.tabBarController?.selectedIndex = 1
             
         }  
     }

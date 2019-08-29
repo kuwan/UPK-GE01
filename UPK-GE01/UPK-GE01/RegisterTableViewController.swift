@@ -61,18 +61,18 @@ class RegisterTableViewController: UITableViewController {
         let image1 = UIImageView.init(frame: CGRect(x: 95*lengthPercent, y: 15*HeighPercent, width: 25*lengthPercent, height: 25*lengthPercent))
         image1.image = UIImage(named: "lin_user")
         cell.contentView.addSubview(image1)
-        let Label1 = UITextField(frame: CGRect(x: 130*lengthPercent, y: 10*HeighPercent, width: screenWidth - 100*lengthPercent, height: 40*lengthPercent))
+        let Label1 = UITextField(frame: CGRect(x: 130*lengthPercent, y: 10*HeighPercent, width: screenWidth - 140*lengthPercent, height: 40*lengthPercent))
         Label1.borderStyle = .none
         Label1.placeholder = "Email address or cell phone number"
-        Label1.clearButtonMode = .always
-        Label1.font = Label1.font?.withSize(15*lengthPercent)
+        Label1.clearButtonMode = .whileEditing
+        //Label1.font = Label1.font?.withSize(15*lengthPercent)
         self.view.addSubview(Label1)
         let lineview2 = UIView.init(frame: CGRect(x: 95*lengthPercent, y: 50*HeighPercent, width: screenWidth - 100*lengthPercent, height: 2*lengthPercent))
         lineview2.backgroundColor = UIColor(red: 0/255.0, green: 204/255.0, blue: 204/255.0, alpha: 1)
         cell.contentView.addSubview(lineview2)
-        let clearbutton = UIButton.init(frame: CGRect(x: screenWidth - 30*lengthPercent, y: 15*HeighPercent, width: 30*lengthPercent, height: 30*lengthPercent))
-        clearbutton.setImage(UIImage(named: "btn_clear"), for: .normal)
-        cell.contentView.addSubview(clearbutton)
+        //let clearbutton = UIButton.init(frame: CGRect(x: screenWidth - 30*lengthPercent, y: 15*HeighPercent, width: 30*lengthPercent, height: 30*lengthPercent))
+       // clearbutton.setImage(UIImage(named: "btn_clear"), for: .normal)
+       // cell.contentView.addSubview(clearbutton)
         
         //let Button2 = UIButton.init(frame: CGRect(x: 10*lengthPercent, y: 55*HeighPercent, width: self.view.frame.width - 10*lengthPercent, height: 40*lengthPercent))
         Button2.setTitle("Click here to send verification code to your email or cell phone", for: .normal)
@@ -194,17 +194,13 @@ class RegisterTableViewController: UITableViewController {
             
         }
         codeTimer.activate()
-        let menu = UIAlertController(title: "", message: "test", preferredStyle: .alert)
-        //let option1 = UIAlertAction(title: "Cance", style: .cancel, handler: nil)
-        //let option2 = UIAlertAction(title: "OK", style: .default, handler: nil)
+        let menu = UIAlertController(title: "", message: "test", preferredStyle: .actionSheet)
+        self.present(menu, animated: true, completion: nil)
         
-       // menu.addAction(option1)
-        //menu.addAction(option2)
         DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 1){
             self.presentedViewController?.dismiss(animated: false, completion: nil)
         }
         
-        self.present(menu, animated: true, completion: nil)
     }
     @objc func ButtonRegister_Action(button: UIButton){
         

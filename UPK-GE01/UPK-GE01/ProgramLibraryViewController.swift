@@ -7,13 +7,14 @@
 //
 
 import UIKit
+var fromWarningView = false
 
 class ProgramLibraryViewController: UIViewController, UITableViewDelegate,UITableViewDataSource {
     
     var therapy = [["Relieve"], ["Strengthen"], ["Relax"]]
     var therapy_decribe = ["Programs designed to help relieve your muscle and joint pain and stiffness", "Programs designed to help strenghten and restore your muscles and promote movement", "Programs designed to massage and relax your muscles"]
     
-      var session_image = ["icon_main_relieve", "icon_main_strenthe", "icon_main_relax"]
+    var session_image = ["icon_main_relieve", "icon_main_strenthe", "icon_main_relax"]
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -30,7 +31,12 @@ class ProgramLibraryViewController: UIViewController, UITableViewDelegate,UITabl
     }
     override func viewWillAppear(_ animated: Bool) {
         
-        print("22222")
+        if fromWarningView == true{
+            print("22222")
+            fromWarningView = false
+            self.tabBarController?.selectedIndex = 1
+        }
+        
         //self.navigationController?.popToRootViewController(animated: true)
         if ((self.navigationController?.viewControllers.count)!) > 1{
             
@@ -67,7 +73,7 @@ class ProgramLibraryViewController: UIViewController, UITableViewDelegate,UITabl
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell_programlibrary", for: indexPath) as! ProgramLibraryUITableViewCell
         
-        let NameLabel = UILabel.init(frame: CGRect(x: 95*lengthPercent, y: 15*HeighPercent, width: 200*lengthPercent, height: 20*lengthPercent))
+        let NameLabel = UILabel.init(frame: CGRect(x: 95*lengthPercent, y: 15*HeighPercent, width: 200*lengthPercent, height: 17*lengthPercent))
         NameLabel.text = therapy[indexPath.section][indexPath.row]
         NameLabel.numberOfLines = 0
         NameLabel.font = NameLabel.font.withSize(17*lengthPercent)
@@ -78,10 +84,10 @@ class ProgramLibraryViewController: UIViewController, UITableViewDelegate,UITabl
         //cell.SessionImage.layer.cornerRadius = cell.SessionImage.frame.size.height/2
         //cell.SessionImage.clipsToBounds = true
         //cell.SessionDetial.text = therapy_decribe[indexPath.section]
-        let DetialLabel = UILabel.init(frame: CGRect(x: 95*lengthPercent, y: 40*HeighPercent, width: 270*lengthPercent, height: 40*lengthPercent))
+        let DetialLabel = UILabel.init(frame: CGRect(x: 95*lengthPercent, y: 33*HeighPercent, width: 270*lengthPercent, height: 50*lengthPercent))
         DetialLabel.text = therapy_decribe[indexPath.section]
         DetialLabel.numberOfLines = 0
-        DetialLabel.font = NameLabel.font.withSize(12*lengthPercent)
+        DetialLabel.font = NameLabel.font.withSize(13*lengthPercent)
         cell.contentView.addSubview(DetialLabel)
         //cell.SessionDetial.font = cell.SessionDetial.font.withSize(12*lengthPercent)
         

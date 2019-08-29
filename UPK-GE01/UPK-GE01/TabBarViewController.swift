@@ -20,10 +20,11 @@ class TabBarViewController: UITabBarController {
         if item.selectedImage == UIImage(named: "lin_control_blue (1)"){
            
             let menu = UIAlertController(title: "", message: "test", preferredStyle: .alert)
+            self.present(menu, animated: true, completion: nil)
             DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 1){
                 self.presentedViewController?.dismiss(animated: false, completion: nil)
             }
-            self.present(menu, animated: true, completion: nil)
+            
         }
        // if item.selectedImage == UIImage(named: "lin_libiary_blue (1)"){
             
