@@ -46,6 +46,9 @@
 		08D8775D230FE09C00843F9D /* MyProgramTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08D8775C230FE09C00843F9D /* MyProgramTableViewCell.swift */; };
 		08D8775F230FE8A000843F9D /* MoreTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08D8775E230FE8A000843F9D /* MoreTableViewCell.swift */; };
 		08D87761231374DF00843F9D /* HelpCenterTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08D87760231374DF00843F9D /* HelpCenterTableViewCell.swift */; };
+		08DD3D24231F5E540094601F /* BackBody.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08DD3D23231F5E540094601F /* BackBody.swift */; };
+		08DD3D26231F5F160094601F /* FrontBody.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08DD3D25231F5F160094601F /* FrontBody.swift */; };
+		08DD3D28231F5F350094601F /* SelectBodyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08DD3D27231F5F350094601F /* SelectBodyView.swift */; };
 		08F4D61222F1306700707A84 /* HelpCenterTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08F4D61122F1306700707A84 /* HelpCenterTableViewController.swift */; };
 		08F4D61422F137ED00707A84 /* UpdateProfileTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08F4D61322F137ED00707A84 /* UpdateProfileTableViewController.swift */; };
 		08F4D61622F1380100707A84 /* ResetPasswordTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08F4D61522F1380100707A84 /* ResetPasswordTableViewController.swift */; };
@@ -108,6 +111,9 @@
 		08D8775C230FE09C00843F9D /* MyProgramTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyProgramTableViewCell.swift; sourceTree = "<group>"; };
 		08D8775E230FE8A000843F9D /* MoreTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoreTableViewCell.swift; sourceTree = "<group>"; };
 		08D87760231374DF00843F9D /* HelpCenterTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HelpCenterTableViewCell.swift; sourceTree = "<group>"; };
+		08DD3D23231F5E540094601F /* BackBody.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BackBody.swift; sourceTree = "<group>"; };
+		08DD3D25231F5F160094601F /* FrontBody.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FrontBody.swift; sourceTree = "<group>"; };
+		08DD3D27231F5F350094601F /* SelectBodyView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SelectBodyView.swift; sourceTree = "<group>"; };
 		08F4D61122F1306700707A84 /* HelpCenterTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HelpCenterTableViewController.swift; sourceTree = "<group>"; };
 		08F4D61322F137ED00707A84 /* UpdateProfileTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateProfileTableViewController.swift; sourceTree = "<group>"; };
 		08F4D61522F1380100707A84 /* ResetPasswordTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResetPasswordTableViewController.swift; sourceTree = "<group>"; };
@@ -190,6 +196,9 @@
 				08D87753230F8D1500843F9D /* Pickerview */,
 				08C2BA1122E01E6F008867E5 /* Pageview */,
 				001992B422D6D5E900D91121 /* AppDelegate.swift */,
+				08DD3D27231F5F350094601F /* SelectBodyView.swift */,
+				08DD3D25231F5F160094601F /* FrontBody.swift */,
+				08DD3D23231F5E540094601F /* BackBody.swift */,
 				08D87751230F8CF200843F9D /* RelieforMeTableViewController.swift */,
 				08C2B9FB22DC7BD5008867E5 /* MyProgramsViewController.swift */,
 				08D8775C230FE09C00843F9D /* MyProgramTableViewCell.swift */,
@@ -433,6 +442,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				08F4D61822F139B000707A84 /* MyDeviceTableViewController.swift in Sources */,
+				08DD3D26231F5F160094601F /* FrontBody.swift in Sources */,
 				08F4D61622F1380100707A84 /* ResetPasswordTableViewController.swift in Sources */,
 				08C2B9FC22DC7BD5008867E5 /* MyProgramsViewController.swift in Sources */,
 				08C2BA1022E01DA5008867E5 /* PLViewController.swift in Sources */,
@@ -447,6 +457,7 @@
 				08C2BA4622E01EDA008867E5 /* YCContentView.swift in Sources */,
 				08C8803C22F0257F007BF6F5 /* SuggestedProgramsTableViewController.swift in Sources */,
 				08C8804222F03375007BF6F5 /* MyDiaryTableViewController.swift in Sources */,
+				08DD3D24231F5E540094601F /* BackBody.swift in Sources */,
 				08C2BA4722E01EDA008867E5 /* YCTitleStyle.swift in Sources */,
 				08F4D63F22FD708B00707A84 /* RegisterTableViewController.swift in Sources */,
 				08F4D64322FD890200707A84 /* ForgotPasswordTableViewController.swift in Sources */,
@@ -468,6 +479,7 @@
 				08F4D64122FD70AD00707A84 /* LoginTableViewController.swift in Sources */,
 				08F4D62A22F4309F00707A84 /* PairingTableViewController.swift in Sources */,
 				08F4D62022F13A1300707A84 /* MiscSettingTableViewController.swift in Sources */,
+				08DD3D28231F5F350094601F /* SelectBodyView.swift in Sources */,
 				08D0909823153A9B00E693E6 /* TabBarViewController.swift in Sources */,
 				08F4D62422F13A3900707A84 /* LogOutTableViewController.swift in Sources */,
 				08C2BA0622DC9856008867E5 /* ProgramLibraryUITableViewCell.swift in Sources */,
