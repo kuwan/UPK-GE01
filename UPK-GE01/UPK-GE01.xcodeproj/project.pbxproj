@@ -193,12 +193,10 @@
 		001992CD22D778D000D91121 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				007AF077231F69260018B44A /* SelectBodyView */,
 				08D87753230F8D1500843F9D /* Pickerview */,
 				08C2BA1122E01E6F008867E5 /* Pageview */,
 				001992B422D6D5E900D91121 /* AppDelegate.swift */,
-				08DD3D27231F5F350094601F /* SelectBodyView.swift */,
-				08DD3D25231F5F160094601F /* FrontBody.swift */,
-				08DD3D23231F5E540094601F /* BackBody.swift */,
 				08D87751230F8CF200843F9D /* RelieforMeTableViewController.swift */,
 				08C2B9FB22DC7BD5008867E5 /* MyProgramsViewController.swift */,
 				08D8775C230FE09C00843F9D /* MyProgramTableViewCell.swift */,
@@ -274,6 +272,16 @@
 				001992C022D6D5EB00D91121 /* Info.plist */,
 			);
 			name = Other;
+			sourceTree = "<group>";
+		};
+		007AF077231F69260018B44A /* SelectBodyView */ = {
+			isa = PBXGroup;
+			children = (
+				08DD3D23231F5E540094601F /* BackBody.swift */,
+				08DD3D27231F5F350094601F /* SelectBodyView.swift */,
+				08DD3D25231F5F160094601F /* FrontBody.swift */,
+			);
+			name = SelectBodyView;
 			sourceTree = "<group>";
 		};
 		08C2BA1122E01E6F008867E5 /* Pageview */ = {

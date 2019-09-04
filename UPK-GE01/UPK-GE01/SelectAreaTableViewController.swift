@@ -45,6 +45,7 @@ class SelectAreaTableViewController: UITableViewController {
         let cell = UITableViewCell.init(style: .default, reuseIdentifier: nil)     
         cell.selectionStyle = UITableViewCell.SelectionStyle.none
         
+        
         let button_next = UIButton.init(frame: CGRect(x: 10*lengthPercent, y: 550*HeighPercent, width: screenWidth - 20*lengthPercent, height: 40*lengthPercent))
         button_next.backgroundColor = UIColor(red: 0/255.0, green: 204/255.0, blue: 204/255.0, alpha: 1)
        // button_next.setImage(UIImage(named: "pic"), for: .normal)
