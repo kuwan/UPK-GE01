@@ -85,9 +85,13 @@ class RelieveQuestionTableViewController: UITableViewController {
         cell.contentView.addSubview(Squestion1)
         //let button_select = UIButton.init(frame: CGRect(x: 10, y: 155, width: self.view.frame.width - 20, height: 25))
         ButtonSelect.backgroundColor = UIColor.white
-        ButtonSelect.setTitle("0", for: .normal)
+        ButtonSelect.setTitle("  0", for: .normal)
         ButtonSelect.setTitleColor(UIColor.black, for: .normal)
         ButtonSelect.contentHorizontalAlignment = .left
+        ButtonSelect.titleLabel?.textAlignment = .left
+        ButtonSelect.layer.masksToBounds = true
+        ButtonSelect.layer.borderWidth = 1
+        ButtonSelect.layer.cornerRadius = 0.5
         ButtonSelect.addTarget(self, action: #selector(button_select2), for: .touchUpInside)
         cell.contentView.addSubview(ButtonSelect)   
         
@@ -115,11 +119,11 @@ class RelieveQuestionTableViewController: UITableViewController {
         Squestion3.numberOfLines = 2
         Squestion3.font = Squestion3.font.withSize(15*lengthPercent)
         cell.contentView.addSubview(Squestion3)
-        let slider_start = UILabel.init(frame: CGRect(x: 10*lengthPercent, y: 455*HeighPercent, width: 20*lengthPercent, height: 20*lengthPercent))
+        let slider_start = UILabel.init(frame: CGRect(x: 10*lengthPercent, y: 450*HeighPercent, width: 20*lengthPercent, height: 20*lengthPercent))
         slider_start.text = "0"
         slider_start.textColor = UIColor(red: 0/255.0, green: 204/255.0, blue: 204/255.0, alpha: 1)
         cell.contentView.addSubview(slider_start)
-        let slider_end = UILabel.init(frame: CGRect(x: 345*lengthPercent, y: 455*HeighPercent, width: 20*lengthPercent, height: 20*lengthPercent))
+        let slider_end = UILabel.init(frame: CGRect(x: 345*lengthPercent, y: 450*HeighPercent, width: 20*lengthPercent, height: 20*lengthPercent))
         slider_end.text = "10"
         slider_end.textColor = UIColor(red: 0/255.0, green: 204/255.0, blue: 204/255.0, alpha: 1)
         cell.contentView.addSubview(slider_end)
@@ -143,18 +147,20 @@ class RelieveQuestionTableViewController: UITableViewController {
         Squestion4.numberOfLines = 2
         Squestion4.font = Squestion4.font.withSize(15*lengthPercent)
         cell.contentView.addSubview(Squestion4)
-        AddSelectButton1(button: question4_A,string: " 1-2")
+        AddSelectButton1(button: question4_A,string: "1-2")
         cell.contentView.addSubview(question4_A)
-        AddSelectButton1(button: question4_B,string: " 3-5")
+        AddSelectButton1(button: question4_B,string: "3-5")
         cell.contentView.addSubview(question4_B)
-        AddSelectButton1(button: question4_C,string: " 6-8")
+        AddSelectButton1(button: question4_C,string: "6-8")
         cell.contentView.addSubview(question4_C)
-        AddSelectButton1(button: question4_D,string: " 9-12")
+        AddSelectButton1(button: question4_D,string: "9-12")
         cell.contentView.addSubview(question4_D)
-        AddSelectButton1(button: question4_E,string: " 12-18")
+        AddSelectButton1(button: question4_E,string: "12-18")
         cell.contentView.addSubview(question4_E)
-        AddSelectButton1(button: question4_F,string: " 18-24")
+        AddSelectButton1(button: question4_F,string: "18-24")
         cell.contentView.addSubview(question4_F)
+        
+        
         
         let button_next = UIButton.init(frame: CGRect(x: 10*lengthPercent, y: 560*HeighPercent, width: screenWidth - 20*lengthPercent, height: 40*lengthPercent))
         button_next.backgroundColor = UIColor(red: 0/255.0, green: 204/255.0, blue: 204/255.0, alpha: 1)
@@ -404,73 +410,81 @@ class RelieveQuestionTableViewController: UITableViewController {
     func AddSelectButton1(button: UIButton, string: String){
         
         button.setTitle(string, for: .normal)
-        button.contentHorizontalAlignment = .left
+        button.titleLabel?.textAlignment = .center
+        button.contentHorizontalAlignment = .center
         button.setTitleColor(UIColor.black, for: .normal)
         button.backgroundColor = UIColor.white
+        button.layer.masksToBounds = true
+        button.layer.borderWidth = 1
+        button.layer.cornerRadius = 0.5
+        //button.layer.backgroundColor =
+        
+        
+        
         //button_test.backgroundColor = UIColor(red: 9/255.0, green: 187/255.0, blue: 7/255.0, alpha: 1)
         button.addTarget(self, action: #selector(button_select1), for: .touchUpInside)
     }
     @objc private func button_select2(button: UIButton) {
         
         let menu = UIAlertController(title: "", message: "", preferredStyle: .alert)
-        let option0 = UIAlertAction(title: "0", style: .default) {(alertAction)->Void in
-            ButtonSelect.setTitle("0", for: .normal)
+        let option0 = UIAlertAction(title: "  0", style: .default) {(alertAction)->Void in
+            ButtonSelect.setTitle("  0", for: .normal)
             self.view.addSubview(ButtonSelect)
         }
-        let option1 = UIAlertAction(title: "1", style: .default) {(alertAction)->Void in
-            ButtonSelect.setTitle("1", for: .normal)
+        let option1 = UIAlertAction(title: "  1", style: .default) {(alertAction)->Void in
+            ButtonSelect.setTitle("  1", for: .normal)
             self.view.addSubview(ButtonSelect)
         }
-        let option2 = UIAlertAction(title: "2", style: .default) {(alertAction)->Void in
-            ButtonSelect.setTitle("2", for: .normal)
+        let option2 = UIAlertAction(title: "  2", style: .default) {(alertAction)->Void in
+            ButtonSelect.setTitle("  2", for: .normal)
             self.view.addSubview(ButtonSelect)
         }
-        let option3 = UIAlertAction(title: "3", style: .default) {(alertAction)->Void in
-            ButtonSelect.setTitle("3", for: .normal)
+        let option3 = UIAlertAction(title: "  3", style: .default) {(alertAction)->Void in
+            ButtonSelect.setTitle("  3", for: .normal)
             self.view.addSubview(ButtonSelect)
         }
-        let option4 = UIAlertAction(title: "4", style: .default) {(alertAction)->Void in
-            ButtonSelect.setTitle("4", for: .normal)
+        let option4 = UIAlertAction(title: "  4", style: .default) {(alertAction)->Void in
+            ButtonSelect.setTitle("  4", for: .normal)
             self.view.addSubview(ButtonSelect)
         }
-        let option5 = UIAlertAction(title: "5", style: .default) {(alertAction)->Void in
-            ButtonSelect.setTitle("5", for: .normal)
+        let option5 = UIAlertAction(title: "  5", style: .default) {(alertAction)->Void in
+            ButtonSelect.setTitle("  5", for: .normal)
             self.view.addSubview(ButtonSelect)
         }
-        let option6 = UIAlertAction(title: "6", style: .default) {(alertAction)->Void in
-            ButtonSelect.setTitle("6", for: .normal)
+        let option6 = UIAlertAction(title: "  6", style: .default) {(alertAction)->Void in
+            ButtonSelect.setTitle("  6", for: .normal)
             self.view.addSubview(ButtonSelect)
         }
-        let option7 = UIAlertAction(title: "7", style: .default) {(alertAction)->Void in
-            ButtonSelect.setTitle("7", for: .normal)
+        let option7 = UIAlertAction(title: "  7", style: .default) {(alertAction)->Void in
+            ButtonSelect.setTitle("  7", for: .normal)
             self.view.addSubview(ButtonSelect)
         }
-        let option8 = UIAlertAction(title: "8", style: .default) {(alertAction)->Void in
-            ButtonSelect.setTitle("8", for: .normal)
+        let option8 = UIAlertAction(title: "  8", style: .default) {(alertAction)->Void in
+            ButtonSelect.setTitle("  8", for: .normal)
             self.view.addSubview(ButtonSelect)
         }
-        let option9 = UIAlertAction(title: "9", style: .default) {(alertAction)->Void in
-            ButtonSelect.setTitle("9", for: .normal)
+        let option9 = UIAlertAction(title: "  9", style: .default) {(alertAction)->Void in
+            ButtonSelect.setTitle("  9", for: .normal)
             self.view.addSubview(ButtonSelect)
         }
-        let option10 = UIAlertAction(title: "10", style: .default) {(alertAction)->Void in
-            ButtonSelect.setTitle("10", for: .normal)
+        let option10 = UIAlertAction(title: "  10", style: .default) {(alertAction)->Void in
+            ButtonSelect.setTitle("  10", for: .normal)
             self.view.addSubview(ButtonSelect)
         }
-        let option11 = UIAlertAction(title: "11", style: .default) {(alertAction)->Void in
-            ButtonSelect.setTitle("11", for: .normal)
+        let option11 = UIAlertAction(title: "  11", style: .default) {(alertAction)->Void in
+            ButtonSelect.setTitle("  11", for: .normal)
             self.view.addSubview(ButtonSelect)
         }
-        let option12 = UIAlertAction(title: "12", style: .default) {(alertAction)->Void in
-            ButtonSelect.setTitle("12", for: .normal)
+        let option12 = UIAlertAction(title: "  12", style: .default) {(alertAction)->Void in
+            ButtonSelect.setTitle("  12", for: .normal)
             self.view.addSubview(ButtonSelect)
         }
-        let option13 = UIAlertAction(title: "13", style: .default) {(alertAction)->Void in
-            ButtonSelect.setTitle("13", for: .normal)
+        let option13 = UIAlertAction(title: "  13", style: .default) {(alertAction)->Void in
+            ButtonSelect.setTitle("  13", for: .normal)
             self.view.addSubview(ButtonSelect)
         }
-        let option14 = UIAlertAction(title: "14", style: .default) {(alertAction)->Void in
-            ButtonSelect.setTitle("14", for: .normal)
+        let option14 = UIAlertAction(title: "  14", style: .default) {(alertAction)->Void in
+            ButtonSelect.setTitle("  14", for: .normal)
             self.view.addSubview(ButtonSelect)
         }
         

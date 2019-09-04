@@ -36,10 +36,10 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="V01.01" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nQc-Qh-gXq">
-                                <rect key="frame" x="155.5" y="386" width="64" height="51"/>
+                                <rect key="frame" x="155.5" y="596" width="64" height="51"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="64" id="aXz-Wa-Gdq"/>
-                                    <constraint firstAttribute="height" constant="51" id="mff-61-Fch"/>
+                                    <constraint firstAttribute="width" constant="64" id="2qD-tJ-yEG"/>
+                                    <constraint firstAttribute="height" constant="51" id="aXE-56-T7D"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="21"/>
                                 <nil key="textColor"/>
@@ -48,11 +48,11 @@
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
+                            <constraint firstItem="Gd7-sP-Unw" firstAttribute="bottom" secondItem="nQc-Qh-gXq" secondAttribute="bottom" constant="20" id="18j-2K-X2x"/>
                             <constraint firstItem="4Ip-8n-ePe" firstAttribute="top" secondItem="Gd7-sP-Unw" secondAttribute="top" constant="105" id="3od-iA-eQF"/>
                             <constraint firstItem="Iqh-50-CQE" firstAttribute="centerX" secondItem="6rx-ei-5O5" secondAttribute="centerX" id="9In-hg-BNP"/>
+                            <constraint firstItem="nQc-Qh-gXq" firstAttribute="centerX" secondItem="6rx-ei-5O5" secondAttribute="centerX" id="9Np-i6-Dcf"/>
                             <constraint firstItem="Iqh-50-CQE" firstAttribute="top" secondItem="4Ip-8n-ePe" secondAttribute="bottom" constant="15" id="GDy-7T-s8Q"/>
-                            <constraint firstItem="nQc-Qh-gXq" firstAttribute="centerX" secondItem="6rx-ei-5O5" secondAttribute="centerX" id="IKc-sD-GIq"/>
-                            <constraint firstItem="nQc-Qh-gXq" firstAttribute="top" secondItem="Iqh-50-CQE" secondAttribute="bottom" constant="69" id="ILZ-32-CUI"/>
                             <constraint firstItem="4Ip-8n-ePe" firstAttribute="centerX" secondItem="6rx-ei-5O5" secondAttribute="centerX" id="wpz-fO-RUA"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="Gd7-sP-Unw"/>

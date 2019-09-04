@@ -42,6 +42,7 @@ class WarningsTableViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = UITableViewCell.init(style: .default, reuseIdentifier: nil)
+        cell.selectionStyle = UITableViewCell.SelectionStyle.none
         
         let label_name = UILabel.init(frame: CGRect(x: 10*lengthPercent, y: 6*HeighPercent, width: 300*lengthPercent, height: 20*lengthPercent))
         label_name.text = warnings
@@ -68,8 +69,9 @@ class WarningsTableViewController: UITableViewController {
             self.navigationController?.pushViewController(vc, animated: true)
         }
         else{
-           // self.navigationController?.popToRootViewController(animated: true)
-            self.tabBarController?.selectedIndex = 1
+            fromWarningView = true           
+            self.navigationController?.popToRootViewController(animated: true)
+            //self.tabBarController?.selectedIndex = 1
             
         }  
     }

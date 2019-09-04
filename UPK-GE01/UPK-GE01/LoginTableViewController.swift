@@ -44,17 +44,17 @@ class LoginTableViewController: UITableViewController {
         let image1 = UIImageView.init(frame: CGRect(x: 10*lengthPercent, y: 15*HeighPercent, width: 25*lengthPercent, height: 25*lengthPercent))
         image1.image = UIImage(named: "lin_user")
         cell.contentView.addSubview(image1)
-        let label1 = UITextField(frame: CGRect(x: 45*lengthPercent, y: 10*HeighPercent, width: screenWidth - 20*lengthPercent, height: 40*lengthPercent))
+        let label1 = UITextField(frame: CGRect(x: 45*lengthPercent, y: 10*HeighPercent, width: screenWidth - 55*lengthPercent, height: 40*lengthPercent))
         label1.borderStyle = .none
         label1.placeholder = "Email address or cell phone number"
-        label1.clearButtonMode = .always
+        label1.clearButtonMode = .whileEditing
         self.view.addSubview(label1)
         let lineview1 = UIView.init(frame: CGRect(x: 10*lengthPercent, y: 50*HeighPercent, width: self.view.frame.width - 20*lengthPercent, height: 2*lengthPercent))
         lineview1.backgroundColor = UIColor(red: 0/255.0, green: 204/255.0, blue: 204/255.0, alpha: 1)
         self.view.addSubview(lineview1)
-        let clearbutton = UIButton.init(frame: CGRect(x: screenWidth - 30*lengthPercent, y: 15*HeighPercent, width: 30*lengthPercent, height: 30*lengthPercent))
-        clearbutton.setImage(UIImage(named: "btn_clear"), for: .normal)
-        cell.contentView.addSubview(clearbutton)
+        //let clearbutton = UIButton.init(frame: CGRect(x: screenWidth - 30*lengthPercent, y: 15*HeighPercent, width: 30*lengthPercent, height: 30*lengthPercent))
+       // clearbutton.setImage(UIImage(named: "btn_clear"), for: .normal)
+       // cell.contentView.addSubview(clearbutton)
         
         let image2 = UIImageView.init(frame: CGRect(x: 10*lengthPercent, y: 65*HeighPercent, width: 25*lengthPercent, height: 25*lengthPercent))
         image2.image = UIImage(named: "user_login_password")

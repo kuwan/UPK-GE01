@@ -17,8 +17,8 @@ class ControlPannelViewController: UIViewController,UITableViewDelegate,UITableV
         self.navigationItem.title = "RelieforMe"
         self.navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.white
             , NSAttributedString.Key.font:UIFont.systemFont(ofSize: 25*lengthPercent)]
-        Add_label()
-        Add_button_test()
+        //Add_label()
+        //Add_button_test()
         let item = UIBarButtonItem(title: "", style: .plain, target: self, action: nil)
         self.navigationItem.backBarButtonItem = item
         self.navigationController?.navigationBar.barTintColor = UIColor(red: 0/255.0, green: 204/255.0, blue: 204/255.0, alpha: 1)
@@ -71,28 +71,42 @@ class ControlPannelViewController: UIViewController,UITableViewDelegate,UITableV
     }
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
         
-        return 300*HeighPercent
+        return 0//300*HeighPercent
     }
     
     func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
         
-        return  10*HeighPercent
+        return  0///10*HeighPercent
     }
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         
-        return 100*HeighPercent
+        return screenHeight//100*HeighPercent
     }
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
        
         let cell = UITableViewCell.init(style: .default, reuseIdentifier: nil)
+        cell.selectionStyle = UITableViewCell.SelectionStyle.none
   
-        let label_current = UILabel.init(frame: CGRect(x: 75*lengthPercent, y: 6*HeighPercent, width: 225*lengthPercent, height: 20*lengthPercent))
+        let lineview1 = UIView.init(frame: CGRect(x: 58*lengthPercent, y: 375*HeighPercent, width: screenWidth - 116*lengthPercent, height: 0.5*lengthPercent))
+        lineview1.backgroundColor = .gray
+        cell.contentView.addSubview(lineview1)
+        let lineview2 = UIView.init(frame: CGRect(x: 58*lengthPercent, y: 465*HeighPercent, width: screenWidth - 116*lengthPercent, height: 0.5*lengthPercent))
+        lineview2.backgroundColor = .gray
+        cell.contentView.addSubview(lineview2)
+        let lineview3 = UIView.init(frame: CGRect(x: 58*lengthPercent, y: 375*HeighPercent, width: 0.5*lengthPercent, height: 90*HeighPercent))
+        lineview3.backgroundColor = .gray
+        cell.contentView.addSubview(lineview3)
+        let lineview4 = UIView.init(frame: CGRect(x: 317*lengthPercent, y: 375*HeighPercent, width: 0.5*lengthPercent, height: 90*HeighPercent))
+        lineview4.backgroundColor = .gray
+        cell.contentView.addSubview(lineview4)
+        
+        let label_current = UILabel.init(frame: CGRect(x: 60*lengthPercent, y: 380*HeighPercent, width: screenWidth - 120*lengthPercent, height: 20*lengthPercent))
         label_current.text = "CURRENT PROGRAM"
         label_current.textAlignment = .center
         //label_current.textColor = UIColor(red: 9/255.0, green: 187/255.0, blue: 7/255.0, alpha: 1)
         cell.contentView.addSubview(label_current)
         
-        let button_favofite = UIButton.init(frame: CGRect(x: 285*lengthPercent, y: 6*HeighPercent, width: 30*lengthPercent, height: 24*lengthPercent))
+        let button_favofite = UIButton.init(frame: CGRect(x: 285*lengthPercent, y: 380*HeighPercent, width: 30*lengthPercent, height: 24*lengthPercent))
         // button.backgroundColor = UIColor.lightGray
         button_favofite.setImage(UIImage(named: "lin_like_full_grey"), for: .normal)
         //button_favofite.setTitle("test", for: .highlighted)
@@ -100,14 +114,26 @@ class ControlPannelViewController: UIViewController,UITableViewDelegate,UITableV
         //button.setImage("pic", for: UIControl.State)
         cell.contentView.addSubview(button_favofite)
         
-        let label_name = UILabel.init(frame: CGRect(x: 60*lengthPercent, y: 40*HeighPercent, width: 255*lengthPercent, height: 50*lengthPercent))
-        label_name.text = "Wrist Stiff Muscle Massage-Advanced"
-        label_name.textColor = .gray
-        label_name.textAlignment = .center
-        label_name.numberOfLines = 0
-        cell.contentView.addSubview(label_name)
+        let button_name = UIButton.init(frame: CGRect(x: 70*lengthPercent, y: 410*HeighPercent, width: screenWidth - 140*lengthPercent, height: 50*lengthPercent))
+        button_name.setTitle("Wrist Stiff Muscle Massage-Advanced", for: .normal)
+        button_name.setTitleColor(.gray, for: .normal)
+        //button_name.backgroundColor = .green
+        button_name.titleLabel?.textAlignment = .center
+        button_name.titleLabel?.numberOfLines = 0
+        button_name.addTarget(self, action: #selector(ButtonName_Action), for: .touchUpInside)
+        cell.contentView.addSubview(button_name)
         
+        let label1 = UILabel.init(frame: CGRect(x: 60*lengthPercent, y: 470*HeighPercent, width: 255*lengthPercent, height: 20*lengthPercent))
+        label1.text = "Intensity info is in Program Details"
+        label1.font = label1.font.withSize(14*lengthPercent)
+        label1.textAlignment = .center
+         cell.contentView.addSubview(label1)
         
+        let label2 = UILabel.init(frame: CGRect(x: 60*lengthPercent, y: 495*HeighPercent, width: 255*lengthPercent, height: 20*lengthPercent))
+        label2.text = "Intensity setting in last use: 6"
+        label2.font = label2.font.withSize(14*lengthPercent)
+        label2.textAlignment = .center
+         cell.contentView.addSubview(label2)
         //tableView.indexPathForSelectedRow!.section
         return cell
     }
@@ -123,17 +149,24 @@ class ControlPannelViewController: UIViewController,UITableViewDelegate,UITableV
         }
         
     }
+    @objc private func ButtonName_Action(button: UIButton) {
+        
+        let vc = ProgramDetailsTableViewController()
+        vc.index = 1
+        self.navigationController?.pushViewController(vc, animated: true)
+        
+    }
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
         if indexPath.section == 0{
             
-            let vc = ProgramDetailsTableViewController()
-            vc.index = 1
+            let vc = PairingTableViewController()
             self.navigationController?.pushViewController(vc, animated: true)
         }
     }
     @objc private func buttonAction_Pairing(button: UIButton) {
         
+        print("test---------")
         let vc = PairingTableViewController()
         self.navigationController?.pushViewController(vc, animated: true)
         

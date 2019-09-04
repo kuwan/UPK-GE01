@@ -14,6 +14,7 @@ class PLViewController: UIViewController {
     
     var index = 0
     var titles = ["Relieve","Strengthen", "Relax"]
+    //var navbar: UINavigationBar = UINavigationBar()
   //  var pageFrame: CGRect = CGRect(x: 0, y: 0, width: 0, height: 0)
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -24,6 +25,8 @@ class PLViewController: UIViewController {
             titles = ["Relieve","Strengthen", "Relax"]
         }
         else{
+           // self.navigationController?.navigationBar.frame = CGRect(x: 0, y: 0, width: screenWidth, height: 500)
+            //self.setNavBar()
             self.navigationItem.title = "RelieforMe"
             let item = UIBarButtonItem(title: "", style: .plain, target: self, action: nil)
             self.navigationItem.leftBarButtonItem = item
@@ -93,4 +96,9 @@ class PLViewController: UIViewController {
         let pageView = YCPageView(frame: pageFrame, titles: titles, childVcs: childVcs, parentVc: self, style : style)
         view.addSubview(pageView)
     }
+    /*func setNavBar() {
+        self.navbar.frame = CGRect(x: 0, y: 0, width: screenWidth, height: 128)
+        self.navbar.backgroundColor = UIColor(red: 0/255.0, green: 204/255.0, blue: 204/255.0, alpha: 1)
+        self.view.addSubview(navbar)
+    }*/
 }
