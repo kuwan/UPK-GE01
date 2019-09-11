@@ -12,6 +12,16 @@
 		001992BC22D6D5EB00D91121 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 001992BB22D6D5EB00D91121 /* Assets.xcassets */; };
 		001992BF22D6D5EB00D91121 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 001992BD22D6D5EB00D91121 /* LaunchScreen.storyboard */; };
 		001992CB22D7623600D91121 /* UiViewHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 001992CA22D7623600D91121 /* UiViewHelper.swift */; };
+		0031990823274CA500122F1D /* Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0031990723274CA500122F1D /* Category.swift */; };
+		0031990A232770B800122F1D /* ContactUs.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00319909232770B800122F1D /* ContactUs.swift */; };
+		0031990C2327740C00122F1D /* ErrorPassword.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0031990B2327740C00122F1D /* ErrorPassword.swift */; };
+		0031990E2327746D00122F1D /* Favorite.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0031990D2327746D00122F1D /* Favorite.swift */; };
+		003199102327756D00122F1D /* Location.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0031990F2327756D00122F1D /* Location.swift */; };
+		003199132327777A00122F1D /* Program.swift in Sources */ = {isa = PBXBuildFile; fileRef = 003199122327777A00122F1D /* Program.swift */; };
+		0031991523277BBE00122F1D /* ProgramDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0031991423277BBE00122F1D /* ProgramDetail.swift */; };
+		003199192327999500122F1D /* RecommendBean.swift in Sources */ = {isa = PBXBuildFile; fileRef = 003199182327999500122F1D /* RecommendBean.swift */; };
+		0031991B23288C2C00122F1D /* InitDB.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0031991A23288C2C00122F1D /* InitDB.swift */; };
+		0031991D2328E8D800122F1D /* LogUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0031991C2328E8D800122F1D /* LogUtils.swift */; };
 		0828AE5122EE95F100EBCD86 /* SelectAreaTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0828AE5022EE95F100EBCD86 /* SelectAreaTableViewController.swift */; };
 		0828AE5322EEBC2E00EBCD86 /* WarningsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0828AE5222EEBC2E00EBCD86 /* WarningsTableViewController.swift */; };
 		0828AE5522EED1BC00EBCD86 /* ProgramDetailsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0828AE5422EED1BC00EBCD86 /* ProgramDetailsTableViewController.swift */; };
@@ -77,6 +87,16 @@
 		001992BE22D6D5EB00D91121 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		001992C022D6D5EB00D91121 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		001992CA22D7623600D91121 /* UiViewHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UiViewHelper.swift; sourceTree = "<group>"; };
+		0031990723274CA500122F1D /* Category.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Category.swift; sourceTree = "<group>"; };
+		00319909232770B800122F1D /* ContactUs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactUs.swift; sourceTree = "<group>"; };
+		0031990B2327740C00122F1D /* ErrorPassword.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorPassword.swift; sourceTree = "<group>"; };
+		0031990D2327746D00122F1D /* Favorite.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Favorite.swift; sourceTree = "<group>"; };
+		0031990F2327756D00122F1D /* Location.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Location.swift; sourceTree = "<group>"; };
+		003199122327777A00122F1D /* Program.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Program.swift; sourceTree = "<group>"; };
+		0031991423277BBE00122F1D /* ProgramDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgramDetail.swift; sourceTree = "<group>"; };
+		003199182327999500122F1D /* RecommendBean.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecommendBean.swift; sourceTree = "<group>"; };
+		0031991A23288C2C00122F1D /* InitDB.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InitDB.swift; sourceTree = "<group>"; };
+		0031991C2328E8D800122F1D /* LogUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogUtils.swift; sourceTree = "<group>"; };
 		0828AE5022EE95F100EBCD86 /* SelectAreaTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectAreaTableViewController.swift; sourceTree = "<group>"; };
 		0828AE5222EEBC2E00EBCD86 /* WarningsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WarningsTableViewController.swift; sourceTree = "<group>"; };
 		0828AE5422EED1BC00EBCD86 /* ProgramDetailsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgramDetailsTableViewController.swift; sourceTree = "<group>"; };
@@ -169,6 +189,7 @@
 		001992B322D6D5E900D91121 /* UPK-GE01 */ = {
 			isa = PBXGroup;
 			children = (
+				001992B422D6D5E900D91121 /* AppDelegate.swift */,
 				001992BB22D6D5EB00D91121 /* Assets.xcassets */,
 				001992CD22D778D000D91121 /* Controller */,
 				001992D022D778FA00D91121 /* Db */,
@@ -196,7 +217,6 @@
 				007AF077231F69260018B44A /* SelectBodyView */,
 				08D87753230F8D1500843F9D /* Pickerview */,
 				08C2BA1122E01E6F008867E5 /* Pageview */,
-				001992B422D6D5E900D91121 /* AppDelegate.swift */,
 				08D87751230F8CF200843F9D /* RelieforMeTableViewController.swift */,
 				08C2B9FB22DC7BD5008867E5 /* MyProgramsViewController.swift */,
 				08D8775C230FE09C00843F9D /* MyProgramTableViewCell.swift */,
@@ -247,6 +267,14 @@
 		001992CE22D778D900D91121 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				0031990723274CA500122F1D /* Category.swift */,
+				00319909232770B800122F1D /* ContactUs.swift */,
+				0031990B2327740C00122F1D /* ErrorPassword.swift */,
+				0031990D2327746D00122F1D /* Favorite.swift */,
+				0031990F2327756D00122F1D /* Location.swift */,
+				003199122327777A00122F1D /* Program.swift */,
+				0031991423277BBE00122F1D /* ProgramDetail.swift */,
+				003199182327999500122F1D /* RecommendBean.swift */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -255,6 +283,7 @@
 			isa = PBXGroup;
 			children = (
 				001992CA22D7623600D91121 /* UiViewHelper.swift */,
+				0031991C2328E8D800122F1D /* LogUtils.swift */,
 			);
 			name = Utils;
 			sourceTree = "<group>";
@@ -262,6 +291,7 @@
 		001992D022D778FA00D91121 /* Db */ = {
 			isa = PBXGroup;
 			children = (
+				0031991A23288C2C00122F1D /* InitDB.swift */,
 			);
 			name = Db;
 			sourceTree = "<group>";
@@ -450,9 +480,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				08F4D61822F139B000707A84 /* MyDeviceTableViewController.swift in Sources */,
+				0031991B23288C2C00122F1D /* InitDB.swift in Sources */,
 				08DD3D26231F5F160094601F /* FrontBody.swift in Sources */,
 				08F4D61622F1380100707A84 /* ResetPasswordTableViewController.swift in Sources */,
 				08C2B9FC22DC7BD5008867E5 /* MyProgramsViewController.swift in Sources */,
+				003199192327999500122F1D /* RecommendBean.swift in Sources */,
 				08C2BA1022E01DA5008867E5 /* PLViewController.swift in Sources */,
 				08C2BA0422DC96FE008867E5 /* ProgramLibraryViewController.swift in Sources */,
 				08D8775D230FE09C00843F9D /* MyProgramTableViewCell.swift in Sources */,
@@ -460,6 +492,7 @@
 				08C8803622F0224E007BF6F5 /* RelieveQuestionTableViewController.swift in Sources */,
 				08C2BA6922E04537008867E5 /* RelaxTableViewController.swift in Sources */,
 				08C8803822F0226B007BF6F5 /* StrengthQuestionTableViewController.swift in Sources */,
+				003199132327777A00122F1D /* Program.swift in Sources */,
 				08F4D61222F1306700707A84 /* HelpCenterTableViewController.swift in Sources */,
 				08C2BA6522E044FC008867E5 /* RelieveTableViewController.swift in Sources */,
 				08C2BA4622E01EDA008867E5 /* YCContentView.swift in Sources */,
@@ -467,14 +500,17 @@
 				08C8804222F03375007BF6F5 /* MyDiaryTableViewController.swift in Sources */,
 				08DD3D24231F5E540094601F /* BackBody.swift in Sources */,
 				08C2BA4722E01EDA008867E5 /* YCTitleStyle.swift in Sources */,
+				0031990E2327746D00122F1D /* Favorite.swift in Sources */,
 				08F4D63F22FD708B00707A84 /* RegisterTableViewController.swift in Sources */,
 				08F4D64322FD890200707A84 /* ForgotPasswordTableViewController.swift in Sources */,
 				0828AE5522EED1BC00EBCD86 /* ProgramDetailsTableViewController.swift in Sources */,
+				003199102327756D00122F1D /* Location.swift in Sources */,
 				08C8803A22F0227F007BF6F5 /* RelaxQuestionTableViewController.swift in Sources */,
 				08C2BA6222E01EDA008867E5 /* YCPageCollectionViewLayout.swift in Sources */,
 				08D87755230F8D5A00843F9D /* PickerView.swift in Sources */,
 				08C2BA0822DD7725008867E5 /* HelpCenterViewController.swift in Sources */,
 				08D87761231374DF00843F9D /* HelpCenterTableViewCell.swift in Sources */,
+				0031990A232770B800122F1D /* ContactUs.swift in Sources */,
 				08F4D61A22F139C600707A84 /* ContactUsTableViewController.swift in Sources */,
 				08C2BA6122E01EDA008867E5 /* YCPageCollectionView.swift in Sources */,
 				08F4D62222F13A2400707A84 /* AboutSoftwareTableViewController.swift in Sources */,
@@ -493,6 +529,7 @@
 				08C2BA0622DC9856008867E5 /* ProgramLibraryUITableViewCell.swift in Sources */,
 				08C2BA0222DC9346008867E5 /* MoreViewController.swift in Sources */,
 				08F4D61C22F139E600707A84 /* PrivacyStatementTableViewController.swift in Sources */,
+				0031990C2327740C00122F1D /* ErrorPassword.swift in Sources */,
 				0828AE5322EEBC2E00EBCD86 /* WarningsTableViewController.swift in Sources */,
 				001992CB22D7623600D91121 /* UiViewHelper.swift in Sources */,
 				08D87752230F8CF200843F9D /* RelieforMeTableViewController.swift in Sources */,
@@ -501,9 +538,12 @@
 				08C2BA4522E01EDA008867E5 /* YCPageView.swift in Sources */,
 				08F4D64522FD8C8400707A84 /* WelcomeTableViewController.swift in Sources */,
 				08D0909C2317B8D500E693E6 /* MyFavoriteTableViewController.swift in Sources */,
+				0031991523277BBE00122F1D /* ProgramDetail.swift in Sources */,
+				0031991D2328E8D800122F1D /* LogUtils.swift in Sources */,
 				08F4D62822F142F500707A84 /* ScienceofEMSTableViewController.swift in Sources */,
 				08C8803422EFE020007BF6F5 /* StartNewSessionTableViewController.swift in Sources */,
 				08C2BA6322E01EDA008867E5 /* YCTitleView.swift in Sources */,
+				0031990823274CA500122F1D /* Category.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

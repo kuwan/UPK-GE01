@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import RealmSwift
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -16,6 +17,42 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
+        
+        /* Realm 数据库配置，用于数据库的迭代更新 */
+        //每次模型属性变化时，将 schemaVersion 加 1 即可
+        let schemaVersion : UInt64 = 0
+        var config = Realm.Configuration(schemaVersion: schemaVersion,
+                                         migrationBlock: { migration, oldSchemaVersion in
+                                            // 我们目前还未执行过迁移，因此 oldSchemaVersion == 0
+                                            if (oldSchemaVersion < schemaVersion) {
+                                                // 没有什么要做的！
+                                                // Realm 会自行检测新增和被移除的属性
+                                                // 然后会自动更新磁盘上的架构
+                                            }
+        })
+        config.fileURL = config.fileURL!.deletingLastPathComponent().appendingPathComponent("UPK_GE01.realm")
+        Realm.Configuration.defaultConfiguration = config
+        Realm.asyncOpen { (realm, error) in
+            
+            /* Realm 成功打开，迁移已在后台线程中完成 */
+            if let _ = realm {
+                
+                LogUtils.debugLog("Realm 数据库配置成功")
+            }
+                /* 处理打开 Realm 时所发生的错误 */
+            else if let error = error {
+                
+                LogUtils.debugLog("Realm 数据库配置失败：\(error.localizedDescription)")
+            }
+        }
+        
+        //初始化数据库
+        let realm = try! Realm()
+        //打印数据库存放地址
+        LogUtils.debugLog(realm.configuration.fileURL!)
+        
+        InitDB.initDB(realm: realm)
+        
         return true
     }
 
